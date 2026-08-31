@@ -1,0 +1,20 @@
+{
+  "gateway_base_url": "https://ai-gateway.apps.cloud.rt.nyu.edu/v1",
+  "provider": "azure-openai",
+  "embedding_model": "@openai-embedding/text-embedding-3-small",
+  "similarity": "cosine",
+  "dimension": 1536,
+  "vector_count": 447,
+  "record_count": 447,
+  "chunk_file_count": 8,
+  "chunk_files": [
+    "dred_scott_v_sandford.jsonl",
+    "gideon_v_wainwright.jsonl",
+    "marbury_v_madison.jsonl",
+    "miranda_v_arizona.jsonl",
+    "new_york_times_co_v_united_states.jsonl",
+    "obergefell_v_hodges.jsonl",
+    "plessy_v_ferguson.jsonl",
+    "tinker_v_des_moines_school_dist.jsonl"
+  ]
+}

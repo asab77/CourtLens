@@ -1,0 +1,29 @@
+# Secrets and local configuration
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Local source/intermediate data
+data/raw/
+data/processed/
+data/chunks/
+
+# Runtime-only local output
+data/evaluations.jsonl
+*.log
+*.tmp
