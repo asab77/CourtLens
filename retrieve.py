@@ -10,10 +10,13 @@ from openai import OpenAI
 
 from gateway_config import (
     EMBEDDING_MODEL,
+    EXPERIMENT_GATEWAY_BASE_URL,
     GATEWAY_BASE_URL,
     GATEWAY_PROVIDER,
+    require_experiment_api_key,
     require_nyu_api_gateway_api_key,
 )
+from embedding_retry import call_with_rate_limit_retry
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -24,52 +27,83 @@ MANIFEST_PATH = VECTOR_STORE_DIR / "manifest.json"
 TOP_K = 5
 
 
-def load_vector_store() -> tuple[faiss.Index, list[dict], dict]:
+def load_vector_store(
+    vector_store_dir: Path = VECTOR_STORE_DIR,
+    *,
+    expected_embedding_model: str = EMBEDDING_MODEL,
+    expected_gateway_base_url: str = GATEWAY_BASE_URL,
+) -> tuple[faiss.Index, list[dict], dict]:
     """Load the index and verify its row-to-record mapping."""
-    index = faiss.read_index(str(INDEX_PATH))
+    index_path = vector_store_dir / "index.faiss"
+    records_path = vector_store_dir / "records.jsonl"
+    manifest_path = vector_store_dir / "manifest.json"
+    index = faiss.read_index(str(index_path))
     records = [
         json.loads(line)
-        for line in RECORDS_PATH.read_text(encoding="utf-8").splitlines()
+        for line in records_path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
     if index.ntotal != len(records) or index.ntotal != manifest["vector_count"]:
         raise ValueError("FAISS vectors, records, and manifest counts do not match")
     if any(record["vector_id"] != position for position, record in enumerate(records)):
         raise ValueError("Stored vector IDs are not aligned with record positions")
-    if manifest["embedding_model"] != EMBEDDING_MODEL:
+    if manifest["embedding_model"] != expected_embedding_model:
         raise ValueError("The index was built with a different embedding model")
-    if manifest.get("gateway_base_url") != GATEWAY_BASE_URL:
+    if manifest.get("gateway_base_url") != expected_gateway_base_url:
         raise ValueError("The index was built through a different embedding gateway")
 
     return index, records, manifest
 
 
-def semantic_search(
-    question: str,
-    top_k: int = TOP_K,
-    case_name: str | None = None,
-    vector_store: tuple[faiss.Index, list[dict], dict] | None = None,
-) -> list[dict]:
-    """Embed a question and return ranked FAISS results with stored metadata."""
-    question = question.strip()
-    if not question:
-        raise ValueError("Please enter a non-empty question.")
-    if top_k < 1:
-        raise ValueError("top_k must be at least 1")
-
-    index, records, manifest = vector_store or load_vector_store()
-    client = OpenAI(
+def embedding_client() -> OpenAI:
+    """Create the shared OpenAI-compatible NYU Gateway embedding client."""
+    return OpenAI(
         api_key=require_nyu_api_gateway_api_key(),
         base_url=GATEWAY_BASE_URL,
         default_headers={"x-portkey-provider": GATEWAY_PROVIDER},
     )
-    response = client.embeddings.create(model=EMBEDDING_MODEL, input=[question])
+
+
+def experiment_embedding_client() -> OpenAI:
+    """Create the Vercel client used only by the fixed-chunking experiment."""
+    return OpenAI(
+        api_key=require_experiment_api_key(),
+        base_url=EXPERIMENT_GATEWAY_BASE_URL,
+    )
+
+
+def embed_question(
+    question: str,
+    client: OpenAI | None = None,
+    model: str = EMBEDDING_MODEL,
+) -> np.ndarray:
+    """Embed and normalize one question with the selected embedding model."""
+    question = question.strip()
+    if not question:
+        raise ValueError("Please enter a non-empty question.")
+    embedding_api = (client or embedding_client()).embeddings
+    response = call_with_rate_limit_retry(
+        lambda: embedding_api.create(model=model, input=[question]),
+        "query embedding",
+    )
     query_vector = np.asarray([response.data[0].embedding], dtype="float32")
     faiss.normalize_L2(query_vector)
+    return query_vector
 
-    # Searching every row when filtering preserves the true ranking within one case.
+
+def search_vector_store(
+    query_vector: np.ndarray,
+    vector_store: tuple[faiss.Index, list[dict], dict],
+    top_k: int = TOP_K,
+    case_name: str | None = None,
+) -> list[dict]:
+    """Search one loaded normalized FAISS store with an existing query vector."""
+    if top_k < 1:
+        raise ValueError("top_k must be at least 1")
+
+    index, records, _manifest = vector_store
     search_count = index.ntotal if case_name else min(top_k, index.ntotal)
     scores, vector_ids = index.search(query_vector, search_count)
 
@@ -90,8 +124,26 @@ def semantic_search(
         )
         if len(results) == top_k:
             break
-
     return results
+
+
+def semantic_search(
+    question: str,
+    top_k: int = TOP_K,
+    case_name: str | None = None,
+    vector_store: tuple[faiss.Index, list[dict], dict] | None = None,
+) -> list[dict]:
+    """Embed a question and return ranked FAISS results with stored metadata."""
+    question = question.strip()
+    if not question:
+        raise ValueError("Please enter a non-empty question.")
+    if top_k < 1:
+        raise ValueError("top_k must be at least 1")
+
+    store = vector_store or load_vector_store()
+    query_vector = embed_question(question)
+    # Searching every row when filtering preserves the true ranking within one case.
+    return search_vector_store(query_vector, store, top_k=top_k, case_name=case_name)
 
 
 def main() -> None:

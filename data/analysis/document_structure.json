@@ -1,0 +1,1559 @@
+{
+  "analysis": "CourtLens document structure description",
+  "case_count": 8,
+  "tokenizer": "cl100k_base",
+  "heuristics": {
+    "content": "Exclude four metadata headers and page-marker lines; join pages with one newline.",
+    "paragraphs": "Split on blank lines retained inside extracted page text.",
+    "sentences": "Split approximately at terminal punctuation after protecting common legal abbreviations.",
+    "headings": "Standalone Roman/numbered markers, conservative opinion markers, and short >=90% uppercase lines.",
+    "warning": "Signals are descriptive heuristics, not a reliable document-outline classifier."
+  },
+  "cases": [
+    {
+      "case_name": "Dred Scott v. Sandford",
+      "source_file": "dred_scott_v_sandford.pdf",
+      "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+      "total_characters": 672098,
+      "total_words": 116319,
+      "approximate_tokens": 158519,
+      "declared_pdf_pages": 241,
+      "pdf_pages_represented": 241,
+      "page_number_min": 1,
+      "page_number_max": 241,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 158519.0,
+        "mean_tokens": 158519.0,
+        "p90_tokens": 158519.0,
+        "max_tokens": 158519
+      },
+      "sentence_statistics": {
+        "count": 3558,
+        "median_tokens": 34.0,
+        "mean_tokens": 42.15,
+        "p90_tokens": 85.0,
+        "max_tokens": 341
+      },
+      "heading_like_line_count": 262,
+      "heading_type_counts": {
+        "dissent": 4,
+        "majority_opinion": 4,
+        "roman_section": 3,
+        "short_all_caps": 251
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "DECEMBER TERM, 1856. 393",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "LATHROP L. STURGIS, PLAINTIFF IN ERROR, V. CHRISTIAN R1ONOLD.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Mr. Justice CURTIS delivered the opinion of the court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "DRED SCOTT, PLAINTIFF IN ERROR, v. JomT F. A. SANDFORD.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "I.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "394 SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "II.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "DECEMBER TERM, 1856. 895",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "396 SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "V.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "DECEMBER TERM, 1856.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "JoHN F. A. SANDFORD.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "898 SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "DECEMBER TERM, 1856. 899",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "400 SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "DECEMBER TERM, 1856. 401",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "VOL. XX. - 26",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "462 SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "DECEMBER TERM, 1856. 403",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 12,
+          "text": "SUPREME COURT.",
+          "types": [
+            "short_all_caps"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 3,
+      "roman_section_marker_frequencies": {
+        "I": 1,
+        "II": 1,
+        "V": 1
+      },
+      "numbered_section_marker_count": 0,
+      "opinion_marker_counts": {
+        "syllabus": 0,
+        "majority_opinion": 4,
+        "concurrence": 0,
+        "dissent": 4
+      },
+      "heading_like_lines_per_10k_tokens": 16.53,
+      "roman_markers_per_10k_tokens": 0.19,
+      "processed_file": "dred_scott_v_sandford.txt"
+    },
+    {
+      "case_name": "Gideon v. Wainwright",
+      "source_file": "gideon_v_wainwright.pdf",
+      "original_source_file": "service-ll-usrep-usrep372-usrep372335-usrep372335.pdf",
+      "total_characters": 35024,
+      "total_words": 5958,
+      "approximate_tokens": 8998,
+      "declared_pdf_pages": 18,
+      "pdf_pages_represented": 18,
+      "page_number_min": 1,
+      "page_number_max": 18,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 8998.0,
+        "mean_tokens": 8998.0,
+        "p90_tokens": 8998.0,
+        "max_tokens": 8998
+      },
+      "sentence_statistics": {
+        "count": 289,
+        "median_tokens": 23.0,
+        "mean_tokens": 29.48,
+        "p90_tokens": 59.2,
+        "max_tokens": 230
+      },
+      "heading_like_line_count": 35,
+      "heading_type_counts": {
+        "concurrence": 5,
+        "majority_opinion": 5,
+        "roman_section": 2,
+        "short_all_caps": 22,
+        "syllabus": 1
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "GIDEON v. WAINWRIGHT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus.",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "GIDEON v. WAINWRIGHT, CORRECTIONS",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "DIRECTOR.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "CERTIORARI TO THE SUPREME COURT OF FLORIDA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "OCTOBER TERM, 1962.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "Opinion of the Court. 372 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "GIDEON v. WAINWRIGHT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "OCTOBER TERM, 1962.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "Opinion of the Court. 372 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "I.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "GIDEON v. WAINWRIGHT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "II.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "OCTOBER TERM, 1962.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "Opinion of the Court. 372 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "GIDEON v. WAINWRIGHT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "OCTOBER TERM, 1962.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "Opinion of the Court. 372 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "GIDEON v. WAINWRIGHT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "OCTOBER TERM, 1962.",
+          "types": [
+            "short_all_caps"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 2,
+      "roman_section_marker_frequencies": {
+        "I": 1,
+        "II": 1
+      },
+      "numbered_section_marker_count": 0,
+      "opinion_marker_counts": {
+        "syllabus": 1,
+        "majority_opinion": 5,
+        "concurrence": 5,
+        "dissent": 0
+      },
+      "heading_like_lines_per_10k_tokens": 38.9,
+      "roman_markers_per_10k_tokens": 2.22,
+      "processed_file": "gideon_v_wainwright.txt"
+    },
+    {
+      "case_name": "Marbury v. Madison",
+      "source_file": "marbury_v_madison.pdf",
+      "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+      "total_characters": 94793,
+      "total_words": 16916,
+      "approximate_tokens": 26765,
+      "declared_pdf_pages": 44,
+      "pdf_pages_represented": 44,
+      "page_number_min": 1,
+      "page_number_max": 44,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 26765.0,
+        "mean_tokens": 26765.0,
+        "p90_tokens": 26765.0,
+        "max_tokens": 26765
+      },
+      "sentence_statistics": {
+        "count": 620,
+        "median_tokens": 34.0,
+        "mean_tokens": 41.37,
+        "p90_tokens": 82.0,
+        "max_tokens": 544
+      },
+      "heading_like_line_count": 49,
+      "heading_type_counts": {
+        "majority_opinion": 2,
+        "short_all_caps": 47
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "WILLIAM MARBURY",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "JAMES MADISON, SECRETARY OF STATE",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "OF THE UNITED STATES.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "FEBRUARY, 1803.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "FEBRUARY, 1803.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "144 SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "MADISON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "FEBRUARY, 1803. 145",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "FEBRUARY, 1803. 147",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 12,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 13,
+          "text": "FEBRUARY, 1803.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 14,
+          "text": "SUPREME COUR U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 15,
+          "text": "FEBRUARY, 1803. 151",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 16,
+          "text": "SUPREME COURT U. S.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 17,
+          "text": "FEBRUARY, 1803.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 17,
+          "text": "opinion of the court was delivered by the chief juftice.",
+          "types": [
+            "majority_opinion"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 0,
+      "roman_section_marker_frequencies": {},
+      "numbered_section_marker_count": 0,
+      "opinion_marker_counts": {
+        "syllabus": 0,
+        "majority_opinion": 2,
+        "concurrence": 0,
+        "dissent": 0
+      },
+      "heading_like_lines_per_10k_tokens": 18.31,
+      "roman_markers_per_10k_tokens": 0.0,
+      "processed_file": "marbury_v_madison.txt"
+    },
+    {
+      "case_name": "Miranda v. Arizona",
+      "source_file": "miranda_v_arizona.pdf",
+      "original_source_file": "service-ll-usrep-usrep384-usrep384436-usrep384436.pdf",
+      "total_characters": 223040,
+      "total_words": 37486,
+      "approximate_tokens": 55508,
+      "declared_pdf_pages": 110,
+      "pdf_pages_represented": 110,
+      "page_number_min": 1,
+      "page_number_max": 110,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 55508.0,
+        "mean_tokens": 55508.0,
+        "p90_tokens": 55508.0,
+        "max_tokens": 55508
+      },
+      "sentence_statistics": {
+        "count": 1956,
+        "median_tokens": 21.0,
+        "mean_tokens": 26.72,
+        "p90_tokens": 57.0,
+        "max_tokens": 251
+      },
+      "heading_like_line_count": 169,
+      "heading_type_counts": {
+        "dissent": 17,
+        "majority_opinion": 27,
+        "numbered_section": 1,
+        "roman_section": 9,
+        "short_all_caps": 117,
+        "syllabus": 1
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus. 384 U. S.",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "CERTIORARI TO THE SUPREME COURT OF ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "• MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "Opinion of the Court. 384 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "Opinion of the Court. 384 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "Opinion of the Court. 384 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "MIRANDA v. ARIZONA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "I.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "446 OCTOBER TERM, 1965.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "Opinion of the Court. 384 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 12,
+          "text": "MIRANDA v. ARIZONA.-",
+          "types": [
+            "short_all_caps"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 9,
+      "roman_section_marker_frequencies": {
+        "I": 1,
+        "II": 2,
+        "III": 3,
+        "IV": 2,
+        "V": 1
+      },
+      "numbered_section_marker_count": 1,
+      "opinion_marker_counts": {
+        "syllabus": 1,
+        "majority_opinion": 27,
+        "concurrence": 0,
+        "dissent": 17
+      },
+      "heading_like_lines_per_10k_tokens": 30.45,
+      "roman_markers_per_10k_tokens": 1.62,
+      "processed_file": "miranda_v_arizona.txt"
+    },
+    {
+      "case_name": "New York Times Co. v. United States",
+      "source_file": "new_york_times_co_v_united_states.pdf",
+      "original_source_file": "service-ll-usrep-usrep403-usrep403713-usrep403713.pdf",
+      "total_characters": 101898,
+      "total_words": 17034,
+      "approximate_tokens": 23458,
+      "declared_pdf_pages": 51,
+      "pdf_pages_represented": 51,
+      "page_number_min": 1,
+      "page_number_max": 51,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 23458.0,
+        "mean_tokens": 23458.0,
+        "p90_tokens": 23458.0,
+        "max_tokens": 23458
+      },
+      "sentence_statistics": {
+        "count": 665,
+        "median_tokens": 26.0,
+        "mean_tokens": 33.09,
+        "p90_tokens": 64.0,
+        "max_tokens": 228
+      },
+      "heading_like_line_count": 91,
+      "heading_type_counts": {
+        "concurrence": 19,
+        "dissent": 13,
+        "numbered_section": 1,
+        "roman_section": 2,
+        "short_all_caps": 55,
+        "syllabus": 1
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "CERTIORARI TO THE UNITED STATES COURT OF APPEALS",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "FOR THE SECOND CIRCUIT",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "OCTOBER TERM, 1970",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "PER CURIAM.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "OCTOBER TERM, 1970",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "BLACK, J., concurring 403 U. S.",
+          "types": [
+            "concurrence"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "OCTOBER TERM, 1970",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "BLACK, J., concurring 403 U. S.",
+          "types": [
+            "concurrence"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "a law.5 See concurring opinion of MR. JUSTICE DOUGLAS,",
+          "types": [
+            "concurrence"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "OCTOBER TERM, 1970",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "DOUGLAS, J., concurring 403 U. S.",
+          "types": [
+            "concurrence"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "concurring opinion which MR. JUSTICE BLACK joined).",
+          "types": [
+            "concurrence"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "NEW YORK TIMES CO. v. UNITED STATES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "OCTOBER TERM, 1970",
+          "types": [
+            "short_all_caps"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 2,
+      "roman_section_marker_frequencies": {
+        "I": 1,
+        "II": 1
+      },
+      "numbered_section_marker_count": 1,
+      "opinion_marker_counts": {
+        "syllabus": 1,
+        "majority_opinion": 0,
+        "concurrence": 19,
+        "dissent": 13
+      },
+      "heading_like_lines_per_10k_tokens": 38.79,
+      "roman_markers_per_10k_tokens": 0.85,
+      "processed_file": "new_york_times_co_v_united_states.txt"
+    },
+    {
+      "case_name": "Obergefell v. Hodges",
+      "source_file": "obergefell_v_hodges.pdf",
+      "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+      "total_characters": 213131,
+      "total_words": 35032,
+      "approximate_tokens": 53864,
+      "declared_pdf_pages": 99,
+      "pdf_pages_represented": 99,
+      "page_number_min": 1,
+      "page_number_max": 99,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 53864.0,
+        "mean_tokens": 53864.0,
+        "p90_tokens": 53864.0,
+        "max_tokens": 53864
+      },
+      "sentence_statistics": {
+        "count": 2122,
+        "median_tokens": 19.5,
+        "mean_tokens": 23.69,
+        "p90_tokens": 49.0,
+        "max_tokens": 257
+      },
+      "heading_like_line_count": 108,
+      "heading_type_counts": {
+        "dissent": 1,
+        "majority_opinion": 32,
+        "roman_section": 18,
+        "short_all_caps": 56,
+        "syllabus": 5
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "OCTOBER TERM, 2014",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "DEPARTMENT OF HEALTH",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "OBERGEFELL v. HODGES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "OBERGEFELL v. HODGES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "Syllabus",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "Kennedy, J., delivered the opinion of the Court, in which Ginsburg,",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "OBERGEFELL v. HODGES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "Opinion of the Court",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "Justice Kennedy delivered the opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "OBERGEFELL v. HODGES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "Opinion of the Court",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "Opinion of the Court",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 10,
+          "text": "I",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "OBERGEFELL v. HODGES",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 11,
+          "text": "Opinion of the Court",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 12,
+          "text": "Opinion of the Court",
+          "types": [
+            "majority_opinion"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 18,
+      "roman_section_marker_frequencies": {
+        "I": 5,
+        "II": 5,
+        "III": 4,
+        "IV": 3,
+        "V": 1
+      },
+      "numbered_section_marker_count": 0,
+      "opinion_marker_counts": {
+        "syllabus": 5,
+        "majority_opinion": 32,
+        "concurrence": 0,
+        "dissent": 1
+      },
+      "heading_like_lines_per_10k_tokens": 20.05,
+      "roman_markers_per_10k_tokens": 3.34,
+      "processed_file": "obergefell_v_hodges.txt"
+    },
+    {
+      "case_name": "Plessy v. Ferguson",
+      "source_file": "plessy_v_ferguson.pdf",
+      "original_source_file": "service-ll-usrep-usrep163-usrep163537-usrep163537.pdf",
+      "total_characters": 63669,
+      "total_words": 10980,
+      "approximate_tokens": 14685,
+      "declared_pdf_pages": 28,
+      "pdf_pages_represented": 28,
+      "page_number_min": 1,
+      "page_number_max": 28,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 14685.0,
+        "mean_tokens": 14685.0,
+        "p90_tokens": 14685.0,
+        "max_tokens": 14685
+      },
+      "sentence_statistics": {
+        "count": 353,
+        "median_tokens": 31.0,
+        "mean_tokens": 39.23,
+        "p90_tokens": 80.8,
+        "max_tokens": 267
+      },
+      "heading_like_line_count": 54,
+      "heading_type_counts": {
+        "dissent": 1,
+        "majority_opinion": 13,
+        "numbered_section": 1,
+        "short_all_caps": 37,
+        "syllabus": 2
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "PLESSY v. FERGUSON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus.",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "PLESSY v. FERGUSON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "ERROR TO THE SUPREME COURT OF THE STATE OF LOUISIANA.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "OCTOBER TERI, 1895.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "PLESSY v. FERGUSOIN.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "OCTOBER TERM, 1895.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "opinion of the court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "PLESSY v. FERGUSON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "OCTOBER TERM, 1895.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "PLESSY v. FERGUSON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "OCTOBER TERM, 1895.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "PLESSY v. FERGUSON.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "Opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 9,
+          "text": "49.",
+          "types": [
+            "numbered_section"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 0,
+      "roman_section_marker_frequencies": {},
+      "numbered_section_marker_count": 1,
+      "opinion_marker_counts": {
+        "syllabus": 2,
+        "majority_opinion": 13,
+        "concurrence": 0,
+        "dissent": 1
+      },
+      "heading_like_lines_per_10k_tokens": 36.77,
+      "roman_markers_per_10k_tokens": 0.0,
+      "processed_file": "plessy_v_ferguson.txt"
+    },
+    {
+      "case_name": "Tinker v. Des Moines School Dist.",
+      "source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_source_file": "service-ll-usrep-usrep393-usrep393503-usrep393503.pdf",
+      "total_characters": 48373,
+      "total_words": 8084,
+      "approximate_tokens": 11516,
+      "declared_pdf_pages": 24,
+      "pdf_pages_represented": 24,
+      "page_number_min": 1,
+      "page_number_max": 24,
+      "page_sequence_complete": true,
+      "blank_line_paragraph_boundaries": 0,
+      "paragraph_statistics": {
+        "count": 1,
+        "median_tokens": 11516.0,
+        "mean_tokens": 11516.0,
+        "p90_tokens": 11516.0,
+        "max_tokens": 11516
+      },
+      "sentence_statistics": {
+        "count": 403,
+        "median_tokens": 21.0,
+        "mean_tokens": 26.84,
+        "p90_tokens": 56.0,
+        "max_tokens": 173
+      },
+      "heading_like_line_count": 49,
+      "heading_type_counts": {
+        "concurrence": 3,
+        "dissent": 8,
+        "majority_opinion": 6,
+        "numbered_section": 1,
+        "roman_section": 2,
+        "short_all_caps": 28,
+        "syllabus": 1
+      },
+      "heading_examples": [
+        {
+          "page": 1,
+          "text": "TINKER v. DES MOINES SCHOOL DIST. 503",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "Syllabus.",
+          "types": [
+            "syllabus"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "TINKER ET AL. v. DES MOINES INDEPENDENT",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "COMMUNITY SCHOOL DISTRICT ET AL.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "CERTIORARI TO THE UNITED STATES COURT OF APPEALS FOR",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 1,
+          "text": "THE EIGHTH CIRCUIT.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "OCTOBER TERM, 1968.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "Opinion of the Court. 393 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 2,
+          "text": "MR. JUSTICE FORTAS delivered the opinion of the Court.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "TINKER v. DES MOINES SCHOOL DIST. 505",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 3,
+          "text": "I.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "OCTOBER TERM, 1968.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 4,
+          "text": "Opinion of the Court. 393 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "TINKER v. DES MOINES SCHOOL DIST. 507",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 5,
+          "text": "II.",
+          "types": [
+            "roman_section"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "OCTOBER TERM, 1968.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 6,
+          "text": "Opinion of the Court. 393 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        },
+        {
+          "page": 7,
+          "text": "TINKER v. DES MOINES SCHOOL DIST. 509",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "OCTOBER TERM, 1968.",
+          "types": [
+            "short_all_caps"
+          ]
+        },
+        {
+          "page": 8,
+          "text": "Opinion of the Court. 393 U. S.",
+          "types": [
+            "majority_opinion"
+          ]
+        }
+      ],
+      "roman_section_marker_count": 2,
+      "roman_section_marker_frequencies": {
+        "I": 1,
+        "II": 1
+      },
+      "numbered_section_marker_count": 1,
+      "opinion_marker_counts": {
+        "syllabus": 1,
+        "majority_opinion": 6,
+        "concurrence": 3,
+        "dissent": 8
+      },
+      "heading_like_lines_per_10k_tokens": 42.55,
+      "roman_markers_per_10k_tokens": 1.74,
+      "processed_file": "tinker_v_des_moines_school_dist.txt"
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "name": "CourtLens human-reviewed chunking benchmark",
+  "status": "VALIDATED",
+  "instructions": "40 manually reviewed questions across 8 Supreme Court cases, 5 per case. Relevance requires the expected case/source and overlap with any inclusive, one-based PDF page interval. Page labels are human-reviewed ground truth.",
+  "questions": [
+    {
+      "id": "MAR-01",
+      "type": "facts",
+      "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "relevant_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MAR-02",
+      "type": "holding_detail",
+      "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "relevant_pages": [
+        [
+          19,
+          25
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MAR-03",
+      "type": "remedy",
+      "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "relevant_pages": [
+        [
+          35,
+          37
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MAR-04",
+      "type": "jurisdiction",
+      "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "relevant_pages": [
+        [
+          37,
+          40
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MAR-05",
+      "type": "reasoning",
+      "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "relevant_pages": [
+        [
+          40,
+          44
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "DRE-01",
+      "type": "facts",
+      "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "relevant_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "DRE-02",
+      "type": "holding",
+      "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "relevant_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "DRE-03",
+      "type": "reasoning",
+      "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "relevant_pages": [
+        [
+          27,
+          28
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "DRE-04",
+      "type": "legal_rule",
+      "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "relevant_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "DRE-05",
+      "type": "specific_detail",
+      "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "relevant_pages": [
+        [
+          27,
+          28
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "PLE-01",
+      "type": "facts",
+      "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "relevant_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "PLE-02",
+      "type": "holding",
+      "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "relevant_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "PLE-03",
+      "type": "reasoning",
+      "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "relevant_pages": [
+        [
+          14,
+          15
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "PLE-04",
+      "type": "specific_detail",
+      "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "relevant_pages": [
+        [
+          4,
+          5
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "PLE-05",
+      "type": "dissent_reasoning",
+      "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "relevant_pages": [
+        [
+          19,
+          26
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "GID-01",
+      "type": "facts",
+      "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "relevant_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "GID-02",
+      "type": "holding",
+      "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "relevant_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "GID-03",
+      "type": "precedent",
+      "question": "Why did the Court overrule Betts v. Brady?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "relevant_pages": [
+        [
+          5,
+          10
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "GID-04",
+      "type": "reasoning",
+      "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "relevant_pages": [
+        [
+          10,
+          11
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "GID-05",
+      "type": "specific_detail",
+      "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "relevant_pages": [
+        [
+          10,
+          11
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MIR-01",
+      "type": "facts",
+      "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "relevant_pages": [
+        [
+          56,
+          57
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MIR-02",
+      "type": "holding",
+      "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "relevant_pages": [
+        [
+          57,
+          57
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MIR-03",
+      "type": "reasoning",
+      "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "relevant_pages": [
+        [
+          22,
+          23
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MIR-04",
+      "type": "legal_rule",
+      "question": "What safeguards did the Court require before custodial interrogation?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "relevant_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "MIR-05",
+      "type": "specific_detail",
+      "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "relevant_pages": [
+        [
+          40,
+          40
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "TIN-01",
+      "type": "facts",
+      "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "relevant_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "TIN-02",
+      "type": "holding",
+      "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "relevant_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "TIN-03",
+      "type": "legal_principle",
+      "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "relevant_pages": [
+        [
+          4,
+          5
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "TIN-04",
+      "type": "reasoning",
+      "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "relevant_pages": [
+        [
+          6,
+          7
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "TIN-05",
+      "type": "specific_detail",
+      "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "relevant_pages": [
+        [
+          8,
+          9
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "NYT-01",
+      "type": "facts",
+      "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "relevant_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "NYT-02",
+      "type": "holding",
+      "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "relevant_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "NYT-03",
+      "type": "legal_rule",
+      "question": "What burden does the government face when seeking a prior restraint on publication?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "relevant_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "NYT-04",
+      "type": "reasoning",
+      "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "relevant_pages": [
+        [
+          3,
+          7
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "NYT-05",
+      "type": "specific_detail",
+      "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "relevant_pages": [
+        [
+          13,
+          14
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "OBE-01",
+      "type": "facts",
+      "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "relevant_pages": [
+        [
+          12,
+          13
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "OBE-02",
+      "type": "holding",
+      "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "relevant_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "OBE-03",
+      "type": "reasoning",
+      "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "relevant_pages": [
+        [
+          22,
+          27
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "OBE-04",
+      "type": "constitutional_principle",
+      "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "relevant_pages": [
+        [
+          4,
+          4
+        ],
+        [
+          28,
+          32
+        ]
+      ],
+      "validated": true
+    },
+    {
+      "id": "OBE-05",
+      "type": "specific_fact",
+      "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "relevant_pages": [
+        [
+          15,
+          15
+        ]
+      ],
+      "validated": true
+    }
+  ]
+}

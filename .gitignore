@@ -22,6 +22,7 @@ __pycache__/
 data/raw/
 data/processed/
 data/chunks/
+data/experiments/chunking/
 
 # Runtime-only local output
 data/evaluations.jsonl

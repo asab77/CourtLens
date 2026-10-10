@@ -1,0 +1,139 @@
+{
+  "manifest": {
+    "strategy": "structure_aware_v1",
+    "logic_version": "phase4b1-v1",
+    "logic_sha256": "00d5e378f93dad3edee8e90a7219b5f47aebf4cdb02a2460df304f530fd6bcb9",
+    "local_tokenizer_logic_sha256": "244bc3c2d7e613f6fc61b33e217deb0ec59554a7787217528e2ed22a4f55c5ee",
+    "tokenizer": "cl100k_base",
+    "target_tokens": 900,
+    "hard_max_tokens": 1100,
+    "soft_min_tokens": 300,
+    "overlap_sentences": 1,
+    "overlap_behavior": "One complete trailing sentence within context, only if it fits; none at explicit section/opinion boundaries or between fallback fragments.",
+    "source_structural_artifact": "data/analysis/structure_aware_preview.json",
+    "source_structural_artifact_sha256": "0ade8e9853a10b8a57b0962ceeb839ed7493892caab903dd3b1b8dbfa9fa8442",
+    "number_of_cases": 8,
+    "number_of_chunks": 433,
+    "total_chunk_tokens_including_overlap": 348772,
+    "excluded_foreign_units": 1,
+    "excluded_foreign_tokens": 200,
+    "oversized_sentence_fallback_count": 0,
+    "fallback_pieces_generated": 0,
+    "validation": {
+      "MIXED_MAJOR_UNIT_CHUNKS": 0,
+      "MIXED_OPINION_CHUNKS": 0,
+      "eligible_source_sentences": 9704,
+      "covered_source_sentences": 9704,
+      "missing_source_sentences": 0,
+      "coverage_percentage": 100.0,
+      "eligible_source_fragments": 9712,
+      "covered_source_fragments": 9712,
+      "source_order_recoverable": true,
+      "fallback_text_preserved": true,
+      "foreign_material_in_chunks": 0
+    }
+  },
+  "summary": {
+    "total_chunks": 433,
+    "total_chunk_tokens": 348772,
+    "mean": 805.48,
+    "median": 873,
+    "min": 9,
+    "max": 900,
+    "p10": 617.0,
+    "p25": 829.0,
+    "p75": 890.0,
+    "p90": 896.0,
+    "buckets": {
+      "<300": 17,
+      "300–599": 26,
+      "600–900": 390,
+      "901–1100": 0,
+      ">1100": 0
+    },
+    "below_300_count": 17,
+    "below_300_percentage": 3.93,
+    "above_900_count": 0,
+    "above_900_percentage": 0.0,
+    "total_unique_cases": 8,
+    "chunks_by_case": {
+      "Dred Scott v. Sandford": 186,
+      "Gideon v. Wainwright": 13,
+      "Marbury v. Madison": 33,
+      "Miranda v. Arizona": 67,
+      "New York Times Co. v. United States": 32,
+      "Obergefell v. Hodges": 64,
+      "Plessy v. Ferguson": 20,
+      "Tinker v. Des Moines School Dist.": 18
+    },
+    "chunks_by_major_unit_type": {
+      "major_legal_component": 433
+    },
+    "chunks_by_opinion_type": {
+      "concurrence": 68,
+      "dissent": 164,
+      "majority": 141,
+      "other": 21,
+      "syllabus": 11,
+      "unknown": 28
+    },
+    "chunks_with_author": 375,
+    "chunks_without_author": 58,
+    "chunks_spanning_multiple_sections": 7,
+    "chunks_using_overlap": 356,
+    "average_overlap_tokens": 41.62,
+    "maximum_overlap_tokens": 220,
+    "total_overlap_tokens": 14817,
+    "chunks_using_oversized_sentence_fallback": 0,
+    "oversized_sentence_fallback_count": 0,
+    "fallback_pieces_generated": 0,
+    "fallback_examples": [],
+    "section_boundary_sentence_fragments": 16,
+    "excluded_foreign_units": 1,
+    "excluded_foreign_tokens": 200,
+    "excluded_foreign_details": [
+      {
+        "case_name": "Dred Scott v. Sandford",
+        "unit_index": 0,
+        "token_count": 200
+      }
+    ],
+    "validation": {
+      "MIXED_MAJOR_UNIT_CHUNKS": 0,
+      "MIXED_OPINION_CHUNKS": 0,
+      "eligible_source_sentences": 9704,
+      "covered_source_sentences": 9704,
+      "missing_source_sentences": 0,
+      "coverage_percentage": 100.0,
+      "eligible_source_fragments": 9712,
+      "covered_source_fragments": 9712,
+      "source_order_recoverable": true,
+      "fallback_text_preserved": true,
+      "foreign_material_in_chunks": 0
+    }
+  },
+  "fixed_900_150": {
+    "total_chunks": 598,
+    "total_chunk_tokens": 360302,
+    "mean": 602.51,
+    "median": 614.5,
+    "min": 5,
+    "max": 897,
+    "p10": 474.0,
+    "p25": 518.25,
+    "p75": 668.0,
+    "p90": 716.3,
+    "buckets": {
+      "<300": 4,
+      "300–599": 276,
+      "600–900": 318,
+      "901–1100": 0,
+      ">1100": 0
+    },
+    "below_300_count": 4,
+    "below_300_percentage": 0.67,
+    "above_900_count": 0,
+    "above_900_percentage": 0.0,
+    "overlap_behavior": "Configured 150-token recursive splitter overlap; actual shared sentence/token overlap was not stored and is not inferred."
+  }
+}

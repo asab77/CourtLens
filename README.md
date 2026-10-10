@@ -118,3 +118,57 @@ metadata. Keeping both source fields preserves the mapping to an unchanged raw P
 `pypdf` extracts text already embedded in a PDF. It does not perform OCR. If a PDF
 contains only scanned page images, the script leaves that page's section empty and
 reports the number of empty pages. OCR can be added later if the collection needs it.
+
+## Experiment 1: fixed chunk size and overlap
+
+`run_chunking_experiment.py` compares four token-based configurations while keeping
+the embedding model, normalized vectors, FAISS `IndexFlatIP`, questions, and
+relevance rules fixed:
+
+- 600 tokens / 100 overlap
+- 900 tokens / 150 overlap
+- 1200 tokens / 200 overlap
+- 1500 tokens / 200 overlap
+
+Experiment 1 uses the Vercel AI Gateway independently of the legacy production/RAG
+configuration. Set `AI_GATEWAY_API_KEY`; the runner uses the OpenAI-compatible base
+URL `https://ai-gateway.vercel.sh/v1` with `openai/text-embedding-3-small`. It does
+not send the NYU/Portkey provider header. Never commit the real key.
+
+`data/evaluation/chunking_benchmark.json` contains 40 manually reviewed questions
+across 8 Supreme Court cases, with 5 questions per case. All entries are marked
+`"validated": true`. This benchmark compares chunking configurations under otherwise
+controlled retrieval conditions; no experimental results are claimed here. The
+normal runner refuses to use unvalidated labels.
+
+Run the validated experiment from the project directory:
+
+```bash
+export AI_GATEWAY_API_KEY="YOUR_KEY_HERE"
+python run_chunking_experiment.py
+```
+
+Use `--rebuild` to regenerate all four isolated indexes. For an implementation smoke
+test only, `--allow-unvalidated` bypasses the review gate; results from that mode
+must not be treated as final benchmark findings.
+
+Generated chunks, indexes, and `results.json` live below
+`data/experiments/chunking/` and never overwrite `data/chunks/` or
+`data/vector_store/`. The detailed results record every retrieved rank, case, source,
+page span, similarity, chunk index, token count, and relevance decision.
+
+The runner reuses each configuration's existing complete chunk set. Missing,
+partial, malformed, or configuration-inconsistent chunks stop the run rather than
+being regenerated silently.
+
+A retrieved chunk is relevant only when its case matches, its expected source file
+matches when one is supplied, and its inclusive page span intersects a labeled page
+range. Hit@1, Hit@3, and Hit@5 indicate whether at least one relevant chunk
+appears by that depth. Reciprocal rank is `1 / first_relevant_rank`, or zero when no
+relevant chunk appears in the top five; MRR is its mean across questions.
+
+Run the metric unit tests without Streamlit:
+
+```bash
+python -m unittest discover -s tests -v
+```

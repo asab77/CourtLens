@@ -1,0 +1,2651 @@
+{
+  "phase": "4C.2",
+  "status": "READY for Phase 5A; Phase 5A not started",
+  "provenance": {
+    "evaluation_date": "2026-10-09",
+    "evaluation_timezone": "America/New_York",
+    "evaluation_method": "CourtLens Phase 4C.2 saved-top5 page-overlap evaluator v1",
+    "evaluation_implementation": "finalize_chunking_benchmark.score_retrieved / aggregate",
+    "evaluation_source_sha256": "23656cb2d5d5312c32bce453e6cd7beb4db6c402051f6cbbdcbb5789e9267cca",
+    "relevance_source_sha256": "807c5c0264d432c5c61d676923a1eff852da7d50477d4faabd41c726d7496949",
+    "finalization_source_sha256": "4a8e41fedb7aaca2e41749772b56779282898b4a354fdd9a87479f7067fbd73f",
+    "v1_benchmark_path": "data/evaluation/chunking_benchmark_reviewed.json",
+    "v1_benchmark_sha256": "7cbfa42bf480717df7b7982297f8ea648a30a8d100d86ccdcaa5371b410b7595",
+    "phase4c_audit_sha256": "495aeabbda165b8e9d3bb98df895ec1f513188be889d232688903a99bb90ecb5",
+    "saved_retrieval_result_sha256": {
+      "data/experiments/chunking/reviewed_results.json": "2e0d3d287b3e880dff3227939dbc796a75296986b9bbef9e86907e1d5c6e32ee",
+      "data/experiments/chunking/structure_aware_v1/results.json": "8928b1e1ec80881acdd7a4664c57661e1aa9df847691996db6229057acc081aa"
+    },
+    "ranking_artifacts_note": "The four fixed strategies share reviewed_results.json; structure-aware has its own results.json.",
+    "question_count": 40,
+    "added_range_count": 7,
+    "v2_benchmark_path": "data/evaluation/chunking_benchmark_v2.json",
+    "v2_benchmark_sha256": "aec09e3d75f9f18aec5b2448e7f420c0443bf9eb8a59e135f4a900f8a2ffd668"
+  },
+  "benchmark_validation": {
+    "question_count": 40,
+    "modified_question_count": 5,
+    "added_range_count": 7,
+    "unchanged_question_count": 35,
+    "modified_question_ids": [
+      "MAR-01",
+      "DRE-01",
+      "DRE-03",
+      "MIR-04",
+      "OBE-04"
+    ],
+    "original_ranges_preserved": true,
+    "question_text_and_metadata_preserved": true,
+    "original_order_preserved": true,
+    "duplicates_or_deletions": false,
+    "mir_04_page_67_excluded": true,
+    "dre_04_unchanged": true,
+    "obe_01_unchanged": true,
+    "literal_byte_identical_question_records": 35
+  },
+  "audit_traceability": {
+    "audit_path": "data/evaluation/chunking_benchmark_phase4c_audit.json",
+    "approved_additions": [
+      {
+        "question_id": "DRE-01",
+        "range": [
+          39,
+          40
+        ],
+        "justification": "Majority restatement of Scott’s Illinois/Fort Snelling residence.",
+        "audit_candidate_ids": [
+          "DRE-01:structure_aware_v1:2"
+        ]
+      },
+      {
+        "question_id": "DRE-01",
+        "range": [
+          167,
+          167
+        ],
+        "justification": "McLean’s factual account of Scott’s Illinois/Fort Snelling residence.",
+        "audit_candidate_ids": [
+          "DRE-01:fixed_900_150:1",
+          "DRE-01:structure_aware_v1:1"
+        ]
+      },
+      {
+        "question_id": "MIR-04",
+        "range": [
+          9,
+          10
+        ],
+        "justification": "Warren majority explicitly enumerates custodial interrogation safeguards.",
+        "audit_candidate_ids": [
+          "MIR-04:structure_aware_v1:1"
+        ]
+      },
+      {
+        "question_id": "MAR-01",
+        "range": [
+          32,
+          32
+        ],
+        "justification": "Commission withholding and legal entitlement.",
+        "audit_candidate_ids": [
+          "MAR-01:fixed_900_150:3",
+          "MAR-01:structure_aware_v1:1"
+        ]
+      },
+      {
+        "question_id": "MAR-01",
+        "range": [
+          36,
+          36
+        ],
+        "justification": "Requested mandamus delivery remedy and vested commission right.",
+        "audit_candidate_ids": [
+          "MAR-01:fixed_900_150:5",
+          "MAR-01:structure_aware_v1:3"
+        ]
+      },
+      {
+        "question_id": "DRE-03",
+        "range": [
+          33,
+          34
+        ],
+        "justification": "Majority’s constitutional and founding-era citizenship reasoning.",
+        "audit_candidate_ids": [
+          "DRE-03:structure_aware_v1:5"
+        ]
+      },
+      {
+        "question_id": "OBE-04",
+        "range": [
+          64,
+          64
+        ],
+        "justification": "Roberts dissent explicitly quotes and attributes the majority’s Due Process / Equal Protection reasoning.",
+        "audit_candidate_ids": [
+          "OBE-04:fixed_900_150:2",
+          "OBE-04:structure_aware_v1:1"
+        ]
+      }
+    ],
+    "approval": "Human approval supplied in Phase 4C.2 request; exactly seven additions across five questions.",
+    "deferred": [
+      {
+        "question_id": "MIR-04",
+        "range": [
+          67,
+          67
+        ],
+        "reason": "Human review deferred this partial-support passage. The historical Phase 4C judgment remains untouched."
+      }
+    ],
+    "unresolved_ambiguous_count": 12,
+    "unresolved_ambiguous_candidate_ids": [
+      "MIR-04:fixed_900_150:2",
+      "MAR-01:fixed_900_150:4",
+      "MAR-01:structure_aware_v1:4",
+      "MAR-04:fixed_900_150:1",
+      "OBE-04:fixed_900_150:3",
+      "DRE-04:fixed_900_150:4",
+      "DRE-04:structure_aware_v1:1",
+      "DRE-04:structure_aware_v1:2",
+      "OBE-01:fixed_900_150:1",
+      "OBE-01:fixed_900_150:5",
+      "OBE-01:structure_aware_v1:2",
+      "OBE-01:structure_aware_v1:4"
+    ],
+    "questions_receiving_no_new_ranges": [
+      "DRE-04",
+      "OBE-01"
+    ],
+    "manual_judgments_unchanged": true,
+    "scoring_note": "Relevance flags in v2 results are mechanical case/source/page-overlap outcomes, not conversions of ambiguous manual audit judgments."
+  },
+  "strategies": [
+    {
+      "strategy": "600_100",
+      "chunk_count": 1163,
+      "v1_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.65,
+        "hit_at_3": 0.9,
+        "hit_at_5": 0.925,
+        "mrr": 0.7770833333333333
+      },
+      "v2_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.675,
+        "hit_at_3": 0.9,
+        "hit_at_5": 0.925,
+        "mrr": 0.7895833333333333
+      },
+      "absolute_differences": {
+        "hit_at_1": 0.025000000000000022,
+        "hit_at_3": 0.0,
+        "hit_at_5": 0.0,
+        "mrr": 0.012499999999999956
+      },
+      "improved_question_count": 1,
+      "improved_rank_count": 1,
+      "added_first_rank_successes": 1,
+      "top5_misses_became_hits": 0,
+      "remaining_top5_misses": [
+        "DRE-04",
+        "GID-05",
+        "OBE-01"
+      ],
+      "no_rank_regressions": true,
+      "questions": [
+        {
+          "question_id": "MAR-01",
+          "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 4,
+              "vector_id": 787,
+              "chunk_index": 61,
+              "chunk_id": null,
+              "case_name": "Marbury v. Madison",
+              "source_file": "marbury_v_madison.pdf",
+              "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+              "page_start": 32,
+              "page_end": 33,
+              "similarity": 0.56666100025177
+            }
+          ]
+        },
+        {
+          "question_id": "MAR-02",
+          "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-03",
+          "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-04",
+          "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 3,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-05",
+          "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-01",
+          "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 489,
+              "chunk_index": 489,
+              "chunk_id": null,
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 167,
+              "page_end": 167,
+              "similarity": 0.6803264617919922
+            },
+            {
+              "rank": 5,
+              "vector_id": 108,
+              "chunk_index": 108,
+              "chunk_id": null,
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 39,
+              "page_end": 39,
+              "similarity": 0.6228429079055786
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-02",
+          "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-03",
+          "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-04",
+          "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-05",
+          "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-01",
+          "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-02",
+          "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-03",
+          "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-04",
+          "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-05",
+          "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-01",
+          "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-02",
+          "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-03",
+          "question": "Why did the Court overrule Betts v. Brady?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-04",
+          "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-05",
+          "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-01",
+          "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-02",
+          "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-03",
+          "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-04",
+          "question": "What safeguards did the Court require before custodial interrogation?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-05",
+          "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-01",
+          "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-02",
+          "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-03",
+          "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-04",
+          "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-05",
+          "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-01",
+          "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 4,
+          "v2_first_relevant_rank": 4,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-02",
+          "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-03",
+          "question": "What burden does the government face when seeking a prior restraint on publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-04",
+          "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-05",
+          "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-01",
+          "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-02",
+          "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-03",
+          "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-04",
+          "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 3,
+              "vector_id": 1068,
+              "chunk_index": 90,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 64,
+              "page_end": 65,
+              "similarity": 0.6704498529434204
+            },
+            {
+              "rank": 4,
+              "vector_id": 1067,
+              "chunk_index": 89,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 63,
+              "page_end": 64,
+              "similarity": 0.66947340965271
+            }
+          ]
+        },
+        {
+          "question_id": "OBE-05",
+          "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        }
+      ]
+    },
+    {
+      "strategy": "900_150",
+      "chunk_count": 598,
+      "v1_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.725,
+        "hit_at_3": 0.9,
+        "hit_at_5": 0.9,
+        "mrr": 0.8083333333333333
+      },
+      "v2_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.75,
+        "hit_at_3": 0.9,
+        "hit_at_5": 0.9,
+        "mrr": 0.825
+      },
+      "absolute_differences": {
+        "hit_at_1": 0.025000000000000022,
+        "hit_at_3": 0.0,
+        "hit_at_5": 0.0,
+        "mrr": 0.016666666666666607
+      },
+      "improved_question_count": 1,
+      "improved_rank_count": 1,
+      "added_first_rank_successes": 1,
+      "top5_misses_became_hits": 0,
+      "remaining_top5_misses": [
+        "DRE-04",
+        "GID-05",
+        "NYT-01",
+        "OBE-01"
+      ],
+      "no_rank_regressions": true,
+      "questions": [
+        {
+          "question_id": "MAR-01",
+          "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 3,
+              "vector_id": 291,
+              "chunk_index": 32,
+              "chunk_id": null,
+              "case_name": "Marbury v. Madison",
+              "source_file": "marbury_v_madison.pdf",
+              "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+              "page_start": 32,
+              "page_end": 33,
+              "similarity": 0.56666100025177
+            }
+          ]
+        },
+        {
+          "question_id": "MAR-02",
+          "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-03",
+          "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-04",
+          "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-05",
+          "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-01",
+          "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 169,
+              "chunk_index": 169,
+              "chunk_id": null,
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 167,
+              "page_end": 168,
+              "similarity": 0.6179918646812439
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-02",
+          "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-03",
+          "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-04",
+          "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-05",
+          "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-01",
+          "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-02",
+          "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-03",
+          "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-04",
+          "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-05",
+          "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-01",
+          "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-02",
+          "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-03",
+          "question": "Why did the Court overrule Betts v. Brady?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-04",
+          "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-05",
+          "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-01",
+          "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-02",
+          "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-03",
+          "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-04",
+          "question": "What safeguards did the Court require before custodial interrogation?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-05",
+          "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-01",
+          "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-02",
+          "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-03",
+          "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-04",
+          "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-05",
+          "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-01",
+          "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-02",
+          "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-03",
+          "question": "What burden does the government face when seeking a prior restraint on publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-04",
+          "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-05",
+          "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-01",
+          "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-02",
+          "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-03",
+          "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-04",
+          "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 2,
+              "vector_id": 514,
+              "chunk_index": 62,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 64,
+              "page_end": 65,
+              "similarity": 0.6704434752464294
+            },
+            {
+              "rank": 3,
+              "vector_id": 513,
+              "chunk_index": 61,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 63,
+              "page_end": 64,
+              "similarity": 0.6693873405456543
+            }
+          ]
+        },
+        {
+          "question_id": "OBE-05",
+          "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        }
+      ]
+    },
+    {
+      "strategy": "1200_200",
+      "chunk_count": 447,
+      "v1_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.675,
+        "hit_at_3": 0.85,
+        "hit_at_5": 0.9,
+        "mrr": 0.7654166666666666
+      },
+      "v2_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.7,
+        "hit_at_3": 0.85,
+        "hit_at_5": 0.9,
+        "mrr": 0.7820833333333334
+      },
+      "absolute_differences": {
+        "hit_at_1": 0.02499999999999991,
+        "hit_at_3": 0.0,
+        "hit_at_5": 0.0,
+        "mrr": 0.01666666666666672
+      },
+      "improved_question_count": 1,
+      "improved_rank_count": 1,
+      "added_first_rank_successes": 1,
+      "top5_misses_became_hits": 0,
+      "remaining_top5_misses": [
+        "MAR-04",
+        "DRE-04",
+        "NYT-01",
+        "OBE-01"
+      ],
+      "no_rank_regressions": true,
+      "questions": [
+        {
+          "question_id": "MAR-01",
+          "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 2,
+              "vector_id": 271,
+              "chunk_index": 23,
+              "chunk_id": null,
+              "case_name": "Marbury v. Madison",
+              "source_file": "marbury_v_madison.pdf",
+              "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+              "page_start": 31,
+              "page_end": 33,
+              "similarity": 0.5849236249923706
+            }
+          ]
+        },
+        {
+          "question_id": "MAR-02",
+          "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-03",
+          "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-04",
+          "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-05",
+          "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-01",
+          "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 165,
+              "chunk_index": 165,
+              "chunk_id": null,
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 167,
+              "page_end": 168,
+              "similarity": 0.6179932951927185
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-02",
+          "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-03",
+          "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-04",
+          "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-05",
+          "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-01",
+          "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-02",
+          "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-03",
+          "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-04",
+          "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-05",
+          "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-01",
+          "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-02",
+          "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-03",
+          "question": "Why did the Court overrule Betts v. Brady?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-04",
+          "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-05",
+          "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 5,
+          "v2_first_relevant_rank": 5,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-01",
+          "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-02",
+          "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-03",
+          "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-04",
+          "question": "What safeguards did the Court require before custodial interrogation?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 3,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-05",
+          "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-01",
+          "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-02",
+          "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-03",
+          "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-04",
+          "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-05",
+          "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-01",
+          "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-02",
+          "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-03",
+          "question": "What burden does the government face when seeking a prior restraint on publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-04",
+          "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-05",
+          "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-01",
+          "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-02",
+          "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-03",
+          "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-04",
+          "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 4,
+              "vector_id": 401,
+              "chunk_index": 38,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 62,
+              "page_end": 64,
+              "similarity": 0.6603536009788513
+            }
+          ]
+        },
+        {
+          "question_id": "OBE-05",
+          "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 4,
+          "v2_first_relevant_rank": 4,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        }
+      ]
+    },
+    {
+      "strategy": "1500_200",
+      "chunk_count": 287,
+      "v1_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.7,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.9,
+        "mrr": 0.7641666666666667
+      },
+      "v2_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.75,
+        "hit_at_3": 0.825,
+        "hit_at_5": 0.9,
+        "mrr": 0.7966666666666666
+      },
+      "absolute_differences": {
+        "hit_at_1": 0.050000000000000044,
+        "hit_at_3": 0.02499999999999991,
+        "hit_at_5": 0.0,
+        "mrr": 0.03249999999999997
+      },
+      "improved_question_count": 2,
+      "improved_rank_count": 2,
+      "added_first_rank_successes": 2,
+      "top5_misses_became_hits": 0,
+      "remaining_top5_misses": [
+        "DRE-04",
+        "GID-05",
+        "NYT-01",
+        "OBE-01"
+      ],
+      "no_rank_regressions": true,
+      "questions": [
+        {
+          "question_id": "MAR-01",
+          "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 3,
+              "vector_id": 145,
+              "chunk_index": 16,
+              "chunk_id": null,
+              "case_name": "Marbury v. Madison",
+              "source_file": "marbury_v_madison.pdf",
+              "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+              "page_start": 32,
+              "page_end": 34,
+              "similarity": 0.5829381942749023
+            }
+          ]
+        },
+        {
+          "question_id": "MAR-02",
+          "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-03",
+          "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-04",
+          "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-05",
+          "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-01",
+          "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 5,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 84,
+              "chunk_index": 84,
+              "chunk_id": null,
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 166,
+              "page_end": 168,
+              "similarity": 0.5952609181404114
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-02",
+          "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 3,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-03",
+          "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-04",
+          "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-05",
+          "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-01",
+          "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-02",
+          "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-03",
+          "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-04",
+          "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 5,
+          "v2_first_relevant_rank": 5,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-05",
+          "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-01",
+          "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-02",
+          "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-03",
+          "question": "Why did the Court overrule Betts v. Brady?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-04",
+          "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 4,
+          "v2_first_relevant_rank": 4,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-05",
+          "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-01",
+          "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 3,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-02",
+          "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-03",
+          "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-04",
+          "question": "What safeguards did the Court require before custodial interrogation?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 4,
+          "v2_first_relevant_rank": 4,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-05",
+          "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-01",
+          "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-02",
+          "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-03",
+          "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-04",
+          "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-05",
+          "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-01",
+          "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-02",
+          "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-03",
+          "question": "What burden does the government face when seeking a prior restraint on publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-04",
+          "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-05",
+          "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-01",
+          "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-02",
+          "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-03",
+          "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-04",
+          "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 249,
+              "chunk_index": 32,
+              "chunk_id": null,
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 63,
+              "page_end": 65,
+              "similarity": 0.6868945956230164
+            }
+          ]
+        },
+        {
+          "question_id": "OBE-05",
+          "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        }
+      ]
+    },
+    {
+      "strategy": "structure_aware_v1",
+      "chunk_count": 433,
+      "v1_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.725,
+        "hit_at_3": 0.875,
+        "hit_at_5": 0.9,
+        "mrr": 0.8020833333333334
+      },
+      "v2_metrics": {
+        "question_count": 40,
+        "hit_at_1": 0.825,
+        "hit_at_3": 0.925,
+        "hit_at_5": 0.95,
+        "mrr": 0.8770833333333334
+      },
+      "absolute_differences": {
+        "hit_at_1": 0.09999999999999998,
+        "hit_at_3": 0.050000000000000044,
+        "hit_at_5": 0.04999999999999993,
+        "mrr": 0.07500000000000007
+      },
+      "improved_question_count": 4,
+      "improved_rank_count": 2,
+      "added_first_rank_successes": 4,
+      "top5_misses_became_hits": 2,
+      "remaining_top5_misses": [
+        "DRE-04",
+        "OBE-01"
+      ],
+      "no_rank_regressions": true,
+      "questions": [
+        {
+          "question_id": "MAR-01",
+          "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 222,
+              "chunk_index": 23,
+              "chunk_id": "marbury_v_madison:structure_aware_v1:00023",
+              "case_name": "Marbury v. Madison",
+              "source_file": "marbury_v_madison.pdf",
+              "original_source_file": "service-ll-usrep-usrep005-usrep005137-usrep005137.pdf",
+              "page_start": 31,
+              "page_end": 33,
+              "similarity": 0.6544631719589233
+            }
+          ]
+        },
+        {
+          "question_id": "MAR-02",
+          "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-03",
+          "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-04",
+          "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 4,
+          "v2_first_relevant_rank": 4,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MAR-05",
+          "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+          "case_name": "Marbury v. Madison",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-01",
+          "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": 1,
+          "classification": "miss → hit",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 127,
+              "chunk_index": 127,
+              "chunk_id": "dred_scott_v_sandford:structure_aware_v1:00127",
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 166,
+              "page_end": 167,
+              "similarity": 0.6255932450294495
+            },
+            {
+              "rank": 2,
+              "vector_id": 29,
+              "chunk_index": 29,
+              "chunk_id": "dred_scott_v_sandford:structure_aware_v1:00029",
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 38,
+              "page_end": 40,
+              "similarity": 0.6254438757896423
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-02",
+          "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-03",
+          "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 5,
+              "vector_id": 25,
+              "chunk_index": 25,
+              "chunk_id": "dred_scott_v_sandford:structure_aware_v1:00025",
+              "case_name": "Dred Scott v. Sandford",
+              "source_file": "dred_scott_v_sandford.pdf",
+              "original_source_file": "service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf",
+              "page_start": 33,
+              "page_end": 34,
+              "similarity": 0.6386723518371582
+            }
+          ]
+        },
+        {
+          "question_id": "DRE-04",
+          "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "DRE-05",
+          "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+          "case_name": "Dred Scott v. Sandford",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-01",
+          "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-02",
+          "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-03",
+          "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-04",
+          "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "PLE-05",
+          "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+          "case_name": "Plessy v. Ferguson",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-01",
+          "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-02",
+          "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-03",
+          "question": "Why did the Court overrule Betts v. Brady?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-04",
+          "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "GID-05",
+          "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+          "case_name": "Gideon v. Wainwright",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 2,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-01",
+          "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-02",
+          "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-03",
+          "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "MIR-04",
+          "question": "What safeguards did the Court require before custodial interrogation?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": 1,
+          "classification": "miss → hit",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 238,
+              "chunk_index": 6,
+              "chunk_id": "miranda_v_arizona:structure_aware_v1:00006",
+              "case_name": "Miranda v. Arizona",
+              "source_file": "miranda_v_arizona.pdf",
+              "original_source_file": "service-ll-usrep-usrep384-usrep384436-usrep384436.pdf",
+              "page_start": 9,
+              "page_end": 10,
+              "similarity": 0.6678488254547119
+            },
+            {
+              "rank": 5,
+              "vector_id": 239,
+              "chunk_index": 7,
+              "chunk_id": "miranda_v_arizona:structure_aware_v1:00007",
+              "case_name": "Miranda v. Arizona",
+              "source_file": "miranda_v_arizona.pdf",
+              "original_source_file": "service-ll-usrep-usrep384-usrep384436-usrep384436.pdf",
+              "page_start": 10,
+              "page_end": 11,
+              "similarity": 0.6190670728683472
+            }
+          ]
+        },
+        {
+          "question_id": "MIR-05",
+          "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+          "case_name": "Miranda v. Arizona",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-01",
+          "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-02",
+          "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-03",
+          "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-04",
+          "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "TIN-05",
+          "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+          "case_name": "Tinker v. Des Moines School Dist.",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-01",
+          "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 3,
+          "v2_first_relevant_rank": 3,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-02",
+          "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-03",
+          "question": "What burden does the government face when seeking a prior restraint on publication?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-04",
+          "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "NYT-05",
+          "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+          "case_name": "New York Times Co. v. United States",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-01",
+          "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": null,
+          "v2_first_relevant_rank": null,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-02",
+          "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-03",
+          "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        },
+        {
+          "question_id": "OBE-04",
+          "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 2,
+          "v2_first_relevant_rank": 1,
+          "classification": "improved rank",
+          "previously_irrelevant_chunks_now_relevant": [
+            {
+              "rank": 1,
+              "vector_id": 372,
+              "chunk_index": 41,
+              "chunk_id": "obergefell_v_hodges:structure_aware_v1:00041",
+              "case_name": "Obergefell v. Hodges",
+              "source_file": "obergefell_v_hodges.pdf",
+              "original_source_file": "service-ll-usrep-usrep576-usrep576644-usrep576644.pdf",
+              "page_start": 63,
+              "page_end": 65,
+              "similarity": 0.7635549902915955
+            }
+          ]
+        },
+        {
+          "question_id": "OBE-05",
+          "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+          "case_name": "Obergefell v. Hodges",
+          "v1_first_relevant_rank": 1,
+          "v2_first_relevant_rank": 1,
+          "classification": "unchanged",
+          "previously_irrelevant_chunks_now_relevant": []
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Benchmark v2 labels were refined after inspecting retrieval candidates from the evaluated systems.",
+    "Benchmark v2 is NOT an independent holdout benchmark.",
+    "Page-range intersection is a coarse relevance proxy that can generate both false negatives and false positives, including credit from trailing page markers or non-answer-bearing text on a labeled page.",
+    "Structure-aware and fixed chunking differ in realized chunk-size distributions; nominal fixed sizes are not equivalent to the structure-aware distribution.",
+    "Any apparent advantage is descriptive performance on this benchmark, not proof of general superiority.",
+    "No statistical significance claim is made."
+  ],
+  "protected_artifacts": {
+    "file_count": 103,
+    "unchanged": true,
+    "before_sha256": {
+      "data/.DS_Store": "dba7ea4f09dd9da13b6386ece6a507bc1d3fdc271d268ecef5aba78c5c009236",
+      "data/analysis/chunking_benchmark_phase4c_audit.md": "82861de07563b8bbce32818c57456feb8fd20d31258bc1ae2c117cf5eeecbad4",
+      "data/analysis/chunking_failure_analysis.json": "3f3179199a0b9546fc300959ef127c8e9f2d293fcfdd28bc87f1c418fa9d0b63",
+      "data/analysis/chunking_failure_analysis.md": "661cf3a29a67154b5929e2954e171dfad10728d1e6bc9e7d01a76a34c921d2ab",
+      "data/analysis/chunking_reviewed_breakdown.json": "3c3e718ddefea2bfb61d6c0623662d8a0fa14f973719956ff7f65de0d9898600",
+      "data/analysis/chunking_reviewed_evaluation.md": "0864e38f33aca105a1ec867eb4104741dccf19db19c93df3c7540af0fe1f7306",
+      "data/analysis/document_structure.json": "4b215472053cca3a6c4843125f70da6487b23de23e33071dbd73da2278546be5",
+      "data/analysis/document_structure_report.md": "3141da84ab16934c1ec1bd575538fae5214beb290fae1aaf4cd170906bbe6021",
+      "data/analysis/long_sentence_analysis.json": "3fc7987789e3eac714f3ffc1a4badac762a6a89455b943298fede200c7a80418",
+      "data/analysis/long_sentence_analysis.md": "2ce3d588d1b2e13eb91d66c2c450dc2ecc9612d7dc746f35fbc486fe79c95ca2",
+      "data/analysis/structure_aware_chunking.json": "90fda71f43c598a1cc24815c1201e776b48220750e42712d5a83c9dc1bc90bbd",
+      "data/analysis/structure_aware_chunking.md": "a84560f5ecf32faa71afdaf5bb8af6ce50343daafbd4838eb1b48c5ac2740b29",
+      "data/analysis/structure_aware_preview.json": "0ade8e9853a10b8a57b0962ceeb839ed7493892caab903dd3b1b8dbfa9fa8442",
+      "data/analysis/structure_aware_preview.md": "5d913b2f88147fd9152890cf4402269f47a42c16d20494d9472f4e183bdca48c",
+      "data/analysis/structure_aware_retrieval_evaluation.json": "ea9c6c01903f668595671f6dde19f86823284cc8e26dd4a13c85693a0c03cee6",
+      "data/analysis/structure_aware_retrieval_evaluation.md": "133760f9d075f161875ce18ebd1b4faed847d1d1a021a75490c6fb58d29437ad",
+      "data/chunks/dred_scott_v_sandford.jsonl": "6bced3d03076b6dfd93ff9f984dd88107ff582ca07be6b96d2e8dcd946173c34",
+      "data/chunks/gideon_v_wainwright.jsonl": "c52fe1269924b08ae97ff4dc999fc2b4129820c86d7524460749078e98b29b15",
+      "data/chunks/marbury_v_madison.jsonl": "3e8e7dde3b4b6ea2d7eabeba9e62c89b0175531b177181c4243497a5339c8e6a",
+      "data/chunks/miranda_v_arizona.jsonl": "8435d0deabb7e19135f3222be954e1219df33b4f239f98b581e2307736a3e77b",
+      "data/chunks/new_york_times_co_v_united_states.jsonl": "bdbac99d04f7fa7dae40f9c945cd4cb1a0b28163bc852101f49234be55fb91f1",
+      "data/chunks/obergefell_v_hodges.jsonl": "d9cfb053a24154723f815c833c07aeb4d839f080cd1a959d97e7d2381958ebd8",
+      "data/chunks/plessy_v_ferguson.jsonl": "5bea13c8765e84a03322d43b9849665d209c3e33a06899bab31ea0ce7cad0647",
+      "data/chunks/tinker_v_des_moines_school_dist.jsonl": "15aa8fe098ed56209a70c8f191d4bc9b7e01431a247682d91cff822689d49768",
+      "data/evaluation/chunking_benchmark.json": "00fc21f465043a09a209e8509f0513378cd6e385d62ca6dbfc7e09940a7eda3d",
+      "data/evaluation/chunking_benchmark_phase4c_audit.json": "495aeabbda165b8e9d3bb98df895ec1f513188be889d232688903a99bb90ecb5",
+      "data/evaluation/chunking_benchmark_review.json": "0cf60ecefd0e39df07d2eb76d8f8e629f499d92a190b293ffa70013795869370",
+      "data/evaluation/chunking_benchmark_review.md": "13637d6f8dcd2f46a568085f4c22d9898301ddd45a2438da0ed6610c5ea09a15",
+      "data/evaluation/chunking_benchmark_reviewed.json": "7cbfa42bf480717df7b7982297f8ea648a30a8d100d86ccdcaa5371b410b7595",
+      "data/evaluations.jsonl": "af41c8c07cfbc4bc10866fc101d74c7da5497a4013a92216fa461f00e853fd1a",
+      "data/experiments/chunking/1200_200/chunks/dred_scott_v_sandford.jsonl": "6bced3d03076b6dfd93ff9f984dd88107ff582ca07be6b96d2e8dcd946173c34",
+      "data/experiments/chunking/1200_200/chunks/gideon_v_wainwright.jsonl": "c52fe1269924b08ae97ff4dc999fc2b4129820c86d7524460749078e98b29b15",
+      "data/experiments/chunking/1200_200/chunks/marbury_v_madison.jsonl": "3e8e7dde3b4b6ea2d7eabeba9e62c89b0175531b177181c4243497a5339c8e6a",
+      "data/experiments/chunking/1200_200/chunks/miranda_v_arizona.jsonl": "8435d0deabb7e19135f3222be954e1219df33b4f239f98b581e2307736a3e77b",
+      "data/experiments/chunking/1200_200/chunks/new_york_times_co_v_united_states.jsonl": "bdbac99d04f7fa7dae40f9c945cd4cb1a0b28163bc852101f49234be55fb91f1",
+      "data/experiments/chunking/1200_200/chunks/obergefell_v_hodges.jsonl": "d9cfb053a24154723f815c833c07aeb4d839f080cd1a959d97e7d2381958ebd8",
+      "data/experiments/chunking/1200_200/chunks/plessy_v_ferguson.jsonl": "5bea13c8765e84a03322d43b9849665d209c3e33a06899bab31ea0ce7cad0647",
+      "data/experiments/chunking/1200_200/chunks/tinker_v_des_moines_school_dist.jsonl": "15aa8fe098ed56209a70c8f191d4bc9b7e01431a247682d91cff822689d49768",
+      "data/experiments/chunking/1200_200/vector_store/index.faiss": "b8b7eb8795c385630cde542a8ec080cfd3db45eace57fcb741390d73f1214398",
+      "data/experiments/chunking/1200_200/vector_store/manifest.json": "5c7c2d0550c78829d9d1b462bf97e19a31a96665f5dd99e993158c88de1f75b8",
+      "data/experiments/chunking/1200_200/vector_store/records.jsonl": "0a031b44b0556f217449a08e1f5bec8e04a58aeb9d8868da0c30a59a7d290648",
+      "data/experiments/chunking/1500_200/chunks/dred_scott_v_sandford.jsonl": "10fae0685c82e38a761c0a4ea1d0071cd786e235a1dfc7a9c28f8de37c8e2742",
+      "data/experiments/chunking/1500_200/chunks/gideon_v_wainwright.jsonl": "e8bd0ecadc3796c4db4985c10908008c139099c5b62cd6bfea2194ea7e645b28",
+      "data/experiments/chunking/1500_200/chunks/marbury_v_madison.jsonl": "80e45c23b528fb783921f120237b5e27bf3063b8e2d0bfa0e2b9bc948971ef67",
+      "data/experiments/chunking/1500_200/chunks/miranda_v_arizona.jsonl": "83d06f72d784b34fb414533653b1b80b17c213c82b99d00d0d3f5731999e92ef",
+      "data/experiments/chunking/1500_200/chunks/new_york_times_co_v_united_states.jsonl": "87664a9f120da592273464784219306c2fe365438a54909a215d5938a0e89153",
+      "data/experiments/chunking/1500_200/chunks/obergefell_v_hodges.jsonl": "3de38ca2d4fb4583ef212b45c71d0a51d69c7f4a241281fa3616eaf54effa11e",
+      "data/experiments/chunking/1500_200/chunks/plessy_v_ferguson.jsonl": "f1dcc04ad0f49021e96df4781dedd9afcdcbe71d91d4a76f4de70eac4a3a56d6",
+      "data/experiments/chunking/1500_200/chunks/tinker_v_des_moines_school_dist.jsonl": "81f365dd0aeea97e9faf0e4e7ebe9db7650b05f8a200945e86df39180e4c97dd",
+      "data/experiments/chunking/1500_200/vector_store/index.faiss": "2e2a48e74ca9838482e4e091c20143b5c2d86282efd4588952329e13528184b2",
+      "data/experiments/chunking/1500_200/vector_store/manifest.json": "6ab26c41d30b64583060470fde6704689f0053566b6947bbc7d83ddb1f01ef65",
+      "data/experiments/chunking/1500_200/vector_store/records.jsonl": "42ffe0a0695d22b097bf8a2697f79d7ba549b4660d92f6e791e3f21b3afdc3b3",
+      "data/experiments/chunking/600_100/chunks/dred_scott_v_sandford.jsonl": "c1609a75f1a36e53a097220f6c2dcb453f1216a768450c5b6071701e1ca71080",
+      "data/experiments/chunking/600_100/chunks/gideon_v_wainwright.jsonl": "71459a6ad063507872da02249c2cdd4ecdafee1c6704b10d7a3ebe5c9265e410",
+      "data/experiments/chunking/600_100/chunks/marbury_v_madison.jsonl": "a0cac67fddac8a95120c9d8c71dd372251c289a4cf79c03ae34e767ba4df593c",
+      "data/experiments/chunking/600_100/chunks/miranda_v_arizona.jsonl": "fb5f22856d7410cac34b0ab71ec7defb82d19be231504036ab2f56bb8c0cb0e9",
+      "data/experiments/chunking/600_100/chunks/new_york_times_co_v_united_states.jsonl": "a5f350297a6c5d3332149c38dfcea9a041b78e85e29fb55a011278055d5e94f2",
+      "data/experiments/chunking/600_100/chunks/obergefell_v_hodges.jsonl": "2b0b30dfc0b05ae2e7d70111f0443740db5512b6192014c7c386211e1cbf9916",
+      "data/experiments/chunking/600_100/chunks/plessy_v_ferguson.jsonl": "805a90d67ec45dc7ae6100cede7e3f745fa9d8fd5cf9fbeef1fcf7500a7e4108",
+      "data/experiments/chunking/600_100/chunks/tinker_v_des_moines_school_dist.jsonl": "8066cc3b9ad15af0e214662003ca4c26c495b92d2ddd1bd184f79f388fb14ee3",
+      "data/experiments/chunking/600_100/vector_store/index.faiss": "8e3ff55615273bc2c6e2b8f6831f276f9d6c38380c99acd09f744b897528e721",
+      "data/experiments/chunking/600_100/vector_store/manifest.json": "6aff4f97e7314fb5e32369ee843f1b9debbbee303d132a11129905dac5b889d5",
+      "data/experiments/chunking/600_100/vector_store/records.jsonl": "ef7c320e39ff67ebc5671a1f0e4473840cb314a88774a389ac580011c727e98d",
+      "data/experiments/chunking/900_150/chunks/dred_scott_v_sandford.jsonl": "adaf3e4ebcc1f39a4de19548a4757ea57ad248a49eebaeef8ad55a3123432c40",
+      "data/experiments/chunking/900_150/chunks/gideon_v_wainwright.jsonl": "2254a634b4c027e8049ee0488dfed74454388d805fa5e6a06f3baa0a001c8713",
+      "data/experiments/chunking/900_150/chunks/marbury_v_madison.jsonl": "eb15fe41780d6e0451f637bbb1a62ee2a5f2f57e3f6cdd857df12e31cdf2edd4",
+      "data/experiments/chunking/900_150/chunks/miranda_v_arizona.jsonl": "e62baecf9c2b45c05fc41ded6420f9951b87b816a0de8b2738d04308a7f8ada0",
+      "data/experiments/chunking/900_150/chunks/new_york_times_co_v_united_states.jsonl": "a13bd800e9efe0fa3bc16127e0f7574a7f802b11719533aa19d6f9c762190ce0",
+      "data/experiments/chunking/900_150/chunks/obergefell_v_hodges.jsonl": "2ab41ed081307b758da2ce031174e0815eef6622a2659b4b7871e1148c54368d",
+      "data/experiments/chunking/900_150/chunks/plessy_v_ferguson.jsonl": "fd71d62c3f41f0cba8eeb960dc950a77a17b0d50a69c7fa83402ebed283e4203",
+      "data/experiments/chunking/900_150/chunks/tinker_v_des_moines_school_dist.jsonl": "a68cd3727081d496f32e22828fdf7b4eab5882d5e541f2b7273d24ce624341eb",
+      "data/experiments/chunking/900_150/vector_store/index.faiss": "e12f8a02f9b35fa9326fb830b917bdfdf41e5ba4aceccb0c2b806329770cc2a8",
+      "data/experiments/chunking/900_150/vector_store/manifest.json": "846e19759df7714867d5353a60401e326439bb4fb92d9454986b9ce2124a4c99",
+      "data/experiments/chunking/900_150/vector_store/records.jsonl": "f56cbda97ec73461c0c35f97cbc7575ce9ecf55c77beb5873377285c9d595f69",
+      "data/experiments/chunking/results.json": "95ca699ef2be19f511d1a98508deeb6fb7c458228ee770e79f7afe83d7e6a123",
+      "data/experiments/chunking/reviewed_results.json": "2e0d3d287b3e880dff3227939dbc796a75296986b9bbef9e86907e1d5c6e32ee",
+      "data/experiments/chunking/structure_aware_v1/chunks.jsonl": "0feb95376bd2a3031d7df8ff87693c18ab5df757da002a2ff042040713a73fd4",
+      "data/experiments/chunking/structure_aware_v1/embedding_usage.json": "dfeb22685a9b3eec3929d038ed94e72a3e81c5ac88e68a7d7b7a23e907a74bed",
+      "data/experiments/chunking/structure_aware_v1/evaluation_progress.json": "ccd2e3d4c7cac3af4f89105bced86c7b4240dbe228a92228b87356c95ed22465",
+      "data/experiments/chunking/structure_aware_v1/manifest.json": "d72c5703be6121228a107611ed47d0926424fa86a983ac83e747fe305f7d9e5d",
+      "data/experiments/chunking/structure_aware_v1/results.json": "8928b1e1ec80881acdd7a4664c57661e1aa9df847691996db6229057acc081aa",
+      "data/experiments/chunking/structure_aware_v1/vector_store/index.faiss": "8390441da91b421d6025327e7f8b6ca53030ec5b6e2d0516900330e614fbad81",
+      "data/experiments/chunking/structure_aware_v1/vector_store/manifest.json": "55750e4b1b8086ee2596e83affdaa285cbe404f9e6cdeec180bc2100784e54af",
+      "data/experiments/chunking/structure_aware_v1/vector_store/records.jsonl": "b736787bd3a2eae7ee8c8f029e18cf94a38332913ffe40ee44300c32002c4bce",
+      "data/processed/dred_scott_v_sandford.txt": "1eb4617eebf3647626d7d3d4e142615c99d3cfbfdb7de80ce9c39b97b05b80ed",
+      "data/processed/gideon_v_wainwright.txt": "10e0e4b6a2a7382d913a3cf3c1a8a3fa99aecdbbb14cfcee19011a4adce5db35",
+      "data/processed/marbury_v_madison.txt": "85f4f933f9614718ca426da9545ae101778d39f88ee3fecd9bbb02081da74da1",
+      "data/processed/miranda_v_arizona.txt": "872ba83c615f9d35e3f7ac841bc441d21dbc9e6ca22756314b42d12bb8cf9e6d",
+      "data/processed/new_york_times_co_v_united_states.txt": "59a716ac534351d0ca21b10620ae31a2f27f9de4609feafbe1be9e8719496d49",
+      "data/processed/obergefell_v_hodges.txt": "50267b559e1daf5e1c7859f8d3a167db54d128df11fc8ed9bfedbf33f5062b0b",
+      "data/processed/plessy_v_ferguson.txt": "c15341b4e08e7060b6f089b1d2ee43ce0fc760020d53e0e943e88931a0fd191f",
+      "data/processed/tinker_v_des_moines_school_dist.txt": "0d534a5e970cd117e9a397b6859ea4cb33c8f47a880d3c31e39a767e93df9dd7",
+      "data/raw/service-ll-usrep-usrep005-usrep005137-usrep005137.pdf": "dc46074ce2db6f2250de60f8a72eaee961f9dd09d7d5daf8a40db404200a4608",
+      "data/raw/service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf": "03829e8483152089c15dd438bb445d0a528bd350602195c60105060bbdaf1965",
+      "data/raw/service-ll-usrep-usrep163-usrep163537-usrep163537.pdf": "1bd8154d5ed6e16f3fec76f0cd14286f57975b997cdadf749f9bb40446b683e2",
+      "data/raw/service-ll-usrep-usrep372-usrep372335-usrep372335.pdf": "2d3219523cb251490349806ab6ab089a33f82429b8c72cf727f1f8ed4d77407d",
+      "data/raw/service-ll-usrep-usrep384-usrep384436-usrep384436.pdf": "31e7666853b8b72f2793da506814552fcaee91fbdb4ad162f8669a0e2419e193",
+      "data/raw/service-ll-usrep-usrep393-usrep393503-usrep393503.pdf": "9e2abaf1ba824eaf0b71e308206580fb13d2ca357dafb5ee12936716f1b5a064",
+      "data/raw/service-ll-usrep-usrep403-usrep403713-usrep403713.pdf": "ab04f81f20f14b76b8b72dd67a596555b4ad62010ec04077b704fe880d60435b",
+      "data/raw/service-ll-usrep-usrep576-usrep576644-usrep576644.pdf": "c22875b84f618083b83677b961d52b242bf61f01282d9f0fdd4099876d754447",
+      "data/vector_store/index.faiss": "b81997170c48a649b84613ba4376c982c231acd27e610bda6e460c66a5d58a1c",
+      "data/vector_store/manifest.json": "a97cecfdf385a49513c82b5fff1909053a77c74e833beffd773d3e54bffd5933",
+      "data/vector_store/records.jsonl": "0a031b44b0556f217449a08e1f5bec8e04a58aeb9d8868da0c30a59a7d290648"
+    },
+    "after_sha256": {
+      "data/.DS_Store": "dba7ea4f09dd9da13b6386ece6a507bc1d3fdc271d268ecef5aba78c5c009236",
+      "data/analysis/chunking_benchmark_phase4c_audit.md": "82861de07563b8bbce32818c57456feb8fd20d31258bc1ae2c117cf5eeecbad4",
+      "data/analysis/chunking_failure_analysis.json": "3f3179199a0b9546fc300959ef127c8e9f2d293fcfdd28bc87f1c418fa9d0b63",
+      "data/analysis/chunking_failure_analysis.md": "661cf3a29a67154b5929e2954e171dfad10728d1e6bc9e7d01a76a34c921d2ab",
+      "data/analysis/chunking_reviewed_breakdown.json": "3c3e718ddefea2bfb61d6c0623662d8a0fa14f973719956ff7f65de0d9898600",
+      "data/analysis/chunking_reviewed_evaluation.md": "0864e38f33aca105a1ec867eb4104741dccf19db19c93df3c7540af0fe1f7306",
+      "data/analysis/document_structure.json": "4b215472053cca3a6c4843125f70da6487b23de23e33071dbd73da2278546be5",
+      "data/analysis/document_structure_report.md": "3141da84ab16934c1ec1bd575538fae5214beb290fae1aaf4cd170906bbe6021",
+      "data/analysis/long_sentence_analysis.json": "3fc7987789e3eac714f3ffc1a4badac762a6a89455b943298fede200c7a80418",
+      "data/analysis/long_sentence_analysis.md": "2ce3d588d1b2e13eb91d66c2c450dc2ecc9612d7dc746f35fbc486fe79c95ca2",
+      "data/analysis/structure_aware_chunking.json": "90fda71f43c598a1cc24815c1201e776b48220750e42712d5a83c9dc1bc90bbd",
+      "data/analysis/structure_aware_chunking.md": "a84560f5ecf32faa71afdaf5bb8af6ce50343daafbd4838eb1b48c5ac2740b29",
+      "data/analysis/structure_aware_preview.json": "0ade8e9853a10b8a57b0962ceeb839ed7493892caab903dd3b1b8dbfa9fa8442",
+      "data/analysis/structure_aware_preview.md": "5d913b2f88147fd9152890cf4402269f47a42c16d20494d9472f4e183bdca48c",
+      "data/analysis/structure_aware_retrieval_evaluation.json": "ea9c6c01903f668595671f6dde19f86823284cc8e26dd4a13c85693a0c03cee6",
+      "data/analysis/structure_aware_retrieval_evaluation.md": "133760f9d075f161875ce18ebd1b4faed847d1d1a021a75490c6fb58d29437ad",
+      "data/chunks/dred_scott_v_sandford.jsonl": "6bced3d03076b6dfd93ff9f984dd88107ff582ca07be6b96d2e8dcd946173c34",
+      "data/chunks/gideon_v_wainwright.jsonl": "c52fe1269924b08ae97ff4dc999fc2b4129820c86d7524460749078e98b29b15",
+      "data/chunks/marbury_v_madison.jsonl": "3e8e7dde3b4b6ea2d7eabeba9e62c89b0175531b177181c4243497a5339c8e6a",
+      "data/chunks/miranda_v_arizona.jsonl": "8435d0deabb7e19135f3222be954e1219df33b4f239f98b581e2307736a3e77b",
+      "data/chunks/new_york_times_co_v_united_states.jsonl": "bdbac99d04f7fa7dae40f9c945cd4cb1a0b28163bc852101f49234be55fb91f1",
+      "data/chunks/obergefell_v_hodges.jsonl": "d9cfb053a24154723f815c833c07aeb4d839f080cd1a959d97e7d2381958ebd8",
+      "data/chunks/plessy_v_ferguson.jsonl": "5bea13c8765e84a03322d43b9849665d209c3e33a06899bab31ea0ce7cad0647",
+      "data/chunks/tinker_v_des_moines_school_dist.jsonl": "15aa8fe098ed56209a70c8f191d4bc9b7e01431a247682d91cff822689d49768",
+      "data/evaluation/chunking_benchmark.json": "00fc21f465043a09a209e8509f0513378cd6e385d62ca6dbfc7e09940a7eda3d",
+      "data/evaluation/chunking_benchmark_phase4c_audit.json": "495aeabbda165b8e9d3bb98df895ec1f513188be889d232688903a99bb90ecb5",
+      "data/evaluation/chunking_benchmark_review.json": "0cf60ecefd0e39df07d2eb76d8f8e629f499d92a190b293ffa70013795869370",
+      "data/evaluation/chunking_benchmark_review.md": "13637d6f8dcd2f46a568085f4c22d9898301ddd45a2438da0ed6610c5ea09a15",
+      "data/evaluation/chunking_benchmark_reviewed.json": "7cbfa42bf480717df7b7982297f8ea648a30a8d100d86ccdcaa5371b410b7595",
+      "data/evaluations.jsonl": "af41c8c07cfbc4bc10866fc101d74c7da5497a4013a92216fa461f00e853fd1a",
+      "data/experiments/chunking/1200_200/chunks/dred_scott_v_sandford.jsonl": "6bced3d03076b6dfd93ff9f984dd88107ff582ca07be6b96d2e8dcd946173c34",
+      "data/experiments/chunking/1200_200/chunks/gideon_v_wainwright.jsonl": "c52fe1269924b08ae97ff4dc999fc2b4129820c86d7524460749078e98b29b15",
+      "data/experiments/chunking/1200_200/chunks/marbury_v_madison.jsonl": "3e8e7dde3b4b6ea2d7eabeba9e62c89b0175531b177181c4243497a5339c8e6a",
+      "data/experiments/chunking/1200_200/chunks/miranda_v_arizona.jsonl": "8435d0deabb7e19135f3222be954e1219df33b4f239f98b581e2307736a3e77b",
+      "data/experiments/chunking/1200_200/chunks/new_york_times_co_v_united_states.jsonl": "bdbac99d04f7fa7dae40f9c945cd4cb1a0b28163bc852101f49234be55fb91f1",
+      "data/experiments/chunking/1200_200/chunks/obergefell_v_hodges.jsonl": "d9cfb053a24154723f815c833c07aeb4d839f080cd1a959d97e7d2381958ebd8",
+      "data/experiments/chunking/1200_200/chunks/plessy_v_ferguson.jsonl": "5bea13c8765e84a03322d43b9849665d209c3e33a06899bab31ea0ce7cad0647",
+      "data/experiments/chunking/1200_200/chunks/tinker_v_des_moines_school_dist.jsonl": "15aa8fe098ed56209a70c8f191d4bc9b7e01431a247682d91cff822689d49768",
+      "data/experiments/chunking/1200_200/vector_store/index.faiss": "b8b7eb8795c385630cde542a8ec080cfd3db45eace57fcb741390d73f1214398",
+      "data/experiments/chunking/1200_200/vector_store/manifest.json": "5c7c2d0550c78829d9d1b462bf97e19a31a96665f5dd99e993158c88de1f75b8",
+      "data/experiments/chunking/1200_200/vector_store/records.jsonl": "0a031b44b0556f217449a08e1f5bec8e04a58aeb9d8868da0c30a59a7d290648",
+      "data/experiments/chunking/1500_200/chunks/dred_scott_v_sandford.jsonl": "10fae0685c82e38a761c0a4ea1d0071cd786e235a1dfc7a9c28f8de37c8e2742",
+      "data/experiments/chunking/1500_200/chunks/gideon_v_wainwright.jsonl": "e8bd0ecadc3796c4db4985c10908008c139099c5b62cd6bfea2194ea7e645b28",
+      "data/experiments/chunking/1500_200/chunks/marbury_v_madison.jsonl": "80e45c23b528fb783921f120237b5e27bf3063b8e2d0bfa0e2b9bc948971ef67",
+      "data/experiments/chunking/1500_200/chunks/miranda_v_arizona.jsonl": "83d06f72d784b34fb414533653b1b80b17c213c82b99d00d0d3f5731999e92ef",
+      "data/experiments/chunking/1500_200/chunks/new_york_times_co_v_united_states.jsonl": "87664a9f120da592273464784219306c2fe365438a54909a215d5938a0e89153",
+      "data/experiments/chunking/1500_200/chunks/obergefell_v_hodges.jsonl": "3de38ca2d4fb4583ef212b45c71d0a51d69c7f4a241281fa3616eaf54effa11e",
+      "data/experiments/chunking/1500_200/chunks/plessy_v_ferguson.jsonl": "f1dcc04ad0f49021e96df4781dedd9afcdcbe71d91d4a76f4de70eac4a3a56d6",
+      "data/experiments/chunking/1500_200/chunks/tinker_v_des_moines_school_dist.jsonl": "81f365dd0aeea97e9faf0e4e7ebe9db7650b05f8a200945e86df39180e4c97dd",
+      "data/experiments/chunking/1500_200/vector_store/index.faiss": "2e2a48e74ca9838482e4e091c20143b5c2d86282efd4588952329e13528184b2",
+      "data/experiments/chunking/1500_200/vector_store/manifest.json": "6ab26c41d30b64583060470fde6704689f0053566b6947bbc7d83ddb1f01ef65",
+      "data/experiments/chunking/1500_200/vector_store/records.jsonl": "42ffe0a0695d22b097bf8a2697f79d7ba549b4660d92f6e791e3f21b3afdc3b3",
+      "data/experiments/chunking/600_100/chunks/dred_scott_v_sandford.jsonl": "c1609a75f1a36e53a097220f6c2dcb453f1216a768450c5b6071701e1ca71080",
+      "data/experiments/chunking/600_100/chunks/gideon_v_wainwright.jsonl": "71459a6ad063507872da02249c2cdd4ecdafee1c6704b10d7a3ebe5c9265e410",
+      "data/experiments/chunking/600_100/chunks/marbury_v_madison.jsonl": "a0cac67fddac8a95120c9d8c71dd372251c289a4cf79c03ae34e767ba4df593c",
+      "data/experiments/chunking/600_100/chunks/miranda_v_arizona.jsonl": "fb5f22856d7410cac34b0ab71ec7defb82d19be231504036ab2f56bb8c0cb0e9",
+      "data/experiments/chunking/600_100/chunks/new_york_times_co_v_united_states.jsonl": "a5f350297a6c5d3332149c38dfcea9a041b78e85e29fb55a011278055d5e94f2",
+      "data/experiments/chunking/600_100/chunks/obergefell_v_hodges.jsonl": "2b0b30dfc0b05ae2e7d70111f0443740db5512b6192014c7c386211e1cbf9916",
+      "data/experiments/chunking/600_100/chunks/plessy_v_ferguson.jsonl": "805a90d67ec45dc7ae6100cede7e3f745fa9d8fd5cf9fbeef1fcf7500a7e4108",
+      "data/experiments/chunking/600_100/chunks/tinker_v_des_moines_school_dist.jsonl": "8066cc3b9ad15af0e214662003ca4c26c495b92d2ddd1bd184f79f388fb14ee3",
+      "data/experiments/chunking/600_100/vector_store/index.faiss": "8e3ff55615273bc2c6e2b8f6831f276f9d6c38380c99acd09f744b897528e721",
+      "data/experiments/chunking/600_100/vector_store/manifest.json": "6aff4f97e7314fb5e32369ee843f1b9debbbee303d132a11129905dac5b889d5",
+      "data/experiments/chunking/600_100/vector_store/records.jsonl": "ef7c320e39ff67ebc5671a1f0e4473840cb314a88774a389ac580011c727e98d",
+      "data/experiments/chunking/900_150/chunks/dred_scott_v_sandford.jsonl": "adaf3e4ebcc1f39a4de19548a4757ea57ad248a49eebaeef8ad55a3123432c40",
+      "data/experiments/chunking/900_150/chunks/gideon_v_wainwright.jsonl": "2254a634b4c027e8049ee0488dfed74454388d805fa5e6a06f3baa0a001c8713",
+      "data/experiments/chunking/900_150/chunks/marbury_v_madison.jsonl": "eb15fe41780d6e0451f637bbb1a62ee2a5f2f57e3f6cdd857df12e31cdf2edd4",
+      "data/experiments/chunking/900_150/chunks/miranda_v_arizona.jsonl": "e62baecf9c2b45c05fc41ded6420f9951b87b816a0de8b2738d04308a7f8ada0",
+      "data/experiments/chunking/900_150/chunks/new_york_times_co_v_united_states.jsonl": "a13bd800e9efe0fa3bc16127e0f7574a7f802b11719533aa19d6f9c762190ce0",
+      "data/experiments/chunking/900_150/chunks/obergefell_v_hodges.jsonl": "2ab41ed081307b758da2ce031174e0815eef6622a2659b4b7871e1148c54368d",
+      "data/experiments/chunking/900_150/chunks/plessy_v_ferguson.jsonl": "fd71d62c3f41f0cba8eeb960dc950a77a17b0d50a69c7fa83402ebed283e4203",
+      "data/experiments/chunking/900_150/chunks/tinker_v_des_moines_school_dist.jsonl": "a68cd3727081d496f32e22828fdf7b4eab5882d5e541f2b7273d24ce624341eb",
+      "data/experiments/chunking/900_150/vector_store/index.faiss": "e12f8a02f9b35fa9326fb830b917bdfdf41e5ba4aceccb0c2b806329770cc2a8",
+      "data/experiments/chunking/900_150/vector_store/manifest.json": "846e19759df7714867d5353a60401e326439bb4fb92d9454986b9ce2124a4c99",
+      "data/experiments/chunking/900_150/vector_store/records.jsonl": "f56cbda97ec73461c0c35f97cbc7575ce9ecf55c77beb5873377285c9d595f69",
+      "data/experiments/chunking/results.json": "95ca699ef2be19f511d1a98508deeb6fb7c458228ee770e79f7afe83d7e6a123",
+      "data/experiments/chunking/reviewed_results.json": "2e0d3d287b3e880dff3227939dbc796a75296986b9bbef9e86907e1d5c6e32ee",
+      "data/experiments/chunking/structure_aware_v1/chunks.jsonl": "0feb95376bd2a3031d7df8ff87693c18ab5df757da002a2ff042040713a73fd4",
+      "data/experiments/chunking/structure_aware_v1/embedding_usage.json": "dfeb22685a9b3eec3929d038ed94e72a3e81c5ac88e68a7d7b7a23e907a74bed",
+      "data/experiments/chunking/structure_aware_v1/evaluation_progress.json": "ccd2e3d4c7cac3af4f89105bced86c7b4240dbe228a92228b87356c95ed22465",
+      "data/experiments/chunking/structure_aware_v1/manifest.json": "d72c5703be6121228a107611ed47d0926424fa86a983ac83e747fe305f7d9e5d",
+      "data/experiments/chunking/structure_aware_v1/results.json": "8928b1e1ec80881acdd7a4664c57661e1aa9df847691996db6229057acc081aa",
+      "data/experiments/chunking/structure_aware_v1/vector_store/index.faiss": "8390441da91b421d6025327e7f8b6ca53030ec5b6e2d0516900330e614fbad81",
+      "data/experiments/chunking/structure_aware_v1/vector_store/manifest.json": "55750e4b1b8086ee2596e83affdaa285cbe404f9e6cdeec180bc2100784e54af",
+      "data/experiments/chunking/structure_aware_v1/vector_store/records.jsonl": "b736787bd3a2eae7ee8c8f029e18cf94a38332913ffe40ee44300c32002c4bce",
+      "data/processed/dred_scott_v_sandford.txt": "1eb4617eebf3647626d7d3d4e142615c99d3cfbfdb7de80ce9c39b97b05b80ed",
+      "data/processed/gideon_v_wainwright.txt": "10e0e4b6a2a7382d913a3cf3c1a8a3fa99aecdbbb14cfcee19011a4adce5db35",
+      "data/processed/marbury_v_madison.txt": "85f4f933f9614718ca426da9545ae101778d39f88ee3fecd9bbb02081da74da1",
+      "data/processed/miranda_v_arizona.txt": "872ba83c615f9d35e3f7ac841bc441d21dbc9e6ca22756314b42d12bb8cf9e6d",
+      "data/processed/new_york_times_co_v_united_states.txt": "59a716ac534351d0ca21b10620ae31a2f27f9de4609feafbe1be9e8719496d49",
+      "data/processed/obergefell_v_hodges.txt": "50267b559e1daf5e1c7859f8d3a167db54d128df11fc8ed9bfedbf33f5062b0b",
+      "data/processed/plessy_v_ferguson.txt": "c15341b4e08e7060b6f089b1d2ee43ce0fc760020d53e0e943e88931a0fd191f",
+      "data/processed/tinker_v_des_moines_school_dist.txt": "0d534a5e970cd117e9a397b6859ea4cb33c8f47a880d3c31e39a767e93df9dd7",
+      "data/raw/service-ll-usrep-usrep005-usrep005137-usrep005137.pdf": "dc46074ce2db6f2250de60f8a72eaee961f9dd09d7d5daf8a40db404200a4608",
+      "data/raw/service-ll-usrep-usrep060-usrep060393a-usrep060393a.pdf": "03829e8483152089c15dd438bb445d0a528bd350602195c60105060bbdaf1965",
+      "data/raw/service-ll-usrep-usrep163-usrep163537-usrep163537.pdf": "1bd8154d5ed6e16f3fec76f0cd14286f57975b997cdadf749f9bb40446b683e2",
+      "data/raw/service-ll-usrep-usrep372-usrep372335-usrep372335.pdf": "2d3219523cb251490349806ab6ab089a33f82429b8c72cf727f1f8ed4d77407d",
+      "data/raw/service-ll-usrep-usrep384-usrep384436-usrep384436.pdf": "31e7666853b8b72f2793da506814552fcaee91fbdb4ad162f8669a0e2419e193",
+      "data/raw/service-ll-usrep-usrep393-usrep393503-usrep393503.pdf": "9e2abaf1ba824eaf0b71e308206580fb13d2ca357dafb5ee12936716f1b5a064",
+      "data/raw/service-ll-usrep-usrep403-usrep403713-usrep403713.pdf": "ab04f81f20f14b76b8b72dd67a596555b4ad62010ec04077b704fe880d60435b",
+      "data/raw/service-ll-usrep-usrep576-usrep576644-usrep576644.pdf": "c22875b84f618083b83677b961d52b242bf61f01282d9f0fdd4099876d754447",
+      "data/vector_store/index.faiss": "b81997170c48a649b84613ba4376c982c231acd27e610bda6e460c66a5d58a1c",
+      "data/vector_store/manifest.json": "a97cecfdf385a49513c82b5fff1909053a77c74e833beffd773d3e54bffd5933",
+      "data/vector_store/records.jsonl": "0a031b44b0556f217449a08e1f5bec8e04a58aeb9d8868da0c30a59a7d290648"
+    }
+  }
+}

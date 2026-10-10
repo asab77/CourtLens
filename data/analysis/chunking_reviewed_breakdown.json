@@ -1,0 +1,1505 @@
+{
+  "reviewed_benchmark": "data/evaluation/chunking_benchmark_reviewed.json",
+  "reviewed_results": "data/experiments/chunking/reviewed_results.json",
+  "question_type_metrics": {
+    "600_100": {
+      "constitutional_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "dissent_reasoning": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "facts": {
+        "question_count": 8,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.75,
+        "hit_at_5": 0.875,
+        "mrr": 0.65625
+      },
+      "holding": {
+        "question_count": 7,
+        "hit_at_1": 0.5714285714285714,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.7857142857142857
+      },
+      "holding_detail": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "jurisdiction": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.3333333333333333
+      },
+      "legal_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_rule": {
+        "question_count": 3,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 0.6666666666666666,
+        "hit_at_5": 0.6666666666666666,
+        "mrr": 0.6666666666666666
+      },
+      "precedent": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "reasoning": {
+        "question_count": 8,
+        "hit_at_1": 0.875,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.9375
+      },
+      "remedy": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.5
+      },
+      "specific_detail": {
+        "question_count": 6,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.8333333333333334,
+        "hit_at_5": 0.8333333333333334,
+        "mrr": 0.6666666666666666
+      },
+      "specific_fact": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "900_150": {
+      "constitutional_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "dissent_reasoning": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "facts": {
+        "question_count": 8,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.75,
+        "hit_at_5": 0.75,
+        "mrr": 0.6041666666666666
+      },
+      "holding": {
+        "question_count": 7,
+        "hit_at_1": 0.5714285714285714,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.7857142857142857
+      },
+      "holding_detail": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "jurisdiction": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_rule": {
+        "question_count": 3,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 0.6666666666666666,
+        "hit_at_5": 0.6666666666666666,
+        "mrr": 0.6666666666666666
+      },
+      "precedent": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "reasoning": {
+        "question_count": 8,
+        "hit_at_1": 0.875,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.9375
+      },
+      "remedy": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "specific_detail": {
+        "question_count": 6,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 0.8333333333333334,
+        "hit_at_5": 0.8333333333333334,
+        "mrr": 0.75
+      },
+      "specific_fact": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "1200_200": {
+      "constitutional_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "dissent_reasoning": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.5
+      },
+      "facts": {
+        "question_count": 8,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.75,
+        "hit_at_5": 0.75,
+        "mrr": 0.6041666666666666
+      },
+      "holding": {
+        "question_count": 7,
+        "hit_at_1": 0.8571428571428571,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.9285714285714286
+      },
+      "holding_detail": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "jurisdiction": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.0,
+        "hit_at_5": 0.0,
+        "mrr": 0.0
+      },
+      "legal_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_rule": {
+        "question_count": 3,
+        "hit_at_1": 0.3333333333333333,
+        "hit_at_3": 0.6666666666666666,
+        "hit_at_5": 0.6666666666666666,
+        "mrr": 0.4444444444444444
+      },
+      "precedent": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.5
+      },
+      "reasoning": {
+        "question_count": 8,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "remedy": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "specific_detail": {
+        "question_count": 6,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 0.8333333333333334,
+        "hit_at_5": 1.0,
+        "mrr": 0.7833333333333333
+      },
+      "specific_fact": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 0.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.25
+      }
+    },
+    "1500_200": {
+      "constitutional_principle": {
+        "question_count": 1,
+        "hit_at_1": 0.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.5
+      },
+      "dissent_reasoning": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "facts": {
+        "question_count": 8,
+        "hit_at_1": 0.5,
+        "hit_at_3": 0.625,
+        "hit_at_5": 0.75,
+        "mrr": 0.5666666666666667
+      },
+      "holding": {
+        "question_count": 7,
+        "hit_at_1": 0.8571428571428571,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.9047619047619048
+      },
+      "holding_detail": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "jurisdiction": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_principle": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "legal_rule": {
+        "question_count": 3,
+        "hit_at_1": 0.3333333333333333,
+        "hit_at_3": 0.3333333333333333,
+        "hit_at_5": 0.6666666666666666,
+        "mrr": 0.4166666666666667
+      },
+      "precedent": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "reasoning": {
+        "question_count": 8,
+        "hit_at_1": 0.75,
+        "hit_at_3": 0.875,
+        "hit_at_5": 1.0,
+        "mrr": 0.84375
+      },
+      "remedy": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "specific_detail": {
+        "question_count": 6,
+        "hit_at_1": 0.6666666666666666,
+        "hit_at_3": 0.6666666666666666,
+        "hit_at_5": 0.8333333333333334,
+        "mrr": 0.7000000000000001
+      },
+      "specific_fact": {
+        "question_count": 1,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    }
+  },
+  "case_metrics": {
+    "600_100": {
+      "Dred Scott v. Sandford": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.6
+      },
+      "Gideon v. Wainwright": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.7
+      },
+      "Marbury v. Madison": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.7666666666666667
+      },
+      "Miranda v. Arizona": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.9
+      },
+      "New York Times Co. v. United States": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_5": 1.0,
+        "mrr": 0.85
+      },
+      "Obergefell v. Hodges": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.7
+      },
+      "Plessy v. Ferguson": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.7
+      },
+      "Tinker v. Des Moines School Dist.": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "900_150": {
+      "Dred Scott v. Sandford": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.5666666666666667
+      },
+      "Gideon v. Wainwright": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.6
+      },
+      "Marbury v. Madison": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "Miranda v. Arizona": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "New York Times Co. v. United States": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.8
+      },
+      "Obergefell v. Hodges": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.7
+      },
+      "Plessy v. Ferguson": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.8
+      },
+      "Tinker v. Des Moines School Dist.": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "1200_200": {
+      "Dred Scott v. Sandford": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.5666666666666667
+      },
+      "Gideon v. Wainwright": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 1.0,
+        "mrr": 0.74
+      },
+      "Marbury v. Madison": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.8
+      },
+      "Miranda v. Arizona": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.7666666666666667
+      },
+      "New York Times Co. v. United States": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.8
+      },
+      "Obergefell v. Hodges": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.6,
+        "hit_at_5": 0.8,
+        "mrr": 0.65
+      },
+      "Plessy v. Ferguson": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 0.8
+      },
+      "Tinker v. Des Moines School Dist.": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "1500_200": {
+      "Dred Scott v. Sandford": {
+        "question_count": 5,
+        "hit_at_1": 0.4,
+        "hit_at_3": 0.6,
+        "hit_at_5": 0.8,
+        "mrr": 0.5066666666666666
+      },
+      "Gideon v. Wainwright": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.6,
+        "hit_at_5": 0.8,
+        "mrr": 0.65
+      },
+      "Marbury v. Madison": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "Miranda v. Arizona": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 1.0,
+        "mrr": 0.7166666666666667
+      },
+      "New York Times Co. v. United States": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.7
+      },
+      "Obergefell v. Hodges": {
+        "question_count": 5,
+        "hit_at_1": 0.6,
+        "hit_at_3": 0.8,
+        "hit_at_5": 0.8,
+        "mrr": 0.7
+      },
+      "Plessy v. Ferguson": {
+        "question_count": 5,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.8,
+        "hit_at_5": 1.0,
+        "mrr": 0.8400000000000001
+      },
+      "Tinker v. Des Moines School Dist.": {
+        "question_count": 5,
+        "hit_at_1": 1.0,
+        "hit_at_3": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0
+      }
+    }
+  },
+  "configuration_wins": {
+    "sole_best_rank_counts": {
+      "600_100": 2,
+      "900_150": 0,
+      "1200_200": 2,
+      "1500_200": 1
+    },
+    "tie_for_best_count": 33,
+    "all_four_miss_count": 2,
+    "all_four_miss_question_ids": [
+      "DRE-04",
+      "OBE-01"
+    ],
+    "pairwise": {
+      "600_100_vs_900_150": {
+        "left_wins": 3,
+        "right_wins": 4,
+        "ties": 33
+      },
+      "600_100_vs_1200_200": {
+        "left_wins": 7,
+        "right_wins": 6,
+        "ties": 27
+      },
+      "600_100_vs_1500_200": {
+        "left_wins": 9,
+        "right_wins": 7,
+        "ties": 24
+      },
+      "900_150_vs_1200_200": {
+        "left_wins": 6,
+        "right_wins": 5,
+        "ties": 29
+      },
+      "900_150_vs_1500_200": {
+        "left_wins": 8,
+        "right_wins": 3,
+        "ties": 29
+      },
+      "1200_200_vs_1500_200": {
+        "left_wins": 9,
+        "right_wins": 6,
+        "ties": 25
+      }
+    },
+    "questions": [
+      {
+        "id": "MAR-01",
+        "type": "facts",
+        "case": "Marbury v. Madison",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MAR-02",
+        "type": "holding_detail",
+        "case": "Marbury v. Madison",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MAR-03",
+        "type": "remedy",
+        "case": "Marbury v. Madison",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MAR-04",
+        "type": "jurisdiction",
+        "case": "Marbury v. Madison",
+        "first_relevant_ranks": {
+          "600_100": 3,
+          "900_150": 1,
+          "1200_200": null,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "900_150",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MAR-05",
+        "type": "reasoning",
+        "case": "Marbury v. Madison",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "DRE-01",
+        "type": "facts",
+        "case": "Dred Scott v. Sandford",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 3,
+          "1200_200": 3,
+          "1500_200": 5
+        },
+        "best_rank_configurations": [
+          "600_100"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "DRE-02",
+        "type": "holding",
+        "case": "Dred Scott v. Sandford",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 2,
+          "1200_200": 2,
+          "1500_200": 3
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "DRE-03",
+        "type": "reasoning",
+        "case": "Dred Scott v. Sandford",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "DRE-04",
+        "type": "legal_rule",
+        "case": "Dred Scott v. Sandford",
+        "first_relevant_ranks": {
+          "600_100": null,
+          "900_150": null,
+          "1200_200": null,
+          "1500_200": null
+        },
+        "best_rank_configurations": [],
+        "all_four_miss_top_5": true
+      },
+      {
+        "id": "DRE-05",
+        "type": "specific_detail",
+        "case": "Dred Scott v. Sandford",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "PLE-01",
+        "type": "facts",
+        "case": "Plessy v. Ferguson",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 2,
+          "1200_200": 2,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "PLE-02",
+        "type": "holding",
+        "case": "Plessy v. Ferguson",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "PLE-03",
+        "type": "reasoning",
+        "case": "Plessy v. Ferguson",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "PLE-04",
+        "type": "specific_detail",
+        "case": "Plessy v. Ferguson",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 2,
+          "1200_200": 1,
+          "1500_200": 5
+        },
+        "best_rank_configurations": [
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "PLE-05",
+        "type": "dissent_reasoning",
+        "case": "Plessy v. Ferguson",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 2,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "GID-01",
+        "type": "facts",
+        "case": "Gideon v. Wainwright",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "GID-02",
+        "type": "holding",
+        "case": "Gideon v. Wainwright",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 2,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "GID-03",
+        "type": "precedent",
+        "case": "Gideon v. Wainwright",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 2,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "GID-04",
+        "type": "reasoning",
+        "case": "Gideon v. Wainwright",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 2,
+          "1200_200": 1,
+          "1500_200": 4
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "GID-05",
+        "type": "specific_detail",
+        "case": "Gideon v. Wainwright",
+        "first_relevant_ranks": {
+          "600_100": null,
+          "900_150": null,
+          "1200_200": 5,
+          "1500_200": null
+        },
+        "best_rank_configurations": [
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MIR-01",
+        "type": "facts",
+        "case": "Miranda v. Arizona",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 3
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MIR-02",
+        "type": "holding",
+        "case": "Miranda v. Arizona",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MIR-03",
+        "type": "reasoning",
+        "case": "Miranda v. Arizona",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MIR-04",
+        "type": "legal_rule",
+        "case": "Miranda v. Arizona",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 3,
+          "1500_200": 4
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "MIR-05",
+        "type": "specific_detail",
+        "case": "Miranda v. Arizona",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 1,
+          "1200_200": 2,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "900_150",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "TIN-01",
+        "type": "facts",
+        "case": "Tinker v. Des Moines School Dist.",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "TIN-02",
+        "type": "holding",
+        "case": "Tinker v. Des Moines School Dist.",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "TIN-03",
+        "type": "legal_principle",
+        "case": "Tinker v. Des Moines School Dist.",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "TIN-04",
+        "type": "reasoning",
+        "case": "Tinker v. Des Moines School Dist.",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "TIN-05",
+        "type": "specific_detail",
+        "case": "Tinker v. Des Moines School Dist.",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "NYT-01",
+        "type": "facts",
+        "case": "New York Times Co. v. United States",
+        "first_relevant_ranks": {
+          "600_100": 4,
+          "900_150": null,
+          "1200_200": null,
+          "1500_200": null
+        },
+        "best_rank_configurations": [
+          "600_100"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "NYT-02",
+        "type": "holding",
+        "case": "New York Times Co. v. United States",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "NYT-03",
+        "type": "legal_rule",
+        "case": "New York Times Co. v. United States",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "NYT-04",
+        "type": "reasoning",
+        "case": "New York Times Co. v. United States",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 2
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "NYT-05",
+        "type": "specific_detail",
+        "case": "New York Times Co. v. United States",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "OBE-01",
+        "type": "facts",
+        "case": "Obergefell v. Hodges",
+        "first_relevant_ranks": {
+          "600_100": null,
+          "900_150": null,
+          "1200_200": null,
+          "1500_200": null
+        },
+        "best_rank_configurations": [],
+        "all_four_miss_top_5": true
+      },
+      {
+        "id": "OBE-02",
+        "type": "holding",
+        "case": "Obergefell v. Hodges",
+        "first_relevant_ranks": {
+          "600_100": 2,
+          "900_150": 2,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "OBE-03",
+        "type": "reasoning",
+        "case": "Obergefell v. Hodges",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "OBE-04",
+        "type": "constitutional_principle",
+        "case": "Obergefell v. Hodges",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 1,
+          "1500_200": 2
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1200_200"
+        ],
+        "all_four_miss_top_5": false
+      },
+      {
+        "id": "OBE-05",
+        "type": "specific_fact",
+        "case": "Obergefell v. Hodges",
+        "first_relevant_ranks": {
+          "600_100": 1,
+          "900_150": 1,
+          "1200_200": 4,
+          "1500_200": 1
+        },
+        "best_rank_configurations": [
+          "600_100",
+          "900_150",
+          "1500_200"
+        ],
+        "all_four_miss_top_5": false
+      }
+    ]
+  },
+  "apparent_misses_converted_to_hits": {
+    "configuration_question_pair_count": 31,
+    "question_count": 13,
+    "by_configuration": {
+      "600_100": [
+        "MAR-01",
+        "DRE-03",
+        "PLE-03",
+        "MIR-03",
+        "TIN-02",
+        "NYT-02",
+        "NYT-03",
+        "OBE-02"
+      ],
+      "900_150": [
+        "MAR-01",
+        "DRE-02",
+        "PLE-02",
+        "PLE-03",
+        "MIR-03",
+        "MIR-04",
+        "TIN-02",
+        "NYT-02",
+        "NYT-03",
+        "OBE-02"
+      ],
+      "1200_200": [
+        "MAR-03",
+        "DRE-02",
+        "PLE-02",
+        "MIR-03",
+        "MIR-04",
+        "TIN-02",
+        "NYT-02",
+        "NYT-03"
+      ],
+      "1500_200": [
+        "DRE-02",
+        "PLE-04",
+        "MIR-04",
+        "NYT-02",
+        "NYT-03"
+      ]
+    },
+    "pairs": [
+      {
+        "configuration": "600_100",
+        "question_id": "MAR-01"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "DRE-03"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "PLE-03"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "MIR-03"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "TIN-02"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "NYT-02"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "NYT-03"
+      },
+      {
+        "configuration": "600_100",
+        "question_id": "OBE-02"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "MAR-01"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "DRE-02"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "PLE-02"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "PLE-03"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "MIR-03"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "MIR-04"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "TIN-02"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "NYT-02"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "NYT-03"
+      },
+      {
+        "configuration": "900_150",
+        "question_id": "OBE-02"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "MAR-03"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "DRE-02"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "PLE-02"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "MIR-03"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "MIR-04"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "TIN-02"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "NYT-02"
+      },
+      {
+        "configuration": "1200_200",
+        "question_id": "NYT-03"
+      },
+      {
+        "configuration": "1500_200",
+        "question_id": "DRE-02"
+      },
+      {
+        "configuration": "1500_200",
+        "question_id": "PLE-04"
+      },
+      {
+        "configuration": "1500_200",
+        "question_id": "MIR-04"
+      },
+      {
+        "configuration": "1500_200",
+        "question_id": "NYT-02"
+      },
+      {
+        "configuration": "1500_200",
+        "question_id": "NYT-03"
+      }
+    ]
+  }
+}

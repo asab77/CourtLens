@@ -1,0 +1,984 @@
+{
+  "name": "CourtLens fixed-chunking benchmark — human-reviewed relevance",
+  "status": "reviewed",
+  "instructions": "A saved result is relevant only when case/source match and its inclusive page span intersects any relevant_ranges interval. Ranges were reviewed from the saved Top-5 passage content; absence from that packet is not evidence that no other answer-bearing passage exists.",
+  "provenance": {
+    "original_benchmark": "data/evaluation/chunking_benchmark.json",
+    "review_packet": "data/evaluation/chunking_benchmark_review.json",
+    "review_method": "human content review of saved Top-5 candidates",
+    "original_benchmark_sha256": "00fc21f465043a09a209e8509f0513378cd6e385d62ca6dbfc7e09940a7eda3d",
+    "review_packet_sha256": "0cf60ecefd0e39df07d2eb76d8f8e629f499d92a190b293ffa70013795869370"
+  },
+  "question_count": 40,
+  "changed_question_count": 22,
+  "questions": [
+    {
+      "id": "MAR-01",
+      "type": "facts",
+      "question": "Why did William Marbury ask the Supreme Court to issue a writ of mandamus against James Madison?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          2
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          37,
+          38
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority-opinion passages describing the withheld commission and the request for mandamus.",
+      "validated": true
+    },
+    {
+      "id": "MAR-02",
+      "type": "holding_detail",
+      "question": "Why did the Court conclude that Marbury had acquired a legal right to his commission even though it had not been delivered to him?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "original_relevant_ranges": [
+        [
+          19,
+          25
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          19,
+          27
+        ],
+        [
+          31,
+          33
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages stating that signing and sealing completed the appointment and vested the legal right.",
+      "validated": true
+    },
+    {
+      "id": "MAR-03",
+      "type": "remedy",
+      "question": "Why did the Court consider mandamus an appropriate remedy for Marbury's withheld commission?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "original_relevant_ranges": [
+        [
+          35,
+          37
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          32,
+          37
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the immediately preceding majority analysis defining mandamus and explaining why that remedy fits.",
+      "validated": true
+    },
+    {
+      "id": "MAR-04",
+      "type": "jurisdiction",
+      "question": "Why could the Supreme Court not exercise original jurisdiction to issue the writ of mandamus requested by Marbury?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "original_relevant_ranges": [
+        [
+          37,
+          40
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          37,
+          40
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved passage outside the original range independently states the Court's original-jurisdiction holding.",
+      "validated": true
+    },
+    {
+      "id": "MAR-05",
+      "type": "reasoning",
+      "question": "Why did the Court conclude that courts must follow the Constitution rather than an ordinary legislative act when the two conflict?",
+      "expected_case": "Marbury v. Madison",
+      "expected_source_file": "marbury_v_madison.pdf",
+      "original_relevant_ranges": [
+        [
+          40,
+          44
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          40,
+          44
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently supplies the judicial-review reasoning required by the question.",
+      "validated": true
+    },
+    {
+      "id": "DRE-01",
+      "type": "facts",
+      "question": "What facts about Dred Scott's residence in Illinois and Fort Snelling formed the basis of his claim to freedom?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "original_relevant_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          5,
+          6
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "Outside passages describing the residence facts came from separate opinions; the original statement-of-case range remains the defensible label.",
+      "validated": true
+    },
+    {
+      "id": "DRE-02",
+      "type": "holding",
+      "question": "Why did the Court conclude that Dred Scott could not sue as a citizen in federal court?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          2
+        ],
+        [
+          31,
+          36
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added controlling-opinion passages explaining the citizenship ruling and resulting lack of federal jurisdiction.",
+      "validated": true
+    },
+    {
+      "id": "DRE-03",
+      "type": "reasoning",
+      "question": "What reasoning did the Court use to support its conclusion about whether people of African descent were included as citizens under the Constitution?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "original_relevant_ranges": [
+        [
+          27,
+          28
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          10,
+          12
+        ],
+        [
+          24,
+          28
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added controlling-opinion passages using founding-era status and constitutional consequences to explain the citizenship conclusion.",
+      "validated": true
+    },
+    {
+      "id": "DRE-04",
+      "type": "legal_rule",
+      "question": "Why did the Court conclude that Congress could not prohibit slaveholders from taking enslaved people into the federal territory at issue?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "original_relevant_ranges": [
+        [
+          3,
+          4
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          3,
+          4
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "Preserved the established decision: retrieved separate-opinion passages were not added to the controlling-rule label.",
+      "validated": true
+    },
+    {
+      "id": "DRE-05",
+      "type": "specific_detail",
+      "question": "How did the Court use early federal naturalization and militia laws as evidence for its interpretation of citizenship?",
+      "expected_case": "Dred Scott v. Sandford",
+      "expected_source_file": "dred_scott_v_sandford.pdf",
+      "original_relevant_ranges": [
+        [
+          27,
+          28
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          27,
+          28
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the saved syllabus passage that expressly discusses the 1790 naturalization law as evidence of the Court's citizenship interpretation.",
+      "validated": true
+    },
+    {
+      "id": "PLE-01",
+      "type": "facts",
+      "question": "What happened after Homer Plessy sat in a railway coach assigned to white passengers and refused to move?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently improves on the original statement of the operative facts.",
+      "validated": true
+    },
+    {
+      "id": "PLE-02",
+      "type": "holding",
+      "question": "What did the Court decide about Louisiana's requirement of separate railway accommodations under the Thirteenth and Fourteenth Amendments?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          17
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages analyzing the Thirteenth and Fourteenth Amendment challenges and affirming the statute.",
+      "validated": true
+    },
+    {
+      "id": "PLE-03",
+      "type": "reasoning",
+      "question": "Why did the majority conclude that legally required racial separation in railway cars did not violate the Fourteenth Amendment?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "original_relevant_ranges": [
+        [
+          14,
+          15
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          8,
+          15
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the majority's preceding police-power, social-equality, and precedent analysis supporting its conclusion.",
+      "validated": true
+    },
+    {
+      "id": "PLE-04",
+      "type": "specific_detail",
+      "question": "What penalties and enforcement powers did Louisiana's Separate Car Act impose on passengers who refused their assigned racial coach?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "original_relevant_ranges": [
+        [
+          4,
+          5
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          5
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the syllabus passage listing the statute's penalties, enforcement authority, and nurse exemption.",
+      "validated": true
+    },
+    {
+      "id": "PLE-05",
+      "type": "dissent_reasoning",
+      "question": "Why did Justice Harlan believe Louisiana's racial-separation law was inconsistent with constitutional equality and civil liberty?",
+      "expected_case": "Plessy v. Ferguson",
+      "expected_source_file": "plessy_v_ferguson.pdf",
+      "original_relevant_ranges": [
+        [
+          19,
+          26
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          19,
+          28
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the concluding pages of Justice Harlan's dissent, which continue his constitutional objection to enforced separation.",
+      "validated": true
+    },
+    {
+      "id": "GID-01",
+      "type": "facts",
+      "question": "What happened when Clarence Gideon asked the Florida trial court to appoint a lawyer for him?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently adds the requested trial facts.",
+      "validated": true
+    },
+    {
+      "id": "GID-02",
+      "type": "holding",
+      "question": "What constitutional right did the Supreme Court hold Florida violated by trying Gideon without appointed counsel?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          5,
+          11
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages explaining why appointed counsel is fundamental and applies to state felony prosecutions.",
+      "validated": true
+    },
+    {
+      "id": "GID-03",
+      "type": "precedent",
+      "question": "Why did the Court overrule Betts v. Brady?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "original_relevant_ranges": [
+        [
+          5,
+          10
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          5,
+          11
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the continuation of the majority's Betts and Powell discussion through the decision to overrule Betts.",
+      "validated": true
+    },
+    {
+      "id": "GID-04",
+      "type": "reasoning",
+      "question": "Why did the Court consider lawyers necessities rather than luxuries in criminal trials?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "original_relevant_ranges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently supplies the requested majority reasoning.",
+      "validated": true
+    },
+    {
+      "id": "GID-05",
+      "type": "specific_detail",
+      "question": "What difficulties did the Court identify that even an intelligent and educated person may face when defending himself without a lawyer?",
+      "expected_case": "Gideon v. Wainwright",
+      "expected_source_file": "gideon_v_wainwright.pdf",
+      "original_relevant_ranges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          10,
+          11
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage lists the specific disadvantages of an uncounseled defendant as directly as the original range.",
+      "validated": true
+    },
+    {
+      "id": "MIR-01",
+      "type": "facts",
+      "question": "What happened during Ernesto Miranda's interrogation before police obtained his confession?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "original_relevant_ranges": [
+        [
+          56,
+          57
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          56,
+          57
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently states the Miranda-specific interrogation facts.",
+      "validated": true
+    },
+    {
+      "id": "MIR-02",
+      "type": "holding",
+      "question": "Why did the Supreme Court find Miranda's statements inadmissible?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "original_relevant_ranges": [
+        [
+          57,
+          57
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          3
+        ],
+        [
+          57,
+          57
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the syllabus holding that statements obtained without warnings and waiver were inadmissible.",
+      "validated": true
+    },
+    {
+      "id": "MIR-03",
+      "type": "reasoning",
+      "question": "Why did the Court believe custodial interrogation could threaten a person's ability to exercise the Fifth Amendment privilege voluntarily?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "original_relevant_ranges": [
+        [
+          22,
+          23
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          22,
+          23
+        ],
+        [
+          32,
+          44
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages explaining custodial pressure and the safeguards adopted to counter it.",
+      "validated": true
+    },
+    {
+      "id": "MIR-04",
+      "type": "legal_rule",
+      "question": "What safeguards did the Court require before custodial interrogation?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          2
+        ],
+        [
+          34,
+          40
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the majority's detailed statement of the warnings, counsel procedure, waiver, and cessation rules.",
+      "validated": true
+    },
+    {
+      "id": "MIR-05",
+      "type": "specific_detail",
+      "question": "Why does simply remaining silent after receiving warnings not establish a valid waiver of Miranda rights?",
+      "expected_case": "Miranda v. Arizona",
+      "expected_source_file": "miranda_v_arizona.pdf",
+      "original_relevant_ranges": [
+        [
+          40,
+          40
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          40,
+          40
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage directly answers the effect of simply remaining silent.",
+      "validated": true
+    },
+    {
+      "id": "TIN-01",
+      "type": "facts",
+      "question": "Why did the Tinker students wear black armbands, and what did the schools do in response?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently gives both why the students wore the armbands and the school's response.",
+      "validated": true
+    },
+    {
+      "id": "TIN-02",
+      "type": "holding",
+      "question": "Why did the Court hold that the students' wearing of black armbands was constitutionally protected?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          12
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages treating the armbands as protected expression absent substantial disruption or invasion of others' rights.",
+      "validated": true
+    },
+    {
+      "id": "TIN-03",
+      "type": "legal_principle",
+      "question": "What did the Court mean when it said students and teachers do not shed their freedom-of-speech rights at the schoolhouse gate?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_relevant_ranges": [
+        [
+          4,
+          5
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added majority passages explaining the scope and limits of student speech rights in school.",
+      "validated": true
+    },
+    {
+      "id": "TIN-04",
+      "type": "reasoning",
+      "question": "What must school officials show before prohibiting student expression on the ground that it may disrupt school?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_relevant_ranges": [
+        [
+          6,
+          7
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          6,
+          7
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the majority's later applications of the disruption and rights-of-others standard.",
+      "validated": true
+    },
+    {
+      "id": "TIN-05",
+      "type": "specific_detail",
+      "question": "What evidence suggested that the school had singled out anti-Vietnam-war armbands rather than prohibiting political symbols generally?",
+      "expected_case": "Tinker v. Des Moines School Dist.",
+      "expected_source_file": "tinker_v_des_moines_school_dist.pdf",
+      "original_relevant_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          8,
+          9
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently demonstrates the requested selective-treatment comparison.",
+      "validated": true
+    },
+    {
+      "id": "NYT-01",
+      "type": "facts",
+      "question": "What classified material was the United States trying to prevent the New York Times and Washington Post from publishing?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently gives the requested description of the classified material.",
+      "validated": true
+    },
+    {
+      "id": "NYT-02",
+      "type": "holding",
+      "question": "Why did the Court refuse to sustain the government's attempt to stop publication?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          2
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          19,
+          22
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Preserved the established decision: added concurring reasoning explains why the attempted restraint failed.",
+      "validated": true
+    },
+    {
+      "id": "NYT-03",
+      "type": "legal_rule",
+      "question": "What burden does the government face when seeking a prior restraint on publication?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "original_relevant_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          2,
+          2
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          19,
+          20
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Preserved the established decision: added passages address the government's burden and the prior-restraint standard.",
+      "validated": true
+    },
+    {
+      "id": "NYT-04",
+      "type": "reasoning",
+      "question": "Why did Justice Black believe a free press must be able to publish information about government without prior censorship?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "original_relevant_ranges": [
+        [
+          3,
+          7
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          3,
+          7
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage answers the question through Justice Black's specified reasoning.",
+      "validated": true
+    },
+    {
+      "id": "NYT-05",
+      "type": "specific_detail",
+      "question": "What extremely narrow circumstances did Justice Brennan identify as potentially capable of justifying prior restraint?",
+      "expected_case": "New York Times Co. v. United States",
+      "expected_source_file": "new_york_times_co_v_united_states.pdf",
+      "original_relevant_ranges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          13,
+          14
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage answers the question through Justice Brennan's specified reasoning.",
+      "validated": true
+    },
+    {
+      "id": "OBE-01",
+      "type": "facts",
+      "question": "What two constitutional questions concerning same-sex marriage did the Supreme Court agree to decide?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "original_relevant_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          12,
+          13
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside passage independently identifies both questions the Court granted review to decide.",
+      "validated": true
+    },
+    {
+      "id": "OBE-02",
+      "type": "holding",
+      "question": "What did the Court hold the Fourteenth Amendment requires States to do regarding same-sex marriages?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "original_relevant_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          5
+        ],
+        [
+          35,
+          39
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added syllabus and majority-conclusion passages stating both the licensing and recognition holdings.",
+      "validated": true
+    },
+    {
+      "id": "OBE-03",
+      "type": "reasoning",
+      "question": "What principles did the Court identify for why the fundamental right to marry applies to same-sex couples?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "original_relevant_ranges": [
+        [
+          22,
+          27
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          1,
+          5
+        ],
+        [
+          22,
+          30
+        ]
+      ],
+      "relevance_changed": true,
+      "review_notes": "Added the syllabus enumeration and majority continuation of the four principles supporting the fundamental-right conclusion.",
+      "validated": true
+    },
+    {
+      "id": "OBE-04",
+      "type": "constitutional_principle",
+      "question": "How did the Court connect the Due Process Clause and Equal Protection Clause in its analysis of same-sex marriage?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "original_relevant_ranges": [
+        [
+          4,
+          4
+        ],
+        [
+          28,
+          32
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          4,
+          4
+        ],
+        [
+          28,
+          32
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "No saved outside majority passage independently adds to the original due-process and equal-protection explanation.",
+      "validated": true
+    },
+    {
+      "id": "OBE-05",
+      "type": "specific_fact",
+      "question": "What circumstances involving James Obergefell and John Arthur illustrated the practical consequences of Ohio's refusal to recognize their marriage?",
+      "expected_case": "Obergefell v. Hodges",
+      "expected_source_file": "obergefell_v_hodges.pdf",
+      "original_relevant_ranges": [
+        [
+          15,
+          15
+        ]
+      ],
+      "relevant_ranges": [
+        [
+          15,
+          15
+        ]
+      ],
+      "relevance_changed": false,
+      "review_notes": "Outside passages mention harm more generally but do not supply the requested terminal-illness and death-certificate facts.",
+      "validated": true
+    }
+  ]
+}
