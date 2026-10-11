@@ -117,3 +117,16 @@ def runtime_vector_store_path() -> Path:
     value = get_runtime_setting(RUNTIME_VECTOR_STORE_SETTING)
     path = Path(value).expanduser() if value else DEFAULT_RUNTIME_VECTOR_STORE
     return (path if path.is_absolute() else PROJECT_DIR / path).resolve()
+
+
+def evidence_budget_config() -> tuple[int, float]:
+    """Evidence-only estimated token budget; history/instructions/output separate."""
+    try:
+        budget = int(get_runtime_setting("COURTLENS_EVIDENCE_TOKEN_BUDGET") or "12000")
+        margin = float(get_runtime_setting("COURTLENS_EVIDENCE_SAFETY_MARGIN") or "0.10")
+    except ValueError:
+        raise RuntimeError("Evidence budget settings require an integer token budget and numeric safety margin") from None
+    import math
+    if budget < 0 or not math.isfinite(margin) or not 0 <= margin < 1:
+        raise RuntimeError("Evidence token budget must be nonnegative and safety margin must be between 0 and 1")
+    return budget, margin

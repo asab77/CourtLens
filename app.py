@@ -5,7 +5,7 @@ import re
 import streamlit as st
 
 from evaluation import SCORE_NAMES, append_evaluation, build_evaluation_record
-from gateway_config import get_gateway_api_key, vercel_generation_config
+from gateway_config import get_gateway_api_key, vercel_generation_config, runtime_vector_store_path
 from rag import (
     configured_answer_models,
     CITATION_PATTERN,
@@ -14,7 +14,7 @@ from rag import (
     generate_grounded_answer_from_evidence,
 )
 from retrieve import semantic_search
-from runtime_assets import load_runtime_vector_store
+from assistant_integration import (resource_identity, initialize_resources, answer_question, AssistantError, HYBRID, DENSE)
 
 
 st.set_page_config(
@@ -123,9 +123,9 @@ st.markdown(
 
 
 @st.cache_resource
-def cached_vector_store():
-    """Load the local index once per Streamlit server process."""
-    return load_runtime_vector_store()
+def cached_live_resources(asset_path, provenance_identity):
+    """Cache validated FAISS/BM25 by path and corpus version, never credentials."""
+    return initialize_resources(asset_path, provenance_identity)
 
 
 def passage_preview(text: str, limit: int = 420) -> str:
@@ -178,7 +178,7 @@ def show_retrieval_result(result: dict, rank: int) -> None:
             st.subheader(f"#{rank}  {metadata['case_name']}")
             st.caption(f"Pages {page_label(metadata)}")
         with score:
-            st.caption(f"{result['similarity']:.0%} similarity")
+            st.caption(f"Dense similarity {result['similarity']:.3f}")
         st.write(passage_preview(result["text"]))
         st.caption(f"Chunk {metadata['chunk_index']}")
         with st.expander("View full passage", expanded=False):
@@ -215,11 +215,24 @@ def show_evidence(evidence: list[dict], label: str = "View retrieved evidence") 
                 with column:
                     with st.container(border=True):
                         st.markdown(f"**[{item['source_id']}] {metadata['case_name']}**")
-                        st.caption(
-                            f"Pages {page_label(metadata)} · Similarity {item['similarity']:.2f} · "
-                            f"Chunk {metadata['chunk_index']}"
-                        )
-                        st.text(display_text(item["text"]))
+                        st.caption(f"PDF pages {page_label(metadata)} · Chunk {metadata['chunk_index']} · Source: {source_label(metadata)}")
+                        st.caption(f"Opinion: {metadata.get('opinion_type') or 'Unknown'} · Raw author: {metadata.get('author') or 'Unknown'}")
+                        sections = '; '.join(' '.join(str(section.get(k) or '') for k in ('marker', 'title')).strip()
+                                             for section in metadata.get('sections') or [])
+                        if sections:
+                            st.caption(f"Sections: {sections}")
+                        if item.get('score_type') == 'rrf':
+                            st.caption(f"Hybrid rank {item['hybrid_rank']} · RRF score {item['rrf_score']:.6f}")
+                            diagnostics = []
+                            if item.get('dense_similarity') is not None:
+                                diagnostics.append(f"Dense similarity {item['dense_similarity']:.3f}")
+                            if item.get('bm25_score') is not None:
+                                diagnostics.append(f"BM25 score {item['bm25_score']:.3f}")
+                            if diagnostics:
+                                st.caption(' · '.join(diagnostics))
+                        elif item.get('similarity') is not None:
+                            st.caption(f"Dense similarity {item['similarity']:.3f}")
+                        st.text(item["text"])
 
 
 def show_assistant_message(message: dict) -> None:
@@ -234,6 +247,11 @@ def show_assistant_message(message: dict) -> None:
             show_source_summary(message["content"], evidence)
             st.caption("Grounded in retrieved CourtLens evidence")
             show_evidence(evidence)
+        if message.get("context_usage"):
+            usage = message["context_usage"]
+            st.caption(f"Evidence context: {usage['evidence_tokens']} estimated tokens; {usage['skipped_count']} passages skipped by budget. IDs validate references, not factual support.")
+            if message.get("context_status") == "insufficient_context":
+                st.caption("No evidence fit the configured context budget; no generation request was made.")
 
 
 def show_comparison_answer(label: str, model_name: str, answer: str, evidence: list[dict]) -> None:
@@ -255,10 +273,12 @@ METRIC_DETAILS = {
 
 
 try:
-    vector_store = cached_vector_store()
+    asset_path = runtime_vector_store_path()
+    resources = cached_live_resources(str(asset_path), resource_identity(asset_path))
+    vector_store = resources.vector_store
     index, records, manifest = vector_store
 except Exception as error:
-    st.error(f"CourtLens could not load the local vector store: {error}")
+    st.error("CourtLens could not load validated runtime assets. Check COURTLENS_VECTOR_STORE_PATH and the frozen asset bundle; no rebuild was attempted.")
     st.stop()
 
 case_names = sorted({record["metadata"]["case_name"] for record in records})
@@ -295,6 +315,9 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
     if mode == "AI Assistant":
+        retrieval_strategy = st.selectbox("Assistant retrieval strategy", [HYBRID, DENSE], key="assistant_retrieval_strategy")
+        if retrieval_strategy == HYBRID:
+            st.caption("Hybrid uses locked Top-5 dense and BM25 candidates, RRF k=60, and five final results. Top-K applies to dense-only retrieval.")
         st.caption("Each question retrieves fresh evidence from the indexed opinions.")
 
 case_filter = None if selected_case == "All cases" else selected_case
@@ -346,7 +369,7 @@ if mode == "Retrieval":
                         vector_store=vector_store,
                     )
             except Exception as error:
-                st.error(f"Search failed: {error}")
+                st.error("Search failed. Check the CourtLens gateway configuration and connection.")
             else:
                 st.divider()
                 st.header("Retrieved Evidence")
@@ -419,38 +442,19 @@ else:
         if prompt:
             st.session_state.court_messages.append({"role": "user", "content": prompt})
             try:
-                if not key_is_configured():
-                    raise ValueError(
-                        "CourtLens AI Gateway API key (AI_GATEWAY_API_KEY) is not configured. Add it to Streamlit "
-                        "secrets or your local environment."
-                    )
-                vercel_generation_config()  # Fail before retrieval if generation is not configured.
                 with st.spinner("Retrieving evidence and drafting a grounded answer…"):
-                    results = semantic_search(
-                        prompt,
-                        top_k=top_k,
-                        case_name=case_filter,
-                        vector_store=vector_store,
-                    )
-                    answer, evidence = generate_grounded_answer(
-                        prompt,
-                        results,
-                        answer_models[answer_model_name],
-                        conversation_history=st.session_state.court_messages[:-1],
+                    message = answer_question(
+                        prompt, resources, answer_models.get(answer_model_name),
+                        st.session_state.court_messages[:-1], strategy=retrieval_strategy,
+                        case_name=case_filter, dense_top_k=top_k,
                     )
             except Exception as error:
+                public_message = str(error) if isinstance(error, AssistantError) else "CourtLens could not complete the request. Check configuration and try again."
                 st.session_state.court_messages.append(
-                    {"role": "assistant", "content": f"I could not complete the request: {error}"}
+                    {"role": "assistant", "content": public_message}
                 )
             else:
-                st.session_state.court_messages.append(
-                    {
-                        "role": "assistant",
-                        "content": answer,
-                        "evidence": evidence,
-                        "model_name": answer_model_name,
-                    }
-                )
+                st.session_state.court_messages.append(message)
             st.rerun()
 
     else:
@@ -508,7 +512,7 @@ else:
                             answer_models[model_b_name],
                         )
                 except Exception as error:
-                    st.error(f"Comparison failed: {error}")
+                    st.error("Comparison failed. Check the configured models and gateway connection.")
                 else:
                     chunk_ids = [item["metadata"]["chunk_index"] for item in evidence]
                     st.session_state.comparison_result = {

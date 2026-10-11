@@ -160,9 +160,15 @@ class ExperimentTests(unittest.TestCase):
 
     def test_saved_score_replay_without_model_loading(self):
         if not (e.ROOT/e.ANALYSIS).exists():self.skipTest('Real scores not generated yet')
-        with patch.object(socket,'getaddrinfo',side_effect=AssertionError('Network forbidden')),patch.object(socket.socket,'connect',side_effect=AssertionError('Network forbidden')),patch.object(e,'LocalScorer',side_effect=AssertionError('No model loading in replay')):
+        current=e.protected_snapshot()
+        historical=e.load(e.ROOT/e.ANALYSIS)['protected_artifacts']['before_sha256']
+        # Replay historical report provenance, not files added in later phases.
+        # Independently verify both historical inputs and every current file.
+        self.assertTrue(all(current.get(p)==digest for p,digest in historical.items()))
+        with patch.object(socket,'getaddrinfo',side_effect=AssertionError('Network forbidden')),patch.object(socket.socket,'connect',side_effect=AssertionError('Network forbidden')),patch.object(e,'LocalScorer',side_effect=AssertionError('No model loading in replay')),patch.object(e,'protected_snapshot',return_value=historical):
             outputs=e.build_outputs(e.ReplayScorer())
         self.assertTrue(all((e.ROOT/p).read_bytes()==text.encode() for p,text in outputs.items()))
+        self.assertEqual(current,e.protected_snapshot())
 
     def test_writer_new_paths_only(self):
         outputs={p:'test fixture\n' for p in e.output_paths()}

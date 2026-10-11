@@ -3,3 +3,6 @@ streamlit>=1.40,<2.0
 openai>=2.0,<3.0
 faiss-cpu>=1.12,<2.0
 numpy>=2.0,<3.0
+
+# Local token counting for bounded generation evidence.
+tiktoken

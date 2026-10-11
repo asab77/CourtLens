@@ -1,10 +1,12 @@
 """CourtLens provider migration tests with mocked clients and Streamlit UI."""
 import os
+import socket
 from pathlib import Path
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
 
+import assistant_integration as integration
 import gateway_config as config
 import rag
 import retrieve
@@ -18,7 +20,7 @@ class ApplicationGatewayTests(unittest.TestCase):
         self.client.chat.completions.create.return_value = SimpleNamespace(
             choices=[SimpleNamespace(message=SimpleNamespace(content='Supported answer [S1].'))])
         self.evidence = [{'source_id': 'S1', 'text': 'Full evidence text.',
-                          'metadata': {'case_name': 'Case', 'page_start': 1, 'page_end': 2}}]
+                          'metadata': {'case_name': 'Case', 'source_file': 'case.pdf', 'chunk_index': 0, 'page_start': 1, 'page_end': 2}}]
 
     def test_active_embedding_client_and_default_model(self):
         with patch.object(retrieve, 'vercel_embedding_config', return_value=self.config) as configured:
@@ -98,13 +100,21 @@ class ApplicationUITests(unittest.TestCase):
         from streamlit.testing.v1 import AppTest
         self.model = 'verified-test/chat'
         self.patches = [
+            patch.object(socket, 'getaddrinfo', side_effect=AssertionError('Network forbidden in UI tests')),
+            patch.object(socket.socket, 'connect', side_effect=AssertionError('Network forbidden in UI tests')),
             patch.object(config, 'get_gateway_api_key', return_value='fake-key'),
             patch.object(config, 'require_experiment_api_key', return_value='fake-key'),
             patch.object(config, 'get_runtime_setting', side_effect=lambda name: self.model if name == 'VERCEL_GENERATION_MODEL' else ''),
             patch.object(rag, 'get_runtime_setting', side_effect=lambda name: self.model if name == 'VERCEL_GENERATION_MODEL' else ''),
+            patch.object(integration, 'get_gateway_api_key', return_value='fake-key'),
+            patch.object(integration, 'get_runtime_setting', side_effect=lambda name: self.model if name == 'VERCEL_GENERATION_MODEL' else ''),
             patch('runtime_assets.load_runtime_vector_store', return_value=self.store),
+            patch.object(integration, 'retrieve_hybrid', return_value=[dict(
+                vector_id=0, corpus_index=0, hybrid_rank=1, rrf_score=2/61, score_type='rrf',
+                dense_similarity=.9, bm25_score=1., text=self.store[1][0]['text'], metadata=self.store[1][0]['metadata'])]),
             patch.object(retrieve, 'semantic_search', return_value=[dict(
                 vector_id=0, similarity=0.9, text=self.store[1][0]['text'], metadata=self.store[1][0]['metadata'])]),
+            patch.object(integration, 'semantic_search', side_effect=lambda *args, **kwargs: self.mocks[-3](*args, **kwargs)),
             patch.object(rag, 'vercel_client'),
         ]
         self.mocks = [p.start() for p in self.patches]
@@ -131,7 +141,7 @@ class ApplicationUITests(unittest.TestCase):
         self.app.text_input(key='retrieval_question').set_value('Find evidence')
         next(b for b in self.app.button if b.label == 'Search').click().run()
         self.assertEqual(len(self.app.exception), 0)
-        self.mocks[-2].assert_called_once()
+        self.mocks[-3].assert_called_once()
         self.mocks[-1].assert_not_called()
         self.assertTrue(any(h.value == 'Retrieved Evidence' for h in self.app.header))
 
@@ -150,7 +160,7 @@ class ApplicationUITests(unittest.TestCase):
         self.app.chat_input[0].set_value('A question').run()
         self.assertEqual(len(self.app.exception), 0)
         self.assertIn('VERCEL_GENERATION_MODEL', self.app.session_state['court_messages'][-1]['content'])
-        self.mocks[-2].assert_not_called()
+        self.mocks[-3].assert_not_called()
         self.mocks[-1].assert_not_called()
 
 

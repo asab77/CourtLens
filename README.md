@@ -44,7 +44,11 @@ structure-aware store. `COURTLENS_VECTOR_STORE_PATH` optionally selects the asse
 bundle; its default is
 `data/experiments/chunking/structure_aware_v1/vector_store/`.
 The original dense cosine retrieval, case filtering, Top-K behavior and source
-citation format are preserved. Hybrid retrieval is not integrated.
+citation format are preserved. The AI Assistant now defaults to structure-aware
+hybrid retrieval (Dense Top-5 + BM25 Top-5, RRF k=60, final Top-5), with an explicit
+Dense only option. The Retrieval tab remains dense. See
+[the Streamlit integration guide](docs/phase7a2d_streamlit_integration.md) for
+resource caching, evidence budgeting, attribution and smoke-test prerequisites.
 
 Existing indexes do not need rebuilding. The production `data/vector_store/`
 contains historical NYU metadata and is preserved; supported runtime loading
