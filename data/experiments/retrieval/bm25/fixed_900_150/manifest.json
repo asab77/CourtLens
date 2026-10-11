@@ -1,0 +1,52 @@
+{
+  "average_lexical_length": 422.4799331103679,
+  "b": 0.75,
+  "benchmark_sha256": "aec09e3d75f9f18aec5b2448e7f420c0443bf9eb8a59e135f4a900f8a2ffd668",
+  "chunk_count": 598,
+  "chunk_identity_text_sequence_sha256": "33c5947b3c335a418c19a53f46f120402924baf6fbe95beb3ec3dfc5429b287e",
+  "collection": "fixed_900_150",
+  "corpus_hash_method": "SHA-256 of sorted UTF-8 JSON mapping relative artifact paths to their byte SHA-256 hashes",
+  "corpus_order": "sorted artifact paths; original JSONL row order",
+  "corpus_sha256": "6c727ec3e5f67400ecbee75ff5c0d5f4e230159826bdbd88623bea4f7cf559ba",
+  "corpus_source_sha256": {
+    "data/experiments/chunking/900_150/chunks/dred_scott_v_sandford.jsonl": "adaf3e4ebcc1f39a4de19548a4757ea57ad248a49eebaeef8ad55a3123432c40",
+    "data/experiments/chunking/900_150/chunks/gideon_v_wainwright.jsonl": "2254a634b4c027e8049ee0488dfed74454388d805fa5e6a06f3baa0a001c8713",
+    "data/experiments/chunking/900_150/chunks/marbury_v_madison.jsonl": "eb15fe41780d6e0451f637bbb1a62ee2a5f2f57e3f6cdd857df12e31cdf2edd4",
+    "data/experiments/chunking/900_150/chunks/miranda_v_arizona.jsonl": "e62baecf9c2b45c05fc41ded6420f9951b87b816a0de8b2738d04308a7f8ada0",
+    "data/experiments/chunking/900_150/chunks/new_york_times_co_v_united_states.jsonl": "a13bd800e9efe0fa3bc16127e0f7574a7f802b11719533aa19d6f9c762190ce0",
+    "data/experiments/chunking/900_150/chunks/obergefell_v_hodges.jsonl": "2ab41ed081307b758da2ce031174e0815eef6622a2659b4b7871e1148c54368d",
+    "data/experiments/chunking/900_150/chunks/plessy_v_ferguson.jsonl": "fd71d62c3f41f0cba8eeb960dc950a77a17b0d50a69c7fa83402ebed283e4203",
+    "data/experiments/chunking/900_150/chunks/tinker_v_des_moines_school_dist.jsonl": "a68cd3727081d496f32e22828fdf7b4eab5882d5e541f2b7273d24ce624341eb"
+  },
+  "dense_result_sha256": "715c27443df5fafe5054e4ae5629bb58a611daeeb0ecc15edf9f168b47856504",
+  "evaluation_date": "2026-10-10",
+  "experiment": "CourtLens Phase 5A BM25",
+  "foreign_sturgis_honold_tokens_excluded": 0,
+  "frozen_token_count_distribution": {
+    "max": 897,
+    "mean": 602.5117056856187,
+    "median": 614.5,
+    "min": 5
+  },
+  "idf": "ln(1+(N-df+.5)/(df+.5))",
+  "implementation": "standard-library text-only Okapi BM25 with positive smoothed Robertson IDF",
+  "implementation_sha256": {
+    "benchmark_relevance.py": "807c5c0264d432c5c61d676923a1eff852da7d50477d4faabd41c726d7496949",
+    "bm25_retrieval.py": "c2c790c5984e6ee57f1db9f468eaa8035195d857e702b9e75e8b1f26ddd98f80",
+    "finalize_chunking_benchmark.py": "23656cb2d5d5312c32bce453e6cd7beb4db6c402051f6cbbdcbb5789e9267cca",
+    "run_bm25_experiment.py": "53eb1ac16f741367adac67292b120b7a8641c763f25fb900990c9b286ced1acd"
+  },
+  "k1": 1.5,
+  "mrr_depth": 5,
+  "official_metric_depth": 5,
+  "parameters_tuned": false,
+  "query_tf": "linear multiplicity; sorted query-term accumulation",
+  "question_count": 40,
+  "ranking_uses_labels_or_metadata": false,
+  "saved_ranking_depth": 20,
+  "tie_break": "score descending; stable original corpus ordinal ascending",
+  "tokenizer_description": "Unicode NFKC then casefold; contiguous Unicode letters/numbers form terms; combining marks continue an existing term. All other characters, including punctuation, apostrophes, hyphens, decimal points, and underscores, separate terms. Numeric strings remain terms. No stemming, stopword removal, OCR repair, synonyms, expansion, or legal normalization. Frozen text, including headers and PDF markers, is used as-is.",
+  "tokenizer_version": "nfkc-casefold-unicode-letter-number-marks-v1",
+  "vocabulary_size": 17788,
+  "zero_score_policy": "exclude; never pad; no-match/empty query has no results and zero Top-5 metrics"
+}

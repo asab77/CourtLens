@@ -1,0 +1,40 @@
+{
+  "bm25_candidate_depth": 5,
+  "chunk_count": 598,
+  "collection": "fixed_900_150",
+  "dense_candidate_depth": 5,
+  "foreign_tokens_excluded": 0,
+  "identity": "corpus namespace + source_file + original chunk_index; original IDs additionally verified",
+  "input_sha256": {
+    "data/evaluation/chunking_benchmark_v2.json": "aec09e3d75f9f18aec5b2448e7f420c0443bf9eb8a59e135f4a900f8a2ffd668",
+    "data/experiments/chunking/900_150/chunks/dred_scott_v_sandford.jsonl": "adaf3e4ebcc1f39a4de19548a4757ea57ad248a49eebaeef8ad55a3123432c40",
+    "data/experiments/chunking/900_150/chunks/gideon_v_wainwright.jsonl": "2254a634b4c027e8049ee0488dfed74454388d805fa5e6a06f3baa0a001c8713",
+    "data/experiments/chunking/900_150/chunks/marbury_v_madison.jsonl": "eb15fe41780d6e0451f637bbb1a62ee2a5f2f57e3f6cdd857df12e31cdf2edd4",
+    "data/experiments/chunking/900_150/chunks/miranda_v_arizona.jsonl": "e62baecf9c2b45c05fc41ded6420f9951b87b816a0de8b2738d04308a7f8ada0",
+    "data/experiments/chunking/900_150/chunks/new_york_times_co_v_united_states.jsonl": "a13bd800e9efe0fa3bc16127e0f7574a7f802b11719533aa19d6f9c762190ce0",
+    "data/experiments/chunking/900_150/chunks/obergefell_v_hodges.jsonl": "2ab41ed081307b758da2ce031174e0815eef6622a2659b4b7871e1148c54368d",
+    "data/experiments/chunking/900_150/chunks/plessy_v_ferguson.jsonl": "fd71d62c3f41f0cba8eeb960dc950a77a17b0d50a69c7fa83402ebed283e4203",
+    "data/experiments/chunking/900_150/chunks/tinker_v_des_moines_school_dist.jsonl": "a68cd3727081d496f32e22828fdf7b4eab5882d5e541f2b7273d24ce624341eb",
+    "data/experiments/chunking/900_150/vector_store/records.jsonl": "f56cbda97ec73461c0c35f97cbc7575ce9ecf55c77beb5873377285c9d595f69",
+    "data/experiments/chunking/benchmark_v2_results.json": "715c27443df5fafe5054e4ae5629bb58a611daeeb0ecc15edf9f168b47856504",
+    "data/experiments/retrieval/bm25/fixed_900_150/manifest.json": "9ebd24021dfca4cead005e3c089dd9976e12f04fe082c5c641c5e521ed3e5260",
+    "data/experiments/retrieval/bm25/fixed_900_150/rankings_top20.json": "70f7b2c61b99d4e3a643be09180b99750ff9dc2bb187bd19c782c2f024c7ad91",
+    "data/experiments/retrieval/bm25/fixed_900_150/results.json": "e16284a565a85546d8423452e1d3763c9a1509d81ade148a0013557649ac2b02"
+  },
+  "k": 60,
+  "parameters_tuned": false,
+  "phase": "5B",
+  "question_count": 40,
+  "ranking_uses_raw_scores_metadata_or_labels": false,
+  "saved_bm25_depth": 20,
+  "saved_dense_depths": [
+    5
+  ],
+  "source_sha256": {
+    "benchmark_relevance.py": "807c5c0264d432c5c61d676923a1eff852da7d50477d4faabd41c726d7496949",
+    "finalize_chunking_benchmark.py": "23656cb2d5d5312c32bce453e6cd7beb4db6c402051f6cbbdcbb5789e9267cca",
+    "hybrid_retrieval.py": "bb328c23c170e08ccb4c1028a01ed8281a73b9ba2ce2ce13c0d00b17bcbc59f1",
+    "run_hybrid_experiment.py": "8140a3f243e1e36d0ed67fa9ba2fd257ec1c11b68085f59fd2a67cd55f52a285"
+  },
+  "tie_break": "original frozen corpus ordinal ascending"
+}

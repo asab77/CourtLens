@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import finalize_benchmark_v2 as v2
 from finalize_chunking_benchmark import aggregate, score_retrieved
@@ -103,7 +104,14 @@ class BenchmarkV2Tests(unittest.TestCase):
 
     def test_deterministic_outputs_match_created_files(self):
         self.assertEqual(self.outputs, v2.build_outputs())
-        for path, text in self.outputs.items():
+        # Historical reports recorded the data inventory at Phase 4C.2 creation.
+        # Later phase outputs must not force rewriting those frozen reports.
+        # Recompute each historical input's CURRENT hash, so changes still fail.
+        historical = v2.load(v2.ROOT / v2.ANALYSIS)['protected_artifacts']['before_sha256']
+        current_historical = {path: v2.sha(v2.ROOT / path) for path in historical}
+        with patch.object(v2, 'protected_snapshot', return_value=current_historical):
+            historical_outputs = v2.build_outputs()
+        for path, text in historical_outputs.items():
             self.assertEqual((v2.ROOT / path).read_bytes(), text.encode('utf-8'))
         expected_hash = v2.sha(v2.ROOT / v2.V2)
         self.assertEqual(self.analysis['provenance']['v2_benchmark_sha256'], expected_hash)

@@ -1,0 +1,33 @@
+{
+  "bm25_candidate_depth": 5,
+  "chunk_count": 433,
+  "collection": "structure_aware_v1",
+  "dense_candidate_depth": 5,
+  "foreign_tokens_excluded": 200,
+  "identity": "corpus namespace + source_file + original chunk_index; original IDs additionally verified",
+  "input_sha256": {
+    "data/evaluation/chunking_benchmark_v2.json": "aec09e3d75f9f18aec5b2448e7f420c0443bf9eb8a59e135f4a900f8a2ffd668",
+    "data/experiments/chunking/benchmark_v2_results.json": "715c27443df5fafe5054e4ae5629bb58a611daeeb0ecc15edf9f168b47856504",
+    "data/experiments/chunking/structure_aware_v1/chunks.jsonl": "0feb95376bd2a3031d7df8ff87693c18ab5df757da002a2ff042040713a73fd4",
+    "data/experiments/chunking/structure_aware_v1/vector_store/records.jsonl": "b736787bd3a2eae7ee8c8f029e18cf94a38332913ffe40ee44300c32002c4bce",
+    "data/experiments/retrieval/bm25/structure_aware_v1/manifest.json": "582767fa34c248623a446c2cb880796e0cb438c564f1222db751496602e5a880",
+    "data/experiments/retrieval/bm25/structure_aware_v1/rankings_top20.json": "26d44ea9476e9548b91c15df771d4ab9486e37b3239b91d557a58e932d807db2",
+    "data/experiments/retrieval/bm25/structure_aware_v1/results.json": "1a522a0320c82b24ba92012c46c91b15c3f137857150d1a06958f668e7a7699c"
+  },
+  "k": 60,
+  "parameters_tuned": false,
+  "phase": "5B",
+  "question_count": 40,
+  "ranking_uses_raw_scores_metadata_or_labels": false,
+  "saved_bm25_depth": 20,
+  "saved_dense_depths": [
+    5
+  ],
+  "source_sha256": {
+    "benchmark_relevance.py": "807c5c0264d432c5c61d676923a1eff852da7d50477d4faabd41c726d7496949",
+    "finalize_chunking_benchmark.py": "23656cb2d5d5312c32bce453e6cd7beb4db6c402051f6cbbdcbb5789e9267cca",
+    "hybrid_retrieval.py": "bb328c23c170e08ccb4c1028a01ed8281a73b9ba2ce2ce13c0d00b17bcbc59f1",
+    "run_hybrid_experiment.py": "8140a3f243e1e36d0ed67fa9ba2fd257ec1c11b68085f59fd2a67cd55f52a285"
+  },
+  "tie_break": "original frozen corpus ordinal ascending"
+}
