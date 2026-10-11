@@ -23,6 +23,9 @@ from gateway_config import (
     EXPERIMENT_GATEWAY_BASE_URL,
     EXPERIMENT_GATEWAY_PROVIDER,
     GATEWAY_BASE_URL,
+    LEGACY_NYU_BASE_URL,
+    LEGACY_NYU_EMBEDDING_MODEL,
+    LEGACY_NYU_PROVIDER,
     get_experiment_api_key,
     require_experiment_api_key,
 )
@@ -116,10 +119,10 @@ class ExperimentalStoreTests(unittest.TestCase):
                 expected_gateway_base_url=EXPERIMENT_GATEWAY_BASE_URL,
             )
             self.assertEqual(index.ntotal, len(records))
-            with self.assertRaisesRegex(ValueError, "different embedding model"):
-                load_vector_store(store_dir)
+            # Supported defaults now match Vercel.
+            load_vector_store(store_dir)
 
-    def test_legacy_defaults_still_validate_legacy_store(self):
+    def test_historical_store_requires_explicit_legacy_metadata(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             store_dir = Path(temp_dir)
             save_vector_store(
@@ -127,13 +130,20 @@ class ExperimentalStoreTests(unittest.TestCase):
                 self.embeddings.copy(),
                 ["case.jsonl"],
                 vector_store_dir=store_dir,
+                gateway_base_url=LEGACY_NYU_BASE_URL,
+                gateway_provider=LEGACY_NYU_PROVIDER,
+                embedding_model=LEGACY_NYU_EMBEDDING_MODEL,
             )
 
-            index, records, manifest = load_vector_store(store_dir)
+            with self.assertRaisesRegex(ValueError, "different embedding model"):
+                load_vector_store(store_dir)
+            index, records, manifest = load_vector_store(
+                store_dir, expected_embedding_model=LEGACY_NYU_EMBEDDING_MODEL,
+                expected_gateway_base_url=LEGACY_NYU_BASE_URL)
 
         self.assertEqual(index.ntotal, len(records))
-        self.assertEqual(manifest["embedding_model"], EMBEDDING_MODEL)
-        self.assertEqual(manifest["gateway_base_url"], GATEWAY_BASE_URL)
+        self.assertEqual(manifest["embedding_model"], LEGACY_NYU_EMBEDDING_MODEL)
+        self.assertEqual(manifest["gateway_base_url"], LEGACY_NYU_BASE_URL)
 
 
 class ExistingChunkValidationTests(unittest.TestCase):

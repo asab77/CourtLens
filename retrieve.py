@@ -10,17 +10,19 @@ from openai import OpenAI
 
 from gateway_config import (
     EMBEDDING_MODEL,
+    DEFAULT_RUNTIME_VECTOR_STORE,
+    runtime_vector_store_path,
     EXPERIMENT_GATEWAY_BASE_URL,
     GATEWAY_BASE_URL,
-    GATEWAY_PROVIDER,
     require_experiment_api_key,
-    require_nyu_api_gateway_api_key,
+    vercel_client,
+    vercel_embedding_config,
 )
 from embedding_retry import call_with_rate_limit_retry
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
-VECTOR_STORE_DIR = PROJECT_DIR / "data" / "vector_store"
+VECTOR_STORE_DIR = DEFAULT_RUNTIME_VECTOR_STORE
 INDEX_PATH = VECTOR_STORE_DIR / "index.faiss"
 RECORDS_PATH = VECTOR_STORE_DIR / "records.jsonl"
 MANIFEST_PATH = VECTOR_STORE_DIR / "manifest.json"
@@ -28,12 +30,13 @@ TOP_K = 5
 
 
 def load_vector_store(
-    vector_store_dir: Path = VECTOR_STORE_DIR,
+    vector_store_dir: Path | None = None,
     *,
     expected_embedding_model: str = EMBEDDING_MODEL,
     expected_gateway_base_url: str = GATEWAY_BASE_URL,
 ) -> tuple[faiss.Index, list[dict], dict]:
     """Load the index and verify its row-to-record mapping."""
+    vector_store_dir = vector_store_dir if vector_store_dir is not None else runtime_vector_store_path()
     index_path = vector_store_dir / "index.faiss"
     records_path = vector_store_dir / "records.jsonl"
     manifest_path = vector_store_dir / "manifest.json"
@@ -58,12 +61,8 @@ def load_vector_store(
 
 
 def embedding_client() -> OpenAI:
-    """Create the shared OpenAI-compatible NYU Gateway embedding client."""
-    return OpenAI(
-        api_key=require_nyu_api_gateway_api_key(),
-        base_url=GATEWAY_BASE_URL,
-        default_headers={"x-portkey-provider": GATEWAY_PROVIDER},
-    )
+    """Create the supported CourtLens Vercel embedding client."""
+    return vercel_client(vercel_embedding_config())
 
 
 def experiment_embedding_client() -> OpenAI:
@@ -140,16 +139,22 @@ def semantic_search(
     if top_k < 1:
         raise ValueError("top_k must be at least 1")
 
-    store = vector_store or load_vector_store()
+    # Import lazily: the read-only runtime validator reuses load_vector_store.
+    if vector_store is None:
+        from runtime_assets import load_runtime_vector_store
+
+        store = load_runtime_vector_store()
+    else:
+        store = vector_store
+    if (store[2].get("embedding_model") != EMBEDDING_MODEL
+            or store[2].get("gateway_base_url") != GATEWAY_BASE_URL):
+        raise ValueError("Vector store is incompatible with CourtLens Vercel query embeddings")
     query_vector = embed_question(question)
     # Searching every row when filtering preserves the true ranking within one case.
     return search_vector_store(query_vector, store, top_k=top_k, case_name=case_name)
 
 
 def main() -> None:
-    if not all(path.exists() for path in (INDEX_PATH, RECORDS_PATH, MANIFEST_PATH)):
-        raise SystemExit("Vector store not found. Run: python3 build_index.py")
-
     question = " ".join(sys.argv[1:]).strip() or input("Question: ").strip()
     if not question:
         raise SystemExit("Please enter a non-empty question.")

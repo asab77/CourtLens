@@ -12,7 +12,8 @@ from gateway_config import (
     EMBEDDING_MODEL,
     GATEWAY_BASE_URL,
     GATEWAY_PROVIDER,
-    require_nyu_api_gateway_api_key,
+    vercel_client,
+    vercel_embedding_config,
 )
 from embedding_retry import call_with_rate_limit_retry
 
@@ -146,11 +147,7 @@ def main() -> None:
     records, chunk_files = load_chunk_records()
     print(f"Loaded {len(records)} chunks from {len(chunk_files)} unique files.")
 
-    client = OpenAI(
-        api_key=require_nyu_api_gateway_api_key(),
-        base_url=GATEWAY_BASE_URL,
-        default_headers={"x-portkey-provider": GATEWAY_PROVIDER},
-    )
+    client = vercel_client(vercel_embedding_config())
     embeddings = create_embeddings(client, [record["text"] for record in records])
     save_vector_store(records, embeddings, chunk_files)
     print(f"Saved {len(records)} vectors to {INDEX_PATH}")

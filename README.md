@@ -1,4 +1,4 @@
-# Supreme Court ingestion: extraction and chunking
+# CourtLens: Supreme Court retrieval and grounded answers
 
 The ingestion pipeline currently has two small steps:
 
@@ -9,8 +9,8 @@ The ingestion pipeline currently has two small steps:
 
 The retrieval pipeline adds two more steps without generating final answers:
 
-3. `build_index.py` embeds every chunk through the NYU AI gateway using
-   `@openai-embedding/text-embedding-3-small`, normalizes the vectors, and saves a
+3. `build_index.py` embeds every chunk through CourtLens AI Gateway (Vercel) using
+   `openai/text-embedding-3-small`, normalizes the vectors, and saves a
    local FAISS cosine-similarity index.
 4. `retrieve.py` embeds a question with the same model and prints the five nearest
    stored chunks.
@@ -27,21 +27,30 @@ python3 extract_text.py
 python3 chunk_text.py
 ```
 
-## Build and test the vector index
+## Configure CourtLens AI Gateway
 
-Set the NYU Gateway key in your local environment, then run:
+CourtLens AI Gateway is our application configuration name for Vercel AI Gateway,
+not a separate server or proxy. Its OpenAI-compatible base URL is
+`https://ai-gateway.vercel.sh/v1`. No NYU credential or Portkey header is used.
 
-```bash
-export NYU_AI_GATEWAY_API_KEY="YOUR_KEY_HERE"
-python3 build_index.py
-python3 retrieve.py
-```
+Set `AI_GATEWAY_API_KEY` securely in Streamlit secrets or the environment.
+For AI Assistant generation, separately set `VERCEL_GENERATION_MODEL` to a
+Vercel chat model ID you have verified. There is no default generation model;
+NYU model IDs are not translated or assumed compatible. Never commit credentials.
+Streamlit secrets take precedence over environment settings.
 
-Both embedding scripts use the OpenAI Python client with the custom OpenAI-compatible
-base URL `https://ai-gateway.apps.cloud.rt.nyu.edu/v1`. The Portkey SDK is not needed.
-They send the workshop provider setting as `x-portkey-provider: azure-openai`.
-The key is loaded centrally from Streamlit secrets or, for local development, the
-`NYU_AI_GATEWAY_API_KEY` environment variable. Never commit the real value.
+Query embeddings use `openai/text-embedding-3-small`, matching the validated
+structure-aware store. `COURTLENS_VECTOR_STORE_PATH` optionally selects the asset
+bundle; its default is
+`data/experiments/chunking/structure_aware_v1/vector_store/`.
+The original dense cosine retrieval, case filtering, Top-K behavior and source
+citation format are preserved. Hybrid retrieval is not integrated.
+
+Existing indexes do not need rebuilding. The production `data/vector_store/`
+contains historical NYU metadata and is preserved; supported runtime loading
+rejects incompatible metadata instead of silently querying it with Vercel.
+`build_index.py` remains an explicit offline ingestion entry point whose future
+builds would use Vercel, but it is not required for running the existing store.
 
 The retrieval script prompts for a question. It also accepts one directly:
 
@@ -58,11 +67,16 @@ streamlit run app.py
 ## Streamlit Community Cloud deployment
 
 The deployed app needs `app.py`, the Python modules it imports, `requirements.txt`,
-and all three files in `data/vector_store/`. In Streamlit Community Cloud, select
+and the frozen runtime asset bundle described in
+[the asset packaging guide](docs/phase7a2a_runtime_configuration.md). The
+structure-aware store is ignored/untracked, so a Git checkout alone is insufficient.
+In Streamlit Community Cloud, select
 Python 3.12 and add this entry under **Advanced settings → Secrets**:
 
 ```toml
-NYU_AI_GATEWAY_API_KEY = "YOUR_KEY_HERE"
+AI_GATEWAY_API_KEY = "YOUR_KEY_HERE"
+# Also set VERCEL_GENERATION_MODEL to your verified Vercel chat model ID.
+# No unverified model example/default is supplied.
 ```
 
 Use `.streamlit/secrets.toml.example` as a format reference only. A real
@@ -75,8 +89,17 @@ evaluation results elsewhere; this project intentionally does not add a database
 
 CourtLens has two modes. Retrieval shows the existing FAISS evidence cards without
 answer generation. AI Assistant performs a fresh FAISS search for each chat question,
-sends only those labeled passages to the selected NYU Gateway answer model, and shows
+sends only those labeled passages to the configured Vercel answer model, and shows
 the grounded response with source mappings and its exact retrieved evidence.
+
+Normal Chat uses the single configured generation model. Compare Models remains
+visible, and saved comparison/session-state behavior is preserved, but new
+comparisons are disabled: this migration supplies only one verified-model setting.
+Two independently verified model configurations will be needed for future
+comparison support. The previous NYU model list has been removed from active UI.
+
+Historical NYU references in frozen manifests, experiment records and research
+reports describe past behavior; they are not supported runtime configuration.
 
 The builder writes three files to `data/vector_store/`:
 

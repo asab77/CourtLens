@@ -4,15 +4,17 @@ import re
 
 from openai import OpenAI
 
-from gateway_config import GATEWAY_BASE_URL, require_nyu_api_gateway_api_key
+from gateway_config import (
+    VERCEL_GENERATION_MODEL_SETTING, get_runtime_setting,
+    vercel_generation_config, vercel_client,
+)
 
 
-ANSWER_MODELS = {
-    "GPT-5.6 Sol": "@gpt56sol/gpt-5.6-sol",
-    "Claude Opus 4.6": "@vertexai/anthropic.claude-opus-4-6",
-    "Gemini 3.7 Flash": "@vertexai/gemini-3.7-flash",
-    "Claude Haiku 4.5": "@vertexai/anthropic.claude-haiku-4-5@20251001",
-}
+def configured_answer_models() -> dict[str, str]:
+    """Expose only the operator-configured model; no legacy or invented IDs."""
+    model = get_runtime_setting(VERCEL_GENERATION_MODEL_SETTING)
+    return {model: model} if model else {}
+
 
 INSUFFICIENT_EVIDENCE_MESSAGE = (
     "The available Supreme Court documents do not provide enough evidence to answer "
@@ -74,7 +76,7 @@ def citation_problem(answer: str, source_count: int) -> str | None:
 
 
 def request_answer(client: OpenAI, model_id: str, messages: list[dict]) -> str:
-    """Make one OpenAI-compatible chat-completions request to the NYU gateway."""
+    """Make one OpenAI-compatible chat-completions request to CourtLens AI Gateway (Vercel)."""
     response = client.chat.completions.create(model=model_id, messages=messages)
     answer = response.choices[0].message.content
     if not answer or not answer.strip():
@@ -89,8 +91,9 @@ def generate_grounded_answer_from_evidence(
     conversation_history: list[dict] | None = None,
 ) -> str:
     """Generate an answer from an existing source-labeled evidence list."""
-    if model_id not in ANSWER_MODELS.values():
-        raise ValueError("Unknown answer model.")
+    config = vercel_generation_config()
+    if model_id != config.model:
+        raise ValueError("Answer model must match the configured VERCEL_GENERATION_MODEL.")
     if not evidence:
         return INSUFFICIENT_EVIDENCE_MESSAGE
 
@@ -105,7 +108,7 @@ def generate_grounded_answer_from_evidence(
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt},
     ]
-    client = OpenAI(api_key=require_nyu_api_gateway_api_key(), base_url=GATEWAY_BASE_URL)
+    client = vercel_client(config)
     answer = request_answer(client, model_id, messages)
 
     problem = citation_problem(answer, len(evidence))

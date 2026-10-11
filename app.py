@@ -5,15 +5,16 @@ import re
 import streamlit as st
 
 from evaluation import SCORE_NAMES, append_evaluation, build_evaluation_record
-from gateway_config import get_nyu_api_gateway_api_key
+from gateway_config import get_gateway_api_key, vercel_generation_config
 from rag import (
-    ANSWER_MODELS,
+    configured_answer_models,
     CITATION_PATTERN,
     attach_source_ids,
     generate_grounded_answer,
     generate_grounded_answer_from_evidence,
 )
-from retrieve import load_vector_store, semantic_search
+from retrieve import semantic_search
+from runtime_assets import load_runtime_vector_store
 
 
 st.set_page_config(
@@ -124,7 +125,7 @@ st.markdown(
 @st.cache_resource
 def cached_vector_store():
     """Load the local index once per Streamlit server process."""
-    return load_vector_store()
+    return load_runtime_vector_store()
 
 
 def passage_preview(text: str, limit: int = 420) -> str:
@@ -159,7 +160,7 @@ def page_label(metadata: dict) -> str:
 
 
 def key_is_configured() -> bool:
-    return bool(get_nyu_api_gateway_api_key())
+    return bool(get_gateway_api_key())
 
 
 def choose_retrieval_example(question: str) -> None:
@@ -332,7 +333,7 @@ if mode == "Retrieval":
             st.warning("Enter a research question before searching.")
         elif not key_is_configured():
             st.error(
-                "NYU AI Gateway API key is not configured. Add it to Streamlit "
+                "CourtLens AI Gateway API key (AI_GATEWAY_API_KEY) is not configured. Add it to Streamlit "
                 "secrets or your local environment."
             )
         else:
@@ -367,12 +368,17 @@ else:
         label_visibility="collapsed",
     )
 
+    answer_models = configured_answer_models()
+    model_options = list(answer_models) or ["Set VERCEL_GENERATION_MODEL"]
+    if not answer_models:
+        st.info("Configure VERCEL_GENERATION_MODEL with a verified Vercel chat model to enable generation.")
+
     if assistant_mode == "Normal Chat":
         conversation_header, clear_column, spacer_column = st.columns(
             [2.3, 1.15, 3.55], vertical_alignment="bottom"
         )
         with conversation_header:
-            answer_model_name = st.selectbox("Model", list(ANSWER_MODELS))
+            answer_model_name = st.selectbox("Model", model_options)
         with clear_column:
             if st.button("+ New chat", use_container_width=True):
                 st.session_state.court_messages = []
@@ -415,9 +421,10 @@ else:
             try:
                 if not key_is_configured():
                     raise ValueError(
-                        "NYU AI Gateway API key is not configured. Add it to Streamlit "
+                        "CourtLens AI Gateway API key (AI_GATEWAY_API_KEY) is not configured. Add it to Streamlit "
                         "secrets or your local environment."
                     )
+                vercel_generation_config()  # Fail before retrieval if generation is not configured.
                 with st.spinner("Retrieving evidence and drafting a grounded answer…"):
                     results = semantic_search(
                         prompt,
@@ -428,7 +435,7 @@ else:
                     answer, evidence = generate_grounded_answer(
                         prompt,
                         results,
-                        ANSWER_MODELS[answer_model_name],
+                        answer_models[answer_model_name],
                         conversation_history=st.session_state.court_messages[:-1],
                     )
             except Exception as error:
@@ -451,29 +458,32 @@ else:
         st.caption(
             "Both models receive one shared FAISS retrieval and the exact same labeled evidence."
         )
+        comparison_available = len(answer_models) >= 2
+        if not comparison_available:
+            st.info("Compare Models is unavailable: this migration supports one configured Vercel generation model. Two verified model configurations are required for comparison.")
         model_a_column, model_b_column = st.columns(2)
         with model_a_column:
-            model_a_name = st.selectbox("Model A", list(ANSWER_MODELS), index=0)
+            model_a_name = st.selectbox("Model A", model_options, index=0)
         with model_b_column:
-            model_b_name = st.selectbox("Model B", list(ANSWER_MODELS), index=1)
+            model_b_name = st.selectbox("Model B", model_options, index=min(1, len(model_options) - 1))
 
         with st.form("comparison_form"):
             comparison_question = st.text_input(
                 "Evaluation question", placeholder="What rights does Miranda protect?"
             )
-            compare_clicked = st.form_submit_button("Compare answers", type="primary")
+            compare_clicked = st.form_submit_button("Compare answers", type="primary", disabled=not comparison_available)
 
-        if model_a_name == model_b_name:
+        if comparison_available and model_a_name == model_b_name:
             st.warning("Choose two different answer models.")
 
-        if compare_clicked:
+        if compare_clicked and comparison_available:
             if not comparison_question.strip():
                 st.warning("Enter an evaluation question before comparing models.")
-            elif model_a_name == model_b_name:
+            elif comparison_available and model_a_name == model_b_name:
                 st.warning("Model A and Model B must be different.")
             elif not key_is_configured():
                 st.error(
-                    "NYU AI Gateway API key is not configured. Add it to Streamlit "
+                    "CourtLens AI Gateway API key (AI_GATEWAY_API_KEY) is not configured. Add it to Streamlit "
                     "secrets or your local environment."
                 )
             else:
@@ -490,12 +500,12 @@ else:
                         model_a_answer = generate_grounded_answer_from_evidence(
                             comparison_question,
                             evidence,
-                            ANSWER_MODELS[model_a_name],
+                            answer_models[model_a_name],
                         )
                         model_b_answer = generate_grounded_answer_from_evidence(
                             comparison_question,
                             evidence,
-                            ANSWER_MODELS[model_b_name],
+                            answer_models[model_b_name],
                         )
                 except Exception as error:
                     st.error(f"Comparison failed: {error}")
@@ -504,9 +514,9 @@ else:
                     st.session_state.comparison_result = {
                         "question": comparison_question,
                         "model_a_name": model_a_name,
-                        "model_a_id": ANSWER_MODELS[model_a_name],
+                        "model_a_id": answer_models[model_a_name],
                         "model_b_name": model_b_name,
-                        "model_b_id": ANSWER_MODELS[model_b_name],
+                        "model_b_id": answer_models[model_b_name],
                         "model_a_answer": model_a_answer,
                         "model_b_answer": model_b_answer,
                         "evidence": evidence,
