@@ -8,8 +8,11 @@ from gateway_config import (PROJECT_DIR, get_gateway_api_key, get_runtime_settin
                             vercel_generation_config, evidence_budget_config)
 from live_retrieval import retrieve_hybrid, load_live_resources
 from retrieve import semantic_search
-from rag import (generate_grounded_answer_from_evidence, citation_problem,
+from rag import (generate_grounded_answer_from_evidence,
                  INSUFFICIENT_EVIDENCE_MESSAGE, SYSTEM_PROMPT, format_history)
+
+from response_contract import (ResponseText, answered_response, ANSWERED,
+                               INSUFFICIENT_EVIDENCE, VALIDATION_FAILED, failure)
 
 HYBRID = 'Structure-aware hybrid'
 DENSE = 'Dense only'
@@ -85,16 +88,29 @@ def answer_question(question, resources, model_id, history, *, strategy=HYBRID,
     except Exception:
         raise AssistantError('Could not prepare bounded evidence. Check the evidence budget and verified local tokenizer vocabulary.') from None
     if context.status == 'insufficient_context':
-        answer = INSUFFICIENT_EVIDENCE_MESSAGE
+        answer = ResponseText(INSUFFICIENT_EVIDENCE_MESSAGE, INSUFFICIENT_EVIDENCE)
     else:
         try:
             answer = generate_grounded_answer_from_evidence(question, context, model_id,
                                                            conversation_history=history)
-            if citation_problem(answer, len(context.evidence)):
-                raise ValueError('Invalid citation identifiers')
+            # Plain-string substitutes retain ANSWERED semantics for legacy
+            # adapters/tests; never infer abstention from words in the body.
+            if not isinstance(answer, ResponseText):
+                answer = answered_response(answer, context.sources)
+            elif answer.response_state == ANSWERED:
+                answer = answered_response(str(answer), context.sources, answer.raw_draft)
+            elif answer.response_state == INSUFFICIENT_EVIDENCE:
+                if answer != INSUFFICIENT_EVIDENCE_MESSAGE:
+                    answer = failure(answer.raw_draft, ('invalid abstention body',))
+            elif answer.response_state == VALIDATION_FAILED:
+                answer = failure(answer.raw_draft, answer.validation_errors)
+            else:
+                answer = failure(answer.raw_draft, ('unknown response state',))
         except Exception:
             raise AssistantError('Answer generation failed or returned invalid source citations. Check the gateway and configured model.') from None
-    return {'role': 'assistant', 'content': answer, 'evidence': context.evidence,
+    return {'role': 'assistant', 'content': str(answer), 'response_state': answer.response_state,
+            'citation_validation_scope': 'identifier syntax and current-context membership only',
+            'validation_errors': list(answer.validation_errors), 'evidence': context.evidence,
             'source_mapping': context.sources, 'context_usage': context.usage,
             'skipped_evidence': context.skipped, 'context_status': context.status,
             'prompt_accounting': prompt_accounting, 'retrieval_strategy': strategy,

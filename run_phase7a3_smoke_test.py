@@ -185,7 +185,8 @@ def main():
                         patch.object(assistant, 'generate_grounded_answer_from_evidence', capture_generate), \
                         patch.object(rag, 'vercel_client', return_value=capped):
                     case['result'] = assistant.answer_question(question, resources, generation.model, [])
-                case['citation_problem'] = rag.citation_problem(case['result']['content'], len(case['result']['evidence']))
+                case['citation_problem'] = rag.citation_problem(case['result']['content'], len(case['result']['evidence']),
+                                                               response_state=case['result'].get('response_state', 'ANSWERED'))
                 case['exact_context_passed'] = all(row['messages'][1]['content'].endswith(case['exact_evidence'])
                                                    for row in document['requests'] if row['kind'] == 'generation' and row['case_id'] == case_id)
                 case['status'] = 'succeeded'

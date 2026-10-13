@@ -18,7 +18,7 @@ class ApplicationGatewayTests(unittest.TestCase):
         self.config = config.VercelProviderConfig('verified-test/chat', 'fake-key')
         self.client = Mock()
         self.client.chat.completions.create.return_value = SimpleNamespace(
-            choices=[SimpleNamespace(message=SimpleNamespace(content='Supported answer [S1].'))])
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"ANSWERED","answer":"Supported answer [S1]."}'))])
         self.evidence = [{'source_id': 'S1', 'text': 'Full evidence text.',
                           'metadata': {'case_name': 'Case', 'source_file': 'case.pdf', 'chunk_index': 0, 'page_start': 1, 'page_end': 2}}]
 
@@ -121,7 +121,7 @@ class ApplicationUITests(unittest.TestCase):
         for p in self.patches:
             self.addCleanup(p.stop)
         self.mocks[-1].return_value.chat.completions.create.return_value = SimpleNamespace(
-            choices=[SimpleNamespace(message=SimpleNamespace(content='Test grounded answer [S1].'))])
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"ANSWERED","answer":"Test grounded answer [S1]."}'))])
         self.app = AppTest.from_file(str(config.PROJECT_DIR / 'app.py')).run()
         self.assertEqual(len(self.app.exception), 0)
 

@@ -142,7 +142,7 @@ class EvidenceTests(unittest.TestCase):
             with self.subTest(reference=reference):
                 self.assertTrue(e.citation_errors(reference, ['S1']))
         self.assertIsNotNone(rag.citation_problem('Uncited claim', 1))
-        self.assertIsNone(rag.citation_problem(rag.INSUFFICIENT_EVIDENCE_MESSAGE, 0))
+        self.assertIsNone(rag.citation_problem(rag.INSUFFICIENT_EVIDENCE_MESSAGE, 0, response_state='INSUFFICIENT_EVIDENCE'))
         self.assertIsNotNone(rag.citation_problem(rag.INSUFFICIENT_EVIDENCE_MESSAGE + ' Claim', 1))
 
     def test_history_ids_removed_without_mutating_session_messages(self):
@@ -162,7 +162,7 @@ class GenerationContextTests(unittest.TestCase):
         self.configuration = config.VercelProviderConfig('verified-test/chat', 'fake-key')
         self.client = Mock()
         self.client.chat.completions.create.return_value = SimpleNamespace(
-            choices=[SimpleNamespace(message=SimpleNamespace(content='Evidence answer [S1].'))])
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"ANSWERED","answer":"Evidence answer [S1]."}'))])
         self.patches = [patch.object(rag, 'vercel_generation_config', return_value=self.configuration),
                         patch.object(rag, 'vercel_client', return_value=self.client),
                         patch.object(rag, 'evidence_budget_config', return_value=(12000, .1))]
@@ -204,13 +204,13 @@ class GenerationContextTests(unittest.TestCase):
                                                        context_token_budget=count, safety_margin=0)
         self.client.chat.completions.create.assert_not_called()
 
-    def test_noncanonical_answer_uses_existing_single_correction(self):
-        self.client.chat.completions.create.side_effect = [
-            SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content='Bad [S01]'))]),
-            SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content='Corrected [S1]'))])]
+    def test_noncanonical_answer_fails_without_correction(self):
+        self.client.chat.completions.create.return_value = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"ANSWERED","answer":"Bad [S01]"}'))])
         answer = rag.generate_grounded_answer_from_evidence('Question', rag.attach_source_ids([record()]), self.configuration.model)
-        self.assertEqual(answer, 'Corrected [S1]')
-        self.assertEqual(self.client.chat.completions.create.call_count, 2)
+        self.assertEqual(answer.response_state, 'VALIDATION_FAILED')
+        self.assertNotIn('Bad [S01]', answer)
+        self.assertEqual(self.client.chat.completions.create.call_count, 1)
 
     def test_empty_generation_question_fails_before_provider(self):
         with self.assertRaisesRegex(ValueError, 'non-empty generation question'):

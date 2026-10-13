@@ -50,6 +50,12 @@ Dense only option. The Retrieval tab remains dense. See
 [the Streamlit integration guide](docs/phase7a2d_streamlit_integration.md) for
 resource caching, evidence budgeting, attribution and smoke-test prerequisites.
 
+Generation now uses a locally validated response envelope with explicit
+`ANSWERED`, `INSUFFICIENT_EVIDENCE`, and `VALIDATION_FAILED` states. Abstentions
+require no citations; invalid responses fail without corrective generation.
+Citation-ID checks do not verify factual support. See the
+[Phase 7B.1 integrity guide](docs/phase7b1_citation_abstention_integrity.md).
+
 Existing indexes do not need rebuilding. The production `data/vector_store/`
 contains historical NYU metadata and is preserved; supported runtime loading
 rejects incompatible metadata instead of silently querying it with Vercel.

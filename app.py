@@ -13,6 +13,7 @@ from rag import (
     generate_grounded_answer,
     generate_grounded_answer_from_evidence,
 )
+from response_contract import ANSWERED, INSUFFICIENT_EVIDENCE, VALIDATION_FAILED
 from retrieve import semantic_search
 from assistant_integration import (resource_identity, initialize_resources, answer_question, AssistantError, HYBRID, DENSE)
 
@@ -244,8 +245,13 @@ def show_assistant_message(message: dict) -> None:
 
         evidence = message.get("evidence", [])
         if evidence:
-            show_source_summary(message["content"], evidence)
-            st.caption("Grounded in retrieved CourtLens evidence")
+            if message.get("response_state") == ANSWERED:
+                show_source_summary(message["content"], evidence)
+                st.caption("Source identifiers validated; factual support is not verified.")
+            elif message.get("response_state") == INSUFFICIENT_EVIDENCE:
+                st.caption("The supplied sources do not establish the requested answer.")
+            elif message.get("response_state") == VALIDATION_FAILED:
+                st.caption("Response validation failed; the draft is not displayed.")
             show_evidence(evidence)
         if message.get("context_usage"):
             usage = message["context_usage"]
@@ -261,7 +267,7 @@ def show_comparison_answer(label: str, model_name: str, answer: str, evidence: l
     st.divider()
     st.markdown(display_answer(answer))
     show_source_summary(answer, evidence)
-    st.caption("Grounded in retrieved CourtLens evidence")
+    st.caption("Source identifiers identify evidence; factual support is not verified.")
 
 
 METRIC_DETAILS = {

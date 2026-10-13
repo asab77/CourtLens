@@ -88,7 +88,10 @@ class WorkflowTests(unittest.TestCase):
     def test_invalid_citations_and_provider_generation_errors_not_stored(self):
         for value in ('Wrong [S01]', 'Wrong [S999]', 'Wrong [S1', 'No citation'):
             self.mocks[6].return_value = value
-            with self.subTest(value=value), self.assertRaisesRegex(a.AssistantError, 'source citations'): self.answer()
+            with self.subTest(value=value):
+                result = self.answer()
+                self.assertEqual(result['response_state'], 'VALIDATION_FAILED')
+                self.assertNotEqual(result['content'], value)
         self.mocks[6].side_effect = RuntimeError('private response payload')
         with self.assertRaises(a.AssistantError) as raised: self.answer()
         self.assertNotIn('private', str(raised.exception))
@@ -187,3 +190,31 @@ class HybridUITests(previous.ApplicationUITests):
         self.assertEqual(len(self.app.exception), 0)
         self.assertEqual(self.app.session_state['court_messages'][-1]['retrieval_strategy'], a.DENSE)
         self.mocks[-3].assert_called_once()
+
+
+class ResponseStateUITests(previous.ApplicationUITests):
+    def test_abstention_is_not_rendered_as_grounded_answer(self):
+        self.app.segmented_control(key='application_mode').set_value('AI Assistant').run()
+        self.mocks[-1].return_value.chat.completions.create.return_value = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"INSUFFICIENT_EVIDENCE","answer":""}'))])
+        self.app.chat_input[0].set_value('Dobbs question').run()
+        self.assertEqual(len(self.app.exception),0)
+        message=self.app.session_state['court_messages'][-1]
+        self.assertEqual(message['response_state'],'INSUFFICIENT_EVIDENCE')
+        self.assertNotIn('[S',message['content'])
+        captions='\n'.join(c.value for c in self.app.caption)
+        self.assertIn('do not establish the requested answer',captions)
+        self.assertNotIn('Grounded in',captions)
+        self.assertEqual(self.mocks[-1].return_value.chat.completions.create.call_count,1)
+
+    def test_validation_failure_does_not_display_original_draft(self):
+        self.app.segmented_control(key='application_mode').set_value('AI Assistant').run()
+        self.mocks[-1].return_value.chat.completions.create.return_value = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"state":"ANSWERED","answer":"Unsupported imaginary claim [S999]"}'))])
+        self.app.chat_input[0].set_value('Question').run()
+        self.assertEqual(len(self.app.exception),0)
+        message=self.app.session_state['court_messages'][-1]
+        self.assertEqual(message['response_state'],'VALIDATION_FAILED')
+        self.assertNotIn('Unsupported imaginary claim','\n'.join(m.value for m in self.app.markdown))
+        self.assertNotIn('raw_draft',message)
+        self.assertEqual(self.mocks[-1].return_value.chat.completions.create.call_count,1)
