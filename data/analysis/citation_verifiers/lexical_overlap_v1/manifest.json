@@ -1,0 +1,10 @@
+{
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "files_sha256": {
+    "configuration.json": "b48c0ec01937eb649596a1da8751d412f4efe64bdf1446d7b5254426306e0847",
+    "predictions.json": "7a854637404a1062152e1f06006689805487ad3c77917bbf0daf28f3ecb15a69",
+    "report.md": "f2895c6dba92383eff8090e67e87214348432503baf99522e299cd8fed1b27ad",
+    "results.json": "9667c9c543e88b5d368ca9393953b574d521d674a766bd5b625081b708d619dd"
+  },
+  "schema_version": "1.0"
+}

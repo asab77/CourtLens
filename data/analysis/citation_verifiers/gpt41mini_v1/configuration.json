@@ -1,0 +1,24 @@
+{
+  "capability_note": "Ordinary Chat Completions/max_tokens worked in Phase 7A.3. Installed SDK accepts temperature/max_tokens. Temperature=0 gateway behavior requires authorized contract preflight; no structured-output mode assumed.",
+  "generation_parameters": {
+    "max_tokens": 512,
+    "response_format": null,
+    "temperature": 0
+  },
+  "limits": {
+    "estimated_cost_ceiling": 0.1,
+    "input_budget_tokens": 8192,
+    "max_output_tokens": 512,
+    "max_requests": 35
+  },
+  "model": "openai/gpt-4.1-mini",
+  "pricing": {
+    "checked_date": "2026-10-11",
+    "input_per_million": 0.4,
+    "output_per_million": 1.6,
+    "source": "https://vercel.com/ai-gateway/models/gpt-4.1-mini"
+  },
+  "pricing_note": "Locally recorded Vercel rates verified 2026-10-11; not refreshed online in this offline phase. Confirm before live authorization.",
+  "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa",
+  "prompt_version": "citation-support-v1.0"
+}

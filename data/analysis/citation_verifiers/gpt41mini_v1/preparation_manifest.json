@@ -1,0 +1,12 @@
+{
+  "files_sha256": {
+    "configuration.json": "593f3445a7006edd6631fe406d2f5eafc8dfdde1be38a6585d9300c53844540c",
+    "dry_run.json": "69f173d68623a96d48f13ccde9078b12f364611e56b4297a97874f7b7e2c0dce",
+    "system_prompt.txt": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa"
+  },
+  "implementation_sha256": {
+    "citation_verifier_evaluation.py": "3fbd2e4d33507da9cd495fc1149c4e7dc5b65827feffcf5117f59157ca0d803f",
+    "llm_citation_verifier.py": "3729b9bf6fdaec9c571dd4b851813ac2082712f1de89876516e19fb6d12da383",
+    "run_llm_citation_verifier.py": "cb73892c9d5d904f7693dd652109ec60ef103d09441ef2caae5e16a3a3bb18dc"
+  }
+}

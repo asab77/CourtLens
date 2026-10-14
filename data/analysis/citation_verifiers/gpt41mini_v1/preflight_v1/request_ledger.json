@@ -1,0 +1,62 @@
+{
+  "accounted_cost_usd": 0.000818,
+  "limits": {
+    "estimated_cost_ceiling": 0.1,
+    "input_budget_tokens": 8192,
+    "max_output_tokens": 512,
+    "max_requests": 3
+  },
+  "never_auto_resume": true,
+  "records": [
+    {
+      "accounted_cost_usd": 0.0002628,
+      "accounting_method": "provider_reported",
+      "error_class": null,
+      "kind": "preflight",
+      "max_output_tokens": 512,
+      "request_number": 1,
+      "reserved_cost_usd": 0.001114,
+      "reserved_input_tokens": 737,
+      "status": "VALID_PREDICTION",
+      "usage": {
+        "input_tokens": 525,
+        "output_tokens": 33,
+        "reported_cost_usd": 0.0002628
+      }
+    },
+    {
+      "accounted_cost_usd": 0.0002752,
+      "accounting_method": "provider_reported",
+      "error_class": null,
+      "kind": "preflight",
+      "max_output_tokens": 512,
+      "request_number": 2,
+      "reserved_cost_usd": 0.0011136000000000002,
+      "reserved_input_tokens": 736,
+      "status": "VALID_PREDICTION",
+      "usage": {
+        "input_tokens": 524,
+        "output_tokens": 41,
+        "reported_cost_usd": 0.0002752
+      }
+    },
+    {
+      "accounted_cost_usd": 0.00028,
+      "accounting_method": "provider_reported",
+      "error_class": null,
+      "kind": "preflight",
+      "max_output_tokens": 512,
+      "request_number": 3,
+      "reserved_cost_usd": 0.0011156000000000002,
+      "reserved_input_tokens": 741,
+      "status": "VALID_PREDICTION",
+      "usage": {
+        "input_tokens": 528,
+        "output_tokens": 43,
+        "reported_cost_usd": 0.00028
+      }
+    }
+  ],
+  "scope": "preflight_only",
+  "stopped": false
+}

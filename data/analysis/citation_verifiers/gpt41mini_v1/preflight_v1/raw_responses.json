@@ -1,0 +1,35 @@
+[
+  {
+    "content": "{\n  \"label\": \"SUPPORTED\",\n  \"rationale\": \"The evidence explicitly states that the fictional hearing occurred on Monday, directly supporting the claim.\"\n}",
+    "finish_reason": "stop",
+    "id": "A",
+    "returned_model": "openai/gpt-4.1-mini",
+    "usage": {
+      "input_tokens": 525,
+      "output_tokens": 33,
+      "reported_cost_usd": 0.0002628
+    }
+  },
+  {
+    "content": "{\n  \"label\": \"UNSUPPORTED\",\n  \"rationale\": \"The evidence only states that the fictional hearing occurred on Monday and does not provide any information about whether the hearing was recorded.\"\n}",
+    "finish_reason": "stop",
+    "id": "B",
+    "returned_model": "openai/gpt-4.1-mini",
+    "usage": {
+      "input_tokens": 524,
+      "output_tokens": 41,
+      "reported_cost_usd": 0.0002752
+    }
+  },
+  {
+    "content": "{\n  \"label\": \"CONTRADICTED\",\n  \"rationale\": \"The evidence explicitly states that the fictional hearing occurred on Monday, directly contradicting the claim that it occurred on Tuesday.\"\n}",
+    "finish_reason": "stop",
+    "id": "C",
+    "returned_model": "openai/gpt-4.1-mini",
+    "usage": {
+      "input_tokens": 528,
+      "output_tokens": 43,
+      "reported_cost_usd": 0.00028
+    }
+  }
+]

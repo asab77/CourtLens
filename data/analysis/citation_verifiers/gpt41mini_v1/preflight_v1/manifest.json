@@ -1,0 +1,15 @@
+{
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "files_sha256": {
+    "configuration.json": "f491934188d8ca7a5f5fb5e49a3bcccb5340fc1f07a260fa3977ccf670a08710",
+    "expected_labels.json": "1f122545b3aa146751ad8083654437fa39217a512fe5e61d614069decb6901a4",
+    "inputs.json": "480a458614c9ef5102efbefc72601482dda03da0fcc14c1d598c9c6889460d51",
+    "predictions.json": "37b616e25ed8eab156fb32923c05dadc580c6bac242d27692f729f5368540f31",
+    "raw_responses.json": "cd58eec48888ba9ef1cc7e260879e47b637003b3c6a077e560a4bd107ec037a7",
+    "report.md": "ea97586f99ca788eebb9d19c3aceadbd6a199063cb634da73277a1d4676ebeec",
+    "request_ledger.json": "1ed282e2ec930488e9892e28537503a624661ed528e4968b1326f1d330d889a5",
+    "results.json": "ae4fef48f1596120cf1c268d5750b8549b23a4eec5c56645a52164ebec8e0a19",
+    "system_prompt.txt": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa"
+  },
+  "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa"
+}

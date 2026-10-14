@@ -1,0 +1,26 @@
+{
+  "automatic_model_fallback": false,
+  "base_url": "https://ai-gateway.vercel.sh/v1",
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "human_permission_note": "Explicit user permission received for three preflight requests only.",
+  "limits": {
+    "estimated_cost_ceiling": 0.1,
+    "input_budget_tokens": 8192,
+    "max_output_tokens": 512,
+    "max_requests": 3
+  },
+  "maximum_planned_estimate_usd": 0.0033432,
+  "model": "openai/gpt-4.1-mini",
+  "never_auto_resume": true,
+  "pricing": {
+    "checked_date": "2026-10-13",
+    "input_per_million": 0.4,
+    "output_per_million": 1.6,
+    "source": "https://vercel.com/ai-gateway/models/gpt-4.1-mini"
+  },
+  "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa",
+  "scope": "three_preflight_requests_only",
+  "sdk_max_retries": 0,
+  "started_at_utc": "2026-10-13T21:39:55.399379+00:00",
+  "temperature": 0
+}

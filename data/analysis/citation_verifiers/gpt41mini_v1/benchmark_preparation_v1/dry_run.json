@@ -1,0 +1,15 @@
+{
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "blockers": [],
+  "combined_requests_consumed": 3,
+  "cumulative_projected_cost_usd": "0.0476788",
+  "execution": "DRY_RUN_ONLY",
+  "historical_cost_usd": "0.0008180",
+  "historical_preflight_requests": 3,
+  "new_API_requests": 0,
+  "pending_benchmark_examples": 32,
+  "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa",
+  "remaining_estimated_allowance_usd": "0.0991820",
+  "reserved_benchmark_requests": 0,
+  "total_planned_requests": 35
+}

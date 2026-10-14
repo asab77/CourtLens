@@ -1,0 +1,59 @@
+[
+  {
+    "id": "A",
+    "input": {
+      "citation_metadata": {
+        "attribution_is_raw": true,
+        "author": null,
+        "case_name": "Synthetic preflight fixture",
+        "citation_identifier": "S1",
+        "opinion_type": "unknown",
+        "pdf_page_range": [
+          1,
+          1
+        ],
+        "source_file": "synthetic_preflight_fixture.txt"
+      },
+      "claim": "The fictional hearing occurred on Monday.",
+      "evidence": "The fictional hearing occurred on Monday."
+    }
+  },
+  {
+    "id": "B",
+    "input": {
+      "citation_metadata": {
+        "attribution_is_raw": true,
+        "author": null,
+        "case_name": "Synthetic preflight fixture",
+        "citation_identifier": "S1",
+        "opinion_type": "unknown",
+        "pdf_page_range": [
+          1,
+          1
+        ],
+        "source_file": "synthetic_preflight_fixture.txt"
+      },
+      "claim": "The fictional hearing was recorded.",
+      "evidence": "The fictional hearing occurred on Monday."
+    }
+  },
+  {
+    "id": "C",
+    "input": {
+      "citation_metadata": {
+        "attribution_is_raw": true,
+        "author": null,
+        "case_name": "Synthetic preflight fixture",
+        "citation_identifier": "S1",
+        "opinion_type": "unknown",
+        "pdf_page_range": [
+          1,
+          1
+        ],
+        "source_file": "synthetic_preflight_fixture.txt"
+      },
+      "claim": "The fictional hearing occurred on Tuesday.",
+      "evidence": "The fictional hearing occurred on Monday, not Tuesday."
+    }
+  }
+]

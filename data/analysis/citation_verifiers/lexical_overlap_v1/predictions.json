@@ -1,0 +1,472 @@
+{
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "benchmark_version": "1.0",
+  "configuration": {
+    "negation_or_attribution_reasoning": false,
+    "overlap": "unique_claim_tokens_intersection_evidence / unique_claim_tokens",
+    "partial_threshold": 0.5,
+    "random_seed": null,
+    "stopwords_removed": false,
+    "supported_threshold": 0.8,
+    "threshold_selection": "fixed before evaluation; not fitted to benchmark labels",
+    "tokenizer_description": "Unicode NFKC then casefold; contiguous Unicode letters/numbers form terms; combining marks continue an existing term. All other characters, including punctuation, apostrophes, hyphens, decimal points, and underscores, separate terms. Numeric strings remain terms. No stemming, stopword removal, OCR repair, synonyms, expansion, or legal normalization. Frozen text, including headers and PDF markers, is used as-is.",
+    "tokenizer_version": "nfkc-casefold-unicode-letter-number-marks-v1",
+    "uses_citation_metadata": false
+  },
+  "predictions": [
+    {
+      "example_id": "CS-001",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.928571; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-002",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.764706; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-003",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 1.000000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-004",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 1.000000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-005",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.750000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-006",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.888889; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-007",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 1.000000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-008",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.904762; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-009",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.888889; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-010",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.642857; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-011",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.733333; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-012",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.538462; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-013",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.666667; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-014",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.750000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-015",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.500000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-016",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.733333; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-017",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.533333; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-018",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.666667; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-019",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "UNSUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.300000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-020",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "UNSUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.400000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-021",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.545455; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-022",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "UNSUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.375000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-023",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.900000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-024",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.727273; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-025",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "UNSUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.357143; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-026",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.777778; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-027",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.857143; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-028",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.666667; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-029",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.666667; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-030",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.769231; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-031",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.750000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "example_id": "CS-032",
+      "result": {
+        "cost_usd": null,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": null,
+        "predicted_label": "PARTIALLY_SUPPORTED",
+        "rationale": "Unique claim-word overlap: 0.600000; lexical heuristic only.",
+        "token_usage": null,
+        "verifier_name": "LexicalOverlapBaseline",
+        "verifier_version": "1.0"
+      }
+    }
+  ],
+  "schema_version": "1.0",
+  "verifier": {
+    "id": "lexical-overlap",
+    "name": "LexicalOverlapBaseline",
+    "version": "1.0"
+  }
+}

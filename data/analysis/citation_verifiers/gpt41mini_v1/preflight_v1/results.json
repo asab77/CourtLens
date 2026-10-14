@@ -1,0 +1,86 @@
+{
+  "accounted_cost_usd": 0.000818,
+  "attempted_requests": 3,
+  "benchmark_requests": 0,
+  "checksums": {
+    "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+    "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa"
+  },
+  "correct_predictions": 3,
+  "cost_accounting_methods": [
+    "provider_reported"
+  ],
+  "estimated_cost_ceiling_usd": 0.1,
+  "existing_files_verified_unchanged": 225,
+  "finished_at_utc": "2026-10-13T21:40:00.666348+00:00",
+  "input_tokens": 1577,
+  "maximum_planned_estimate_usd": 0.0033432,
+  "output_tokens": 117,
+  "provider_errors": 0,
+  "provider_responses_received": 3,
+  "remaining_authorized_requests": 0,
+  "remaining_original_35_request_plan": 32,
+  "results": [
+    {
+      "expected_label": "SUPPORTED",
+      "id": "A",
+      "prediction_correct": true,
+      "result": {
+        "cost_usd": 0.0002628,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": 2.1405727500095963,
+        "predicted_label": "SUPPORTED",
+        "rationale": "The evidence explicitly states that the fictional hearing occurred on Monday, directly supporting the claim.",
+        "token_usage": {
+          "input": 525,
+          "output": 33
+        },
+        "verifier_name": "GPT41MiniCitationVerifier",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "expected_label": "UNSUPPORTED",
+      "id": "B",
+      "prediction_correct": true,
+      "result": {
+        "cost_usd": 0.0002752,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": 1.5845369169837795,
+        "predicted_label": "UNSUPPORTED",
+        "rationale": "The evidence only states that the fictional hearing occurred on Monday and does not provide any information about whether the hearing was recorded.",
+        "token_usage": {
+          "input": 524,
+          "output": 41
+        },
+        "verifier_name": "GPT41MiniCitationVerifier",
+        "verifier_version": "1.0"
+      }
+    },
+    {
+      "expected_label": "CONTRADICTED",
+      "id": "C",
+      "prediction_correct": true,
+      "result": {
+        "cost_usd": 0.00028,
+        "error": null,
+        "execution_status": "VALID_PREDICTION",
+        "latency_seconds": 0.9609516659984365,
+        "predicted_label": "CONTRADICTED",
+        "rationale": "The evidence explicitly states that the fictional hearing occurred on Monday, directly contradicting the claim that it occurred on Tuesday.",
+        "token_usage": {
+          "input": 528,
+          "output": 43
+        },
+        "verifier_name": "GPT41MiniCitationVerifier",
+        "verifier_version": "1.0"
+      }
+    }
+  ],
+  "scope": "preflight_only",
+  "stop_reason": null,
+  "usage_known_for_all_requests": true,
+  "valid_schema_responses": 3
+}

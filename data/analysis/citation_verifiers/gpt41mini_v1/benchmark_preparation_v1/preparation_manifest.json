@@ -1,0 +1,12 @@
+{
+  "benchmark_sha256": "2519c6563bcd21ac651e90a0151a67cbd37d6e4d50e6681c061b78884e18cffa",
+  "dry_run_sha256": "e995077d860d946c9a0ad57c1e86338c799b96abd3ac0af224663d583a46bf2d",
+  "implementation_sha256": {
+    "citation_verifier_evaluation.py": "3fbd2e4d33507da9cd495fc1149c4e7dc5b65827feffcf5117f59157ca0d803f",
+    "cumulative_verifier_accounting.py": "e1d97f54de98e3a7800c1b34d6e04345d20aa7cdc0e784a326338bbbf1f97c56",
+    "llm_citation_verifier.py": "649df8978c19d9afd485f2ccf70ebfd9c324985b721c4aa0f8829e051dc24fbe",
+    "run_llm_citation_verifier.py": "374142e3ee30be1be8863befffcbc802f0fc75ca577b313c972a54cb74f20866"
+  },
+  "preflight_ledger_sha256": "1ed282e2ec930488e9892e28537503a624661ed528e4968b1326f1d330d889a5",
+  "prompt_sha256": "f9b9160cd8c6f168a06d00c10dec680f4f3333ad83cdaf9f245f57b6be3cdfaa"
+}
